@@ -1,0 +1,78 @@
+.navBox{
+    margin-top:10px;
+    overflow: hidden;
+}
+.navBox>div{
+    height: 100px;
+    padding:0 10px;
+    text-align: center;
+    border:1px solid #eee;
+}
+.iconfont{
+    font-size: 32px;
+}
+.navBox>div>p{
+    margin:0;
+    font-size: 12px;
+}
+.logobox{
+    margin-top: 20px;
+}
+.logobox>img{
+    width: 100%;
+}
+.bigbox{
+    margin-bottom:20px;
+}
+.item{
+    box-sizing: border-box;
+    padding:15px 15px;
+    border-top: 3px solid #ddd;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:0;
+}
+.djBox{
+    font-size: 14px;
+}
+.content{
+    font-size: 13px;
+    color:#666;
+}
+.nameBox{
+    margin-bottom: 6px;
+}
+.zhiwei{
+    margin-top:6px;
+    margin-bottom:6px;
+    font-size: 13px;
+}
+.lableBox{
+    margin:10px 0;
+}
+.label{
+    background:#fff;
+    padding:5px 10px;
+}
+.chose-pay{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom:15px;
+}
+.chose-pay img{
+    width:45%;
+    border:2px solid transparent;
+}
+.chose-pay .cur{
+    border-color:#dd514c;
+}
+.chose-pay-span{
+    font-size:14px;
+    margin:10px 0;
+    text-align: center;
+}
+

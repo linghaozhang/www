@@ -1,0 +1,360 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <!-- page -->
+    <link rel="stylesheet" href="../css/tourongquan-zichanfang.css">
+    <link rel="stylesheet" href="../plugin/swiper/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="../plugin/swiper/swiper.jquery.min.js"></script>
+    <script src="../plugin/layer/layer.js" charset="utf-8"></script>
+    <title>太和·投融宝</title>
+    <style>
+        .jigouleibie{
+            padding:0 0px;
+            margin-bottom: 10px;
+        }
+        .xnbtnbox{
+            padding:0 0px;
+            margin-bottom: 6px;
+        }
+        .xnbtn,.xnbtn2{
+            width: 95%;
+            background-color:#d4d4d4 !important;
+        }
+        .tit{
+            margin-bottom: 5px;
+        }
+        .am-btn-default:focus, .am-btn-default:hover{
+            background-color:#d7342e;
+        }
+        .xnbtnSelected,.xnbtnSelected2{
+            background-color:#d7342e !important;
+            color:#fff !important;
+            width: 95%;
+        }
+        .duijietanchu{
+            z-index: 999999;
+        }
+        .swiper-slide{
+            padding-bottom: 20px;
+        }
+        .swiper-pagination-bullet-active{
+            background:#dd514c;
+        }
+        [class*=am-u-]+[class*=am-u-]:last-child{
+            float: left;
+        }
+        .topBox{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background:#fff;
+            z-index:999;
+        }
+        body{
+            padding-top:50px;
+        }
+        .shuaxin{
+            position: fixed;
+            right: 10px;
+            bottom: 130px;
+            width: 50px;
+            height: 50px;
+            background:#dd514c;
+            z-index: 2;
+            border-radius: 50%;
+            color:#fff;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .diqu .am-u-sm-6:nth-child(2n){ text-align: right; }
+        .jigouleibie .am-u-sm-6:nth-child(2n){  text-align: right;  }
+        .touzifangshi .am-u-sm-6:nth-child(2n){  text-align: right;  }
+        .zichanpianhaobiaoqian .am-u-sm-6:nth-child(2n){  text-align: right;  }
+        .zichanxinxiduijie .am-u-sm-6:nth-child(2n){  text-align: right;  }
+        .touzijine .am-u-sm-6:nth-child(2n){  text-align: right;  }
+        .zichanhangye .am-u-sm-6:nth-child(2n){  text-align: right;  }
+    </style>
+
+</head>
+<body>
+<div class="am-g topBox">
+    <div class="am-u-sm-4 zijinfangView" onclick="gotoTourongbao('./tourongbao.html');">资金方</div>
+    <div class="am-u-sm-4 zichanfangView" onclick="gotoTourongbao('./tourongbao-zichanfang.html');">资产方</div>
+    <div class="am-u-sm-4 renmaiquanView" onclick="gotoTourongbao('./tourongbao-renmaiquan.html');">人脉圈</div>
+</div>
+
+<div class="am-g shaiBox">
+    <div class="am-u-sm-4" onclick="diqu();">&nbsp;&nbsp;地区<i class="iconfont">&#xe60b;</i></div>
+    <div class="am-u-sm-4" onclick="shaixuan();">&nbsp;&nbsp;筛选<i class="iconfont">&#xe60b;</i></div>
+    <div class="am-u-sm-4" onclick="openSousuo();">&nbsp;&nbsp;搜索<i class="iconfont">&#xe60b;</i></div>
+</div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <!--<div class="swiper-slide">Slide 1</div>-->
+        <!--<div class="swiper-slide">Slide 2</div>-->
+        <!--<div class="swiper-slide">Slide 3</div>-->
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+</div>
+
+
+<div class="am-g contentBox" >
+
+    <!--<div class="item" style="">-->
+        <!--<div class="am-g">-->
+            <!--<div class="am-u-sm-2">-->
+                <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503378049&di=ced682ef4dae8db40088598542e8d910&imgtype=jpg&er=1&src=http%3A%2F%2Fp9.qhimg.com%2Ft014c0b45fe12d2153c.jpg" alt="" class="logo">-->
+            <!--</div>-->
+            <!--<div class="am-u-sm-7">-->
+                <!--<p class='nameBox'>-->
+                    <!--<span class="name">田雨</span>-->
+                    <!--<span class="sf">总经理</span>-->
+                <!--</p>-->
+                <!--<p class="zhiwei">-->
+                    <!--北京市金融交易所-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<div class="am-u-sm-3">-->
+                <!--<p class="djBox">-->
+                    <!--<span class="dj">123</span>次对接-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="am-g">-->
+            <!--<div class="am-u-sm-12 am-u-sm-centered content">-->
+                <!--个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，-->
+                <!--个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，-->
+                <!--个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，-->
+                <!--个人资料介绍信息，-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="am-g lableBox">-->
+            <!--<div class="am-u-sm-3">-->
+                <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+            <!--</div>-->
+            <!--<div class="am-u-sm-3">-->
+                <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+            <!--</div>-->
+            <!--<div class="am-u-sm-3">-->
+                <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+            <!--</div>-->
+            <!--<div class="am-u-sm-3">-->
+                <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="am-g">-->
+            <!--<button type="button" class="am-btn am-btn-danger" style="width:100%;">红色按钮</button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+</div>
+
+<div class="am-g xuanzeList" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;padding:10px;display:none;">
+    <div class="xuanzeList2" style="padding-top:60px;overflow-x:hidden;">
+        <p>资产类别：</p>
+        <div class="am-g jigouleibie" style="padding:0px 20px 10px">
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn" style="width:95%;" type="button" configId="">全部</button></div>
+        </div>
+
+        <p>资产行业：</p>
+        <div class="am-g zichanhangye" style="padding:0px 20px 10px">
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn" style="width:95%;" type="button" configId="">全部</button></div>
+        </div>
+
+        <p>资产信息对接：</p>
+        <div class="am-g zichanxinxiduijie" style="padding:0px 20px 10px">
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn" style="width:95%;" type="button" configId="">全部</button></div>
+
+        </div>
+    </div>
+
+    <div class="am-g btnsBoxx" style="position:fixed;bottom:0px;left:0;z-index:20;width:110%;height:4rem;display: none;background:#fff;">
+        <div class="am-u-sm-6"><button type="button" class="am-btn am-btn-default" style="width:95%;margin-left:3.5%;background:#333;color:#fff;" onclick="shaixuanhide()">取消</button></div>
+        <div class="am-u-sm-6"><button type="button"onclick="allSer();" class="am-btn am-btn-danger"style="width:90%;margin-left:-5%;">确定</button></div>
+    </div>
+</div>
+
+<!--搜索-->
+<div class="sousuoBox" style="display: none;">
+    <form class="am-form">
+        <fieldset>
+            <div class="am-form-group">
+                <input type="text" class="sousuoinput" id="doc-ipt-pwd-1" placeholder="输入搜索内容">
+            </div>
+            <div style="text-align: center">
+                <button type="button" class="am-btn am-btn-default" onclick="sousuoquxiao();">取消</button>
+                <button type="button" class="am-btn am-btn-danger" onclick="allSer();" >搜索</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+<!--地区选择-->
+<div class="am-g diqu2" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;padding:10px;display:none;">
+    <p>选择地区：</p>
+    <div class="am-g diqu" style="padding-top:15px;">
+
+    </div>
+
+
+
+</div>
+
+<div class="am-g diqubtnsBoxx" style="position:fixed;bottom:10px;left:0;z-index:20;width:100%;display: none;">
+    <div class="am-u-sm-6"><button type="button" class="am-btn am-btn-default" style="width:100%;background:#333;color:#fff;" onclick="diquhide()">取消</button></div>
+    <div class="am-u-sm-6"><button type="button" onclick="allSer();" class="am-btn am-btn-danger"style="width:100%;">确定</button></div>
+</div>
+
+<div class="fabuBtn" onclick="fabuBtn();">
+    发布
+</div>
+
+<div class="shuaxin" onclick="shuaxin();">
+    刷新
+</div>
+
+<!--<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5)">-->
+    <!--<div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">-->
+        <!--<button type="button" class="am-btn am-btn-danger" style="width:100%;">红色按钮</button>-->
+        <!--<button type="button" class="am-btn am-btn-danger" style="width:100%;">确定</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--委托给系统-->
+<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="weituopxitong">
+    <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+        <p style="text-align: center">
+            已委托平台对接
+        </p>
+        <p style="text-align: center">
+            联系邮箱：xxx.sk@126.com
+        </p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+    </div>
+</div>
+
+<!--缴纳保证金-->
+<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="jiaonabaozhengjin">
+    <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+        <p style="text-align: center">
+            需要缴纳保证金(可退)
+        </p>
+        <p style="text-align: center">
+            200元
+        </p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >支付宝支付</button>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+    </div>
+</div>
+
+<!--邀请好友-->
+<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="yaoqinghaoyou">
+    <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+        <p style="text-align: center">
+            邀请好友即可获得对接资格
+        </p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上邀请</button>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">以后再说</button>
+    </div>
+</div>
+
+<!--直接查看联系方式-->
+<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="chakanlianxifangshi">
+    <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+        <p style="text-align: center;">
+            业务对接
+        </p>
+        <p style="text-align: center;margin:3px 0px 10px;font-size: 12px;" class="card2">
+            <img src="" alt="" style="width: 100%;" class="cardImage">
+        </p>
+        <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="dianhua2">
+            电话：<span class="dianhua"></span>
+        </p>
+        <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="weixin2">
+            微信：<span class="weixin"></span>
+        </p>
+        <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="youxiang2">
+            邮件：<span class="youxiang"></span>
+        </p>
+
+        <p style="margin:3px 0px;font-size: 13px;margin-bottom: 10px;">
+            备注：<span class="beizhuxinxi">对接前请说明来自太和投融宝，谢谢！</span>
+        </p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+    </div>
+</div>
+
+<!--成为会员-->
+<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="chengweihuiyuan">
+    <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+        <p style="text-align: center">
+            成为会员即可对接
+        </p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上成为会员</button>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
+    </div>
+</div>
+<!--二选一-->
+<div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="erxuanyi">
+    <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+        <p style="text-align: center">
+            成为会员或邀请好友即可
+        </p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上成为会员</button>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上邀请</button>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
+    </div>
+</div>
+
+
+
+
+</body>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        // 如果需要分页器
+        pagination: '.swiper-pagination',
+        autoplay:'2000'
+    })
+</script>
+<script src="../js/tab.js" charset="utf-8"></script>
+<script src="../js/common.js" charset="utf-8"></script>
+<script src="../js/tourongbao-zichanfang.js" charset="utf-8"></script>
+<script src="../js/yewuduijie.js" charset="utf-8"></script>
+<script type="text/javascript">
+    function shuaxin() {
+        location.reload()
+    }
+</script>
+<script type="text/javascript">
+    $('#doc-ipt-pwd-1').bind('focus',function(){
+        $('#qj_tab').css('position','static');
+        //或者$('#viewport').height($(window).height()+'px');
+    }).bind('blur',function(){
+        $('#qj_tab').css({'position':'fixed','bottom':'0px'});
+        //或者$('#viewport').height('auto');
+    });
+
+</script>
+</html>

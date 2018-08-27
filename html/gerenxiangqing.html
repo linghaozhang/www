@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <style>
+        .item{
+            border-top:0px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        #zijintouxiang>p{
+            margin-bottom:6px;
+            margin-top:6px;
+        }
+        .zijintouxiangtitle{
+            font-weight: 900;
+        }
+    </style>
+    <title>太和·投融宝</title>
+</head>
+<body>
+    <div style="position: fixed;top:10px;right:20px;font-size: 14px;">
+        <!--<span onclick="shoucang();">收藏</span>-->
+        <span onclick="jubao();">举报</span>
+    </div>
+
+    <div class="headePicBox" style="text-align: center;margin-top:20px;">
+
+    </div>
+    <p style="font-weight: 800;text-align: center;font-size: 14px;margin-bottom: 0px;">
+        <span id="name"></span>
+        <span id="zhiwei"></span>
+    </p>
+    <p style="text-align: center;font-size: 12px;margin-top:0px;" id="gongsi">
+        <!--这是一个公司哦的名字-->
+    </p>
+<div style="display: flex;border-top:1px solid #eeeeee;border-bottom:1px solid #eee;padding:5px 0px;">
+    <p class="tabClass" style="flex: 1;margin:0;text-align: center;display: block;font-weight:900;" onclick="tabList(0);" id="zjtx">资金投向</p>
+    <!--<p class="tabClass" style="flex: 1;margin:0;text-align: center;display: block;" onclick="tabList(1);">个人简介</p>-->
+    <p class="tabClass" style="flex: 1;margin:0;text-align: center;display: block;" onclick="tabList(1);">我的发布</p>
+</div>
+
+
+<!--资金投向-->
+<div  class="content" id="zijintouxiang" style="padding:24px;display: none;">
+    <p><span class="zijintouxiangtitle">投资方式：</span><span id="touzifangshi"></span></p>
+    <p><span class="zijintouxiangtitle">投资阶段：</span><span id="touzijieduan"></span></p>
+    <p><span class="zijintouxiangtitle">股权投资类型：</span><span id="guquantouzi"></span></p>
+    <p><span class="zijintouxiangtitle">参股比例：</span><span id="caogubili"></span></p>
+    <p><span class="zijintouxiangtitle">投资风控要求：</span><span id="touzifengkong"></span></p>
+    <p><span class="zijintouxiangtitle">抵押物类型：</span><span id="diyawuleixing"></span></p>
+    <p><span class="zijintouxiangtitle">最低回报要求：</span><span id="zhidihuibaoyaoqiu"></span></p>
+    <p><span class="zijintouxiangtitle">抵押物折扣率：</span><span id="diyawuzhekoulv"></span></p>
+    <p><span class="zijintouxiangtitle">风险偏好：</span><span id="fengxianpianhao"></span></p>
+    <p><span class="zijintouxiangtitle">产品偏好：</span><span id="chanpinpianhao"></span></p>
+    <p><span class="zijintouxiangtitle">投资期限：</span><span id="touziqixian"></span></p>
+    <p><span class="zijintouxiangtitle">前期费用：</span><span id="qianqifeiyong"></span></p>
+    <p><span class="zijintouxiangtitle">需提供资料：</span><span id="tigongziliao"></span></p>
+    <p><span class="zijintouxiangtitle">资金来源：</span><span id="zijinlaiyuan"></span></p>
+    <p><span class="zijintouxiangtitle">机构类别：</span><span id="jigouleibie"></span></p>
+    <!--机构类别-->
+    <p><span class="zijintouxiangtitle">投资行业：</span><span id="touzihangye"></span></p>
+    <p><span class="zijintouxiangtitle">资金偏好标签：</span><span id="zijinpianhaobiaoqian"></span></p>
+    <!--偏好标签-->
+    <p><span class="zijintouxiangtitle">投资金额：</span><span id="touzijine"></span></p>
+    <p><span class="zijintouxiangtitle">投资地区：</span><span id="diqu"></span></p>
+
+
+    <p><span class="zijintouxiangtitle">投资要求：</span><span id="touziyaoqiu"></span></p>
+    <p><span class="zijintouxiangtitle">投资案例：</span><span id="touzianli"></span></p>
+    <p><span class="zijintouxiangtitle">备注：</span><span id="beizhu"></span></p>
+
+
+    <div class="am-g" style="text-align: center;margin-bottom:30px;">
+        <button type="button" class="am-btn am-btn-danger" id="yewuduijieBtn" style="width:100%;" onclick="yewuduijie();">业务对接</button>
+    </div>
+
+
+</div>
+    <!--个人介绍-->
+    <!--<div class="content" style="padding:15px;display: none;">-->
+        <!--<p style="font-size: 14px;font-weight: 900;" >工作经历：</p>-->
+        <!--<p id="gongzuojingli"></p>-->
+        <!--<p style="font-size: 14px;font-weight: 900;" >教育经历：</p>-->
+        <!--<p id="jiaoyujingli"></p>-->
+
+    <!--</div>-->
+        <!--我的发布-->
+<div  class="content" style="display: none;" id="wodefabu">
+
+</div>
+
+
+
+    <!--委托给系统-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="weituopxitong">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center">
+                已委托平台对接
+            </p>
+            <p style="text-align: center">
+                联系邮箱：xxx.sk@126.com
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+        </div>
+    </div>
+
+    <!--缴纳保证金-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="jiaonabaozhengjin">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center">
+                需要缴纳保证金(可退)
+            </p>
+            <p style="text-align: center">
+                200元
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >支付宝支付</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+        </div>
+    </div>
+
+    <!--邀请好友-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="yaoqinghaoyou">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center">
+                邀请好友即可获得对接资格
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;"  onclick="">马上邀请</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">以后再说</button>
+        </div>
+    </div>
+
+    <!--直接查看联系方式-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="chakanlianxifangshi">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p style="text-align: center;margin:3px 0px 10px;font-size: 12px;" class="card2">
+                <img src="" alt="" style="width: 100%;" class="cardImage">
+            </p>
+            <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="dianhua2">
+                电话：<span class="dianhua"></span>
+            </p>
+            <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="weixin2">
+                微信：<span class="weixin"></span>
+            </p>
+            <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="youxiang2">
+                邮件：<span class="youxiang"></span>
+            </p>
+
+            <p style="margin:3px 0px;font-size: 13px;margin-bottom: 10px;">
+                备注：<span class="beizhuxinxi">对接前请说明来自太和投融宝，谢谢！</span>
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+        </div>
+    </div>
+
+    <!--成为会员-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="chengweihuiyuan">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center">
+                成为会员即可对接
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上成为会员</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
+        </div>
+    </div>
+    <!--二选一-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="erxuanyi">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center">
+                成为会员或邀请好友即可
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上成为会员</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" >马上邀请</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
+        </div>
+    </div>
+
+</body>
+<script src="../js/gerenxiangqing.js"></script>
+<script src="../js/yewuduijie.js"></script>
+
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <title>发布</title>
+    <style>
+        .jigouleibie{
+            padding:0 0px;
+            margin-bottom: 10px;
+        }
+        .xnbtnbox{
+            padding:0 0px;
+            margin-bottom: 6px;
+        }
+        .xnbtn,.xnbtn2{
+            width: 95%;
+            background-color:#d4d4d4 !important;
+        }
+        .tit{
+            margin-bottom: 5px;
+        }
+        .am-btn-default:focus, .am-btn-default:hover{
+            background-color:#d7342e;
+        }
+        .xnbtnSelected,.xnbtnSelected2{
+            background-color:#d7342e !important;
+            color:#fff !important;
+            width: 95%;
+        }
+        [class*=am-u-]+[class*=am-u-]:last-child{
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<fieldset>
+    <form class="am-form" id="myForm">
+
+    <!--<legend>发布</legend>-->
+
+    <div class="am-form-group" style="padding-top:5px;">
+        <label for="doc-ta-1">资产描述：</label>
+        <textarea class="zichanmiaoshu" rows="10"  id="txt" style="font-size: 12px;" placeholder="温馨提示：请点击右上方“···”功能，使用“浮窗”功能，切换到微信，复制粘贴文字会更方便！发布项目信息时请尽可能将项目基本情况(要素表)、股权、资产抵质押担保及项目盈利情况描述清楚，文字不少于100个字，发布项目不可留下联系方式，后台一经发现，除删除项目信息外，还将对发布人进行直接警告并封号处理。"></textarea>
+    </div>
+
+    <div class="jigouleibie">
+        <p class="tit">资产类别：</p>
+        <div class="am-g" id="propertyType">
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2 xnbtnSelected2" type="button" configId="17" id="xn_zqzc">债券资产</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="18" id="gqzc">股权资产</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="19" id="tyyw">同业业务</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="20" id="fbcp">非标产品</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="21" id="tzyh">投资银行</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="22" id="xdyw">信贷业务</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="23" id="jrysp">金融衍生品</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="24" id="zyfw">专业服务</button></div>
+            <div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn2" type="button" configId="25" id="qtyw">其他业务</button></div>
+        </div>
+    </div>
+
+    <div class="propertyTypeLabel_zhaiquan biandong biandongSelected">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_zhaiquan"></div>
+    </div>
+    <div class="propertyTypeLabel_guquan biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_guquan"></div>
+    </div>
+    <div class="propertyTypeLabel_tongye biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_tongye"></div>
+    </div>
+    <div class="propertyTypeLabel_feibiao biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_feibiao"></div>
+    </div>
+    <div class="propertyTypeLabel_touziyinhang biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_touziyinhang"></div>
+    </div>
+    <div class="propertyTypeLabel_xindai biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_xindai"></div>
+    </div>
+    <div class="propertyTypeLabel_yanshengpin biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_yanshengpin"></div>
+    </div>
+    <div class="propertyTypeLabel_qita biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_qita"></div>
+    </div>
+    <div class="propertyTypeLabel_zhuanye biandong">
+        <p class="tit">资产类别标签：</p>
+        <div class="am-g" id="propertyTypeLabel_zhuanye"></div>
+    </div>
+
+    <div class="jigouleibie">
+        <p class="tit">资产行业：</p>
+        <div class="am-g" id="propertyTrade"></div>
+    </div>
+
+    <div class="jigouleibie">
+        <p class="tit">资产信息对接：</p>
+        <div class="am-g" id="propertyRole"></div>
+    </div>
+
+        <div class="diqu">
+            <p class="tit">地区：</p>
+            <div class="am-g" id="diqu"></div>
+        </div>
+
+    <p><button type="button" class="am-btn am-btn-danger" onclick="tijiao();" style="width:100%">发布</button></p>
+
+</fieldset>
+</form>
+
+</body>
+<script src="../js/fabu.js"></script>
+</html>

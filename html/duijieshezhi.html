@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/duijieshezhi.css">
+    <style>
+        .selected{background-color:#dd514c !important;color:#fff !important;}
+    </style>
+    <title>太和·投融宝</title>
+</head>
+<body>
+    <div class="btnbox">
+        <button type="button" class="am-btn am-btn-default xnbtn" onclick="mfdjBtn();" id="mfdjBtn">免费公开方式</button>
+        <p>
+            <button type="button" class="am-btn am-btn-default duijie" id="mingpian" txt="名片">名片</button>
+            <button type="button" class="am-btn am-btn-default duijie" id="phone" txt="手机号">手机号</button>
+            <button type="button" class="am-btn am-btn-default duijie" id="weixin" txt="微信">微信</button>
+            <button type="button" class="am-btn am-btn-default duijie" id="email" txt="邮箱">邮箱</button>
+        </p>
+        <!--<p class="beizhutit" style="text-align: left;padding-left:30px;">备注信息</p>-->
+        <textarea class="beizhu" style="font-size: 14px;padding:3px 5px;"  rows="3" id="doc-ta-1" placeholder="备注:业务对接前请说明来自太和投融宝。谢谢。"></textarea>
+    </div>
+    <p class="btnbox">
+        <button type="button" class="am-btn am-btn-default xnbtn" onclick="wtptBtn();" id="wtptBtn">委托平台对接</button>
+    </p>
+
+    <p class="btnbox2">
+        <button type="button" class="am-btn am-btn-danger" style="width:90%;" onclick="save();">保存设置</button>
+    </p>
+
+</body>
+<script type="text/javascript">
+
+    $.ajax({
+        url: WWW_URL+'/user',
+        type: 'GET',
+        headers:HEADER,
+        data:{
+            id:sessionStorage.getItem('TRQuserid'),
+        },
+        success:function(data){
+            var d = data.data;
+
+            if (d.joinType == 1) $('#mfdjBtn').addClass('selected');
+            if (d.joinType == 2) $('#wtptBtn').addClass('selected');
+            if (d.openWechat == 1) $('#weixin').addClass('selected');
+            if (d.openPhone == 1) $('#phone').addClass('selected');
+            if (d.openEmail == 1) $('#email').addClass('selected');
+            if (d.openCard == 1) $('#mingpian').addClass('selected');
+            $('.beizhu').val(d.remark);
+        }
+    })
+
+
+
+    //公开
+    function mfdjBtn() {
+        layer.msg('已选择免费公开方式');
+        $('#wtptBtn').removeClass('selected');
+        $('#mfdjBtn').addClass('selected');
+        $('.duijie').addClass('selected');
+    }
+
+    //委托平台
+    function wtptBtn() {
+        layer.msg('已选择委托平台对接');
+        $('#mfdjBtn').removeClass('selected');
+        $('#wtptBtn').addClass('selected');
+        $('.duijie').removeClass('selected');
+
+    }
+
+    $('.duijie').click(function(i){
+        if ($(this).hasClass('selected')){
+            layer.msg('已取消公开'+$(this).attr('txt'));
+            $(this).removeClass('selected')
+        }else{
+
+            if ($('#wtptBtn').hasClass('selected')) return false;
+
+            layer.msg('已公开'+$(this).attr('txt'));
+            $(this).addClass('selected')
+        }
+
+    })
+
+    function save() {
+
+        //对接模式
+        var joinType=1 ,openWechat=0,openPhone=0,openEmail=0,openCard=0;
+
+        if ($('#wtptBtn').hasClass('selected')){
+            joinType =2
+        };
+
+        if ($('#weixin').hasClass('selected')){
+            openWechat =1
+        };
+
+        if ($('#phone').hasClass('selected')){
+            openPhone =1
+        }
+
+        if ($('#email').hasClass('selected')){
+            openEmail =1
+        }
+
+        if ($('#mingpian').hasClass('selected')){
+            openCard =1
+        }
+
+        $.ajax({
+            url: WWW_URL+'/user/update',
+            type: 'POST',
+            headers:HEADER,
+            data:{
+                id:sessionStorage.getItem('TRQuserid'),
+                joinType:joinType,
+                openWechat:openWechat,
+                openPhone:openPhone,
+                openEmail:openEmail,
+                openCard:openCard,
+                remark:$('.beizhu').val()
+            },
+            success:function(data){
+                if (data.status == 0){
+                    layer.msg('保存成功');
+
+                    return false;
+                    setTimeout(function () {
+                        window.location.href = './my.html';
+                    },1200)
+                }else{
+                    layer.msg(data.msg);
+                }
+                console.log();
+            }
+        })
+
+
+    }
+
+
+</script>
+</html>

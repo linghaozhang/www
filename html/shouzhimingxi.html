@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <title>太和·投融宝</title>
+</head>
+<body style="padding:15px;">
+<!--<p class="mingxi" style="padding-left:30px;">-->
+    <!--邀请记录-->
+<!--</p>-->
+<table class="am-table">
+    <thead>
+        <tr class="titleBox" style="text-align: center">
+            <th style="text-align: center">被邀请人</th>
+            <th style="text-align: center">奖励金额</th>
+            <th style="text-align: center">邀请时间</th>
+            <!--<th>时间</th>-->
+        </tr>
+    </thead>
+    <tbody id="content">
+        <!--<tr style="text-align: center">-->
+        <!--<td>刘德华</td>-->
+        <!--<td>200.00</td>-->
+        <!--<td>2017-11-11</td>-->
+        <!--</tr>-->
+    </tbody>
+    </tbody>
+</table>
+
+</body>
+
+<script type="text/javascript">
+    // 获取总收入和收入列表
+    $.ajax({
+        url: WWW_URL+'/invite/get',
+        type: 'get',
+        headers:HEADER,
+        data: {
+            inviteId : sessionStorage.getItem('TRQuserid')
+        },
+        success:function(data){
+            console.log(6666,data);
+
+            var d = data.data;
+            var allNumber = 0;
+            for (var i=0;i<d.length;i++){
+//
+                var obj = d[i].userInfo; // 详细信息
+//
+//
+                allNumber += d[i].price;
+                var typeStr = d[i].type==1? '好友邀请':''; //类型文字
+//
+//
+                var html = '';
+                html += '<tr style="text-align: center">';
+                html += '<td>'+obj.name+'</td>';
+
+                var payOkTxt = obj.payOk == 1 ? 200 : 0;
+                var time = obj.created_at.substring(0,10);
+
+
+                html += '<td>'+payOkTxt+'</td>';
+                html += '<td>'+time+'</td>';
+                html += '</tr>';
+//
+                $('#content').prepend(html);
+//
+//
+//
+//
+//
+            }
+            $('#leijishouru').html(allNumber);
+//            console.log(allNumber);
+//            console.log(data);
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            if (XMLHttpRequest.status==401){
+                layer.msg('您还未登录，请您先登陆！')
+                setTimeout(function () {
+                    window.location.href = './login.html';
+                },1500)
+            }
+        }
+    });
+</script>
+
+</html>

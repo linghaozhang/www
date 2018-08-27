@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/plupload.full.min.js" charset="utf-8"></script>
+    <script src="../plugin/plupload/jquery.ui.plupload.min.js" charset="utf-8"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <title>太和·投融宝</title>
+</head>
+<body>
+<div style="padding:20px 15px">
+    <p>手机号认证：<spna><i class="iconfont" style="font-size: 14px;margin-right: 6px;">&#xe854;</i></spna>已认证</p>
+
+    <p>名片认证：<spna><i class="iconfont" style="font-size: 14px;margin-right: 6px;">&#xe854;</i></spna>已认证</p>
+    <div style="width:100%;height:150px;border:1px solid #eeeeee;" id="card">
+        <img src="" alt="" style="width: 100%;height:100%;">
+    </div>
+
+    <p>身份证认证：<spna><i class="iconfont" style="font-size: 14px;margin-right: 6px;">&#xe854;</i></spna>
+        <span class="shenfenzhengrenzheng"></span>
+    </p>
+
+    <p id="zmbtn">点击上传身份证正面</p>
+    <div style="width:100%;height:150px;border:1px solid #eeeeee;" id="zm">
+        <img src="../images/shenfenrenzhen.jpg" alt="" style="width: 100%;height:100%;" id="zhengmian">
+    </div>
+
+
+    <p id="fmbtn">点击上传身份证反面</p>
+    <div style="width:100%;height:150px;border:1px solid #eeeeee;" id="fm">
+        <img src="../images/shenfenrenzhen.jpg" alt="" style="width: 100%;height:100%;" id="fanmian">
+    </div>
+
+    <div style="text-align: center;margin-top:30px;">
+        <button onclick="save();" type="button" class="am-btn am-btn-danger" style="width: 95%;">提交</button>
+    </div>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+
+    $.ajax({
+        url: WWW_URL+'/user',
+        type: 'GET',
+        headers:HEADER,
+        data: {
+            userId  : sessionStorage.getItem('TRQuserid')
+        },
+        success:function(data){
+            console.log(6666,data);
+            var d= data.data;
+
+            var identityCard = d.identityCard;
+            var card = d.card;
+
+//
+
+            if (o!=null && o!="‘’"){
+                var o = eval('('+identityCard+')');
+                $('#zm>img').attr({src:IMG_URL+o[0]});
+                $('#fm>img').attr({src:IMG_URL+o[1]});
+            }
+
+            console.log(222,IMG_URL+card);
+
+            $('#card>img').attr({src:IMG_URL+card});
+
+            /* 判断身份证认证状态 显示不同文字提示 0为未提交审核，1为正在审核，2为通过审核，3为未通过审核 */
+            var identityCardReview = '';
+            if (d.identityCardReview == 0){
+                identityCardReview = '未审核'
+            }else if (d.identityCardReview == 1){
+                identityCardReview = '身份信息审核中'
+            }else if (d.identityCardReview == 2){
+                identityCardReview = '已审核';
+            }
+            $('.shenfenzhengrenzheng').html(identityCardReview);
+
+
+            var identityCard = d.identityCard;
+            var identityCardArr = eval(identityCard);
+            console.log(1122,identityCardArr);
+
+            $('#zhengmian').attr({src:IMG_URL+identityCardArr[0]})
+            $('#fanmian').attr({src:IMG_URL+identityCardArr[1]})
+
+        }
+    })
+
+
+
+    var zmUrl,fmUrl,mpUrl;
+
+    //实例化一个plupload上传对象
+    var uploader = new plupload.Uploader({
+        browse_button : 'zm', //触发文件选择对话框的按钮，为那个元素id
+        url : WWW_URL+'/file/upload', //服务器端的上传页面地址
+    });
+
+    //在实例对象上调用init()方法进行初始化
+    uploader.init();
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader.bind('FilesAdded',function(uploader,files){
+        console.log(111);
+        uploader.start();
+    });
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader.bind('FileUploaded',function(uploader,files,responseObject){
+        var url = responseObject.response;
+        var data = eval('('+url+')');
+
+        var rkUrl = data.data; //入库URL
+        var zsUrl = IMG_URL + data.data; //展示URL
+
+        $('#zm>img').attr({src:zsUrl});
+
+        zmUrl = rkUrl;
+
+    });
+
+
+    //实例化一个plupload上传对象
+    var uploader2 = new plupload.Uploader({
+        browse_button :'fm', //触发文件选择对话框的按钮，为那个元素id
+        url : WWW_URL+'/file/upload', //服务器端的上传页面地址
+//        flash_swf_url : 'js/Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
+//        silverlight_xap_url : 'js/Moxie.xap' //silverlight文件，当需要使用silverlight方式进行上传时需要配置该参数
+
+    });
+
+    //在实例对象上调用init()方法进行初始化
+    uploader2.init();
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader2.bind('FilesAdded',function(uploader,files){
+        console.log(111);
+        uploader2.start();
+    });
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader2.bind('FileUploaded',function(uploader,files,responseObject){
+        var url = responseObject.response;
+        var data = eval('('+url+')');
+
+        var rkUrl = data.data; //入库URL
+        var zsUrl = IMG_URL + data.data; //展示URL
+
+        $('#fm>img').attr({src:zsUrl});
+
+        fmUrl = rkUrl;
+
+    });
+
+
+
+    //实例化一个plupload上传对象
+    var uploader3 = new plupload.Uploader({
+        browse_button : 'card', //触发文件选择对话框的按钮，为那个元素id
+        url : WWW_URL+'/file/upload', //服务器端的上传页面地址
+//        flash_swf_url : 'js/Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
+//        silverlight_xap_url : 'js/Moxie.xap' //silverlight文件，当需要使用silverlight方式进行上传时需要配置该参数
+
+    });
+
+    //在实例对象上调用init()方法进行初始化
+    uploader3.init();
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader3.bind('FilesAdded',function(uploader,files){
+        console.log(111);
+        uploader3.start();
+    });
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader3.bind('FileUploaded',function(uploader,files,responseObject){
+        var url = responseObject.response;
+        var data = eval('('+url+')');
+
+        var rkUrl = data.data; //入库URL
+        var zsUrl = IMG_URL + data.data; //展示URL
+
+        $('#card>img').attr({src:zsUrl});
+
+        mpUrl = rkUrl;
+
+    });
+
+
+    function save(){
+
+        var zmUrlArr = $('#zhengmian').attr('src').split('/');
+        var zmUrl = 'file/'+ zmUrlArr[zmUrlArr.length-1];
+
+        var fmUrlArr = $('#fanmian').attr('src').split('/');
+        var fmUrl = 'file/'+ fmUrlArr[fmUrlArr.length-1];
+        console.log(12233,zmUrl);
+        var identityCardReview = '["'+zmUrl+'","'+fmUrl+'"]';
+
+        $.ajax({
+            url: WWW_URL+'/user/update',
+            type: 'POST',
+            headers:HEADER,
+            data: {
+                id  : sessionStorage.getItem('TRQuserid'),
+                identityCard:identityCardReview,
+                card:mpUrl,
+                identityCardReview:1,
+            },
+            success:function(data){
+                console.log(data);
+
+                if (data.status ==0){
+                    layer.msg('提交成功')
+                    setTimeout(function () {
+                        window.location.href = './my.html';
+                    },1000)
+                }else{
+                    layer.msg(data.msg)
+                }
+
+                console.log(123,d);
+            }
+        })
+    }
+
+</script>
+</html>

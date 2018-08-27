@@ -1,0 +1,47 @@
+.btnsBox{
+    margin:0;
+}
+.btnsBox>li{
+    padding:12px 20px !important;
+}
+.btnsBox>li>span{
+margin-left:6px;
+}
+.btnsBox>li>i{
+font-size: 16px;
+}
+.laicon{
+float: right;
+}
+.djBox{
+    margin-bottom: 0px;
+    height:50px;
+    width: 40px;
+}
+.cwhy{
+    background: #ff232b;
+    color:#fff;
+    border-radius: 3px;
+    display: none;
+}
+.jbzj{
+    background: #ff232b;
+    color:#fff;
+    display: none;
+    line-height: 0px;
+    
+}
+.yishihuiyuan{
+    background: #ff232b;
+    color:#fff;
+    border-radius: 3px;
+    display: none;
+
+}
+.yijiao{
+    background: #ff232b;
+    color:#fff;
+    border-radius: 3px;
+    display: none;
+
+}

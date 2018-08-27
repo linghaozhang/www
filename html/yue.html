@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../plugin/layer/layer.js" charset="utf-8"></script>
+
+    <script src="../js/amazeui.min.js"></script>
+    <!-- page -->
+    <link rel="stylesheet" href="../css/yue.css">
+    <title>太和·投融宝</title>
+    <style>
+        #content td{
+            text-align: center;
+        }
+        .bigBox{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            background:rgba(0,0,0,0.5);
+        }
+        .fixed{
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left:50%;
+            margin-left:-150px;
+            margin-top:-180px;
+            background:#fff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding:20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="yuebox">
+        <p class="yue"><span id="yueNum" style="margin-right:6px"></span><span>元</span></p>
+        <p>余额(￥)</p>
+        <p class="btns">
+            <!--<button type="button" class="am-btn am-btn-danger" style="margin-right:20px;">充值</button>-->
+            <button type="button" class="am-btn am-btn-danger" style="background:#dd514c;border:#333;" onclick="tixian();">提现</button>
+        </p>
+    </div>
+    <p class="ljsr">
+        累计收入：￥<span id="leijishouru"></span>
+    </p>
+
+    <div style="height: 100px;margin:15px;border:1px solid #dddddd;display:flex;">
+        <div style="border-right:1px solid #dddddd;flex:1;padding-top:12px;">
+            <p style="text-align: center;margin-bottom:0px;" id="shouru"></p>
+            <p style="text-align: center;font-size: 14px;margin-top:6px;">邀请会员奖励收入(￥)</p>
+        </div>
+        <div style="border-right:1px solid #dddddd;flex:1;padding-top:45px;">
+            <a style="text-align: center;display: block;color:#dd514c;font-size: 14px;" href="./shouzhimingxi.html">查看明细 ></a>
+        </div>
+    </div>
+
+    <div style="margin:20px 0px;text-align: center;" id="fenxiang">
+        <button type="button" class="am-btn am-btn-danger" style="width:93%;">
+            <a href="./yaoqinghaoyou.html" style="color:#fff;">马上分享给好友获取奖励</a>
+        </button>
+    </div>
+
+
+    <div class="bigBox" style="display: none;">
+        <div class="fixed" style="padding:20px;height: 360px;">
+            <p style="text-align: center;color:#666;">提现步骤</p>
+            <p style="text-align: left;color:#666;font-size:12px;">
+                第一步：成为平台会员</br>
+                第二步：完成身份认证</br>
+                第三步：添加提现微信号taihetourongbao，添加完成后24小时内完成提现,添加时请标明“提现”。
+            </p>
+            <img src="../images/wechat.png" style="height: 90px;width: 90px;margin-left: 84px;">
+
+            <p style="text-align: center;color:#666;font-size:12px;margin-bottom:0px;">如有问题可联系客服，电话:18901089825</p>
+            <p style="text-align: center;color:#666;font-size:12px;">工作日9:00-17:00</p>
+            <button type="button" class="am-btn am-btn-danger" style="margin-top: 40px;width: 100%;margin-top: 20px;" onclick="gb();">确定</button>
+        </div>
+    </div>
+
+</body>
+<script src="../js/common.js"></script>
+<script src="../js/yue.js"></script>
+</html>

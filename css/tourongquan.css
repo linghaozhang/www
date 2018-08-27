@@ -1,0 +1,109 @@
+.topBox{
+    height: 50px;
+}
+.topBox>div{
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 900;
+}
+.shaiBox{
+    height: 40px;
+}
+.shaiBox>div{
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+}
+.item{
+    box-sizing: border-box;
+    padding:15px 15px;
+    border-top: 3px solid #ddd;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.djBox{
+    font-size: 14px;
+}
+.content{
+    font-size: 13px;
+    color:#666;
+}
+.nameBox{
+    margin-bottom: 6px;
+}
+.zhiwei{
+    margin-top:6px;
+    margin-bottom:6px;
+    font-size: 13px;
+}
+.lableBox{
+    margin:10px 0;
+}
+.label{
+    background:#fff;
+    padding:5px 10px;
+}
+.xnbtn{
+    margin-bottom: 10px;
+}
+.diqu2{
+    padding:0 10px;
+}
+.diqu{
+    padding:0 15px 30px;
+    overflow: auto;
+    height: 84%;
+}
+.fabuBtn{
+    position: fixed;
+    right: 10px;
+    bottom: 70px;
+    width: 50px;
+    height: 50px;
+    background:#dd514c;
+    z-index: 2;
+    border-radius: 50%;
+    color:#fff;
+    text-align: center;
+    line-height: 50px;
+}
+.xuanzeList2{
+    height: 86% ;
+    overflow: auto ;
+}
+.sousuoBox{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: rgba(0,0,0,0.5);
+    padding:15px 20px;
+    z-index: 999999;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

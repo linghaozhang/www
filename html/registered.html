@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="description" content="">
+  	<meta name="keywords" content="">
+  	<meta name="viewport"content="width=device-width, initial-scale=1">
+  	<meta name="renderer" content="webkit">
+  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<!-- common -->
+  	<link rel="stylesheet" href="../css/amazeui.min.css">
+  	<link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+  	<script src="../js/jquery.min.js"></script>
+	<script src="../js/amazeui.min.js"></script>
+	<script src="../js/common.js"></script>
+<!-- page -->
+	<link rel="stylesheet" href="../css/registered.css">
+    <link rel="stylesheet" href="../plugin/ld/css/style.css" />
+    <script src="../js/plupload.full.min.js" charset="utf-8"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/md5.js" charset="utf-8"></script>
+    <script src="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js" charset="utf-8"></script>
+
+
+    <script src="../plugin/plupload/jquery.ui.plupload.min.js" charset="utf-8"></script>
+
+    <style>
+        #diquDD{
+            font-size: 16px;
+        }
+    </style>
+    <title>用户注册</title>
+</head>
+<body style="padding-top:15px;">
+    <form class="am-form" id="formReg" style="display: block;">
+  <fieldset>
+    <legend>用户注册</legend>
+
+
+      <input type="hidden" name="type" id="userType">
+      <!--邀请人-->
+      <input type="hidden" name="inviteId" id="inviteId">
+
+      <!--头像-->
+      <div class="am-form-group photoBigBox" id="zm">
+          <button type="button" id="browse" style="z-index: 1;border:0;height: 50px;background:#dd514c;color:#fff;">选择头像</button>
+          <div class="photoBox">
+           <img src="" alt="">
+            </div>
+
+
+        <div class="photoBtn" style="padding-top:5px;padding-left:15px;">
+            <input type="hidden" name="avatar" value="1" id="avatar">
+            <!--<button type="button" class="am-btn am-btn-default">选择头像</button>-->
+        </div>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-text-1">姓名</label>
+      <input type="text" class="" name="name" placeholder="请输入用户名">
+    </div>
+
+    <!--<div class="am-form-group">-->
+      <!--<label for="doc-ipt-text-1">出生日期</label>-->
+      <!--<input name="birthday" type="text" class="am-form-field" placeholder="选择您的出生日期" data-am-datepicker readonly required />-->
+    <!--</div>-->
+      <label >选择地区</label>
+    <div class="browser">
+        <input type="hidden" name="region" id="regionInput">
+        <!--选择地区-->
+        <section class="express-area" style=" border: 0.1px solid #cccccc" name="region">
+            <a id="expressArea" style="background: none; background-size: 8px 8px; " href="javascript:void(0)">
+                <dl>
+
+                    <dd id="diquDD" style="font-size: 1.6rem;line-height:28px;height: 17px;margin-left: 3px;"><div style="color: 	#A9A9A9;">请选择所在地区</div></dd>
+                </dl>
+            </a>
+        </section>
+        <!--选择地区弹层-->
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <p>选择地区</p>
+                <a id="backUp" class="back" href="javascript:;" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:;" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <!--遮罩层-->
+        <div id="areaMask" class="mask"></div>
+        <script src="../plugin/ld/js/jquery.area.js"></script>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-select-1">机构类别</label>
+      <select id="doc-select-1" name="orgType" class="orgType">
+        <!--<option value="option3">选项三........</option>-->
+      </select>
+      <span class="am-form-caret"></span>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-select-1">机构选择</label>
+      <select id="doc-select-1" name="org" class="org">
+        <!--<option value="信诺科技工作室">信诺科技工作室</option>-->
+      </select>
+      <span class="am-form-caret"></span>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-text-1">机构名称</label>
+      <input type="text" name="orgName" class="" id="" placeholder="请输入机构名称">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-text-1">部门名称</label>
+      <input type="text" class="" name="department" id="" placeholder="请输入部门名称">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-text-1">职位名称</label>
+      <input type="text" class="" name="position" id="" placeholder="请输入职位名称">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-text-1">微信号码</label>
+      <input type="text" class="" name="wechat" id="" placeholder="请输入微信号码">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-text-1">联系邮箱</label>
+      <input type="text" class="" name="email" id="" placeholder="请输入邮箱地址">
+    </div>
+
+      <!--名片-->
+      <div class="am-form-group photoBigBox">
+          <button type="button" style="border:0;height: 50px;background: #dd514c;color: #FFFFFF" id="cardbtn" style="border:0;height: 60px;background:#dd514c;color:#fff;">选择名片</button>
+          <div class="cardBox" style="width:100px;height:60px;">
+              <img src="" alt="" style="width:100%;height: 100%;">
+          </div>
+
+          <div class="photoBtn" style="padding-top:5px;padding-left:15px;">
+              <input type="hidden" name="card" value="1" id="card">
+              <!--<button type="button" class="am-btn am-btn-default">选择头像</button>-->
+          </div>
+      </div>
+
+
+      <div class="am-form-group">
+          <label for="doc-ipt-text-1" >手机号码</label>
+          <input type="text" class="" name="phone" id="phone" placeholder="请输入手机号码">
+      </div>
+
+      <div class="am-form-group">
+          <label for="doc-ipt-text-1">验证码</label>
+          <div>
+              <input type="text" class="" id="yanzmtxt" placeholder="请输入验证码" style="width:70%;display:inline-block;">
+              <button type="button" class="am-btn am-btn-danger" onclick="yanzhengma();" id="yanzheng">发送</button>
+          </div>
+      </div>
+
+      <div class="am-form-group">
+          <label for="doc-ipt-pwd-1">设置密码</label>
+          <input type="password" class="" id="doc-ipt-pwd-1" name="password" placeholder="设置个密码吧">
+      </div>
+
+    <p>
+        <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="submitBtn();">注册</button>
+    </p>
+
+  </fieldset>
+</form>
+
+<div class="usertypeBox" style="display:block;width:100%;height:100%;position: fixed;top:0;left:0;background:#fff;padding:20px 10px;text-align: center;overflow: auto;z-index: 99999999999;font-size: 14px;">
+    <p class="txt" style="text-align:center;margin-bottom:0px;">新用户注册在选择下面角色时请慎重选择</p>
+    <p class="txt" style="text-align:center;margin-top:0px;">一经选择将无法自主修改</p>
+    <p class="btn" onclick="selectType(1);" style="width: 244px;"><i class="iconfont" style="margin-right:10px;font-size: 22px;">&#xe611;</i>资金方</p>
+    <p class="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;太和投融宝平台中的资金方是指资金方在投资项目时是以本公司名义进行的直接投资，而非挣取财顾费的平台公司或个人；对申请进入的资金方，我们团队会进行严格筛选核查，其中包括线下拜访考察、投资案例核实、企业背景调查等。真实的资金方通常情况下有较强的资金实力和尽调团队，平台资金方在投资放款前，原则上不收取任何费用，对所谓的以收取评估费、交通费、考察费、公证费、律师费等虚假资方，平台将实行禁入、黑名单公示或报警处理。</p>
+    <!--<p class="txt">温馨提示：要求资金方投资项目时候必须以本公司名义进行投资，而非以挣居间费的平台公司或个人，对申请进入的资金方，我们团队会进行严格逐一筛选核查，其中包括线下约谈拜访考察、投资案例核实、企业规模考察、企业背景调查等。</p>-->
+    <!--<p class="txt">平台声明：平台资金方在投资过程中没有任何费用，包括且不限于评估费、交通费、公证费、律师费等。对有费用的公司，平台一律免进，对混迹平台内假的资金方已经核实，立马清除封号，绝不姑息！切实对每个会员负责，保障会员权益。</p>-->
+    <p class="btn" onclick="selectType(2);" style="width: 244px;"><i class="iconfont" style="margin-right:10px;font-size: 22px;">&#xe641;</i>资产方、渠道方</p>
+    <p class="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适合项目资源比较多的机构或个人选择，目的是让每一个有投资价值的资产都能精准对接到相匹配的资金；让每一个加入平台的渠道方（中间人）都能将自身的人脉资源、项目资源等进行资源变现，同时解决渠道方（中间人）在项目对接过程中资金错配、被跳单、甩单的烦恼。</p>
+    <!--<p class="txt">温馨提示：项目信息比较多的机构和个人进入，让每一个有投资价值的资产都能高效精准对接匹配资金。同时让每一个加入平台的渠道商（中间人）都能有所收益，解决渠道商（中间人）在项目对接过程中资金错配、跳单、甩单的痛点。</p>-->
+</div>
+</body>
+<script src="../js/registered.js" charset="utf-8"></script>
+<script>
+
+    //实例化一个plupload上传对象
+    var uploader = new plupload.Uploader({
+        browse_button : 'browse', //触发文件选择对话框的按钮，为那个元素id
+        url : WWW_URL+'/file/upload', //服务器端的上传页面地址
+    });
+
+    //在实例对象上调用init()方法进行初始化
+    uploader.init();
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader.bind('FilesAdded',function(uploader,files){
+        uploader.start();
+    });
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader.bind('FileUploaded',function(uploader,files,responseObject){
+        var url = responseObject.response;
+        var data = eval('('+url+')');
+
+        var rkUrl = data.data; //入库URL
+        var zsUrl = IMG_URL + data.data; //展示URL
+
+        $('.photoBox>img').attr({src:zsUrl});
+        $('#avatar').val(rkUrl);
+
+    });
+
+    uploader.bind('UploadProgress',function(uploader,file){
+
+        console.log(33333,uploader,file);
+        //每个事件监听函数都会传入一些很有用的参数，
+        //我们可以利用这些参数提供的信息来做比如更新UI，提示上传进度等操作
+    });
+
+
+
+
+
+    //实例化一个plupload上传对象
+    var uploader2 = new plupload.Uploader({
+        browse_button : 'cardbtn', //触发文件选择对话框的按钮，为那个元素id
+        url : WWW_URL+'/file/upload', //服务器端的上传页面地址
+//        flash_swf_url : 'js/Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
+//        silverlight_xap_url : 'js/Moxie.xap' //silverlight文件，当需要使用silverlight方式进行上传时需要配置该参数
+    });
+
+    //在实例对象上调用init()方法进行初始化
+    uploader2.init();
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader2.bind('FilesAdded',function(uploader,files){
+        uploader.start();
+        console.log(111222);
+
+
+        //每个事件监听函数都会传入一些很有用的参数，
+        //我们可以利用这些参数提供的信息来做比如更新UI，提示上传进度等操作
+    });
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader2.bind('FileUploaded',function(uploader,files,responseObject){
+        var url = responseObject.response;
+        var data = eval('('+url+')');
+
+        var rkUrl = data.data; //入库URL
+        var zsUrl = IMG_URL + data.data; //展示URL
+
+        $('.cardBox>img').attr({src:zsUrl});
+        $('#card').val(rkUrl);
+
+        console.log(666,data);
+
+
+        //每个事件监听函数都会传入一些很有用的参数，
+        //我们可以利用这些参数提供的信息来做比如更新UI，提示上传进度等操作
+    });
+
+
+
+
+    uploader2.bind('UploadProgress',function(uploader,file){
+
+        console.log(33333,uploader,file);
+    });
+
+    // $('#areaLayer p').html('');
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="description" content="">
+  	<meta name="keywords" content="">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="renderer" content="webkit">
+  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<!-- common -->
+  	<link rel="stylesheet" href="../css/amazeui.min.css">
+  	<link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+  	<script src="../js/jquery.min.js"></script>
+  	<script src="../js/amazeui.min.js"></script>
+<!-- page -->
+    <script src="../plugin/layer/layer.js" charset="utf-8"></script>
+	<script src="../js/md5.js" charset="utf-8"></script>
+	<script src="../js/common.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" href="../css/login.css">
+
+  <title>用户登录</title>
+</head>
+<body>
+	<div class="am-g bigbox">
+	 	<div class="am-u-sm-4 am-u-sm-centered logobox">
+ 	 		<img src="../images/1.jpeg" alt="" style="width:160px;margin-left:-20px;">
+ 	 	</div>
+	</div>
+
+	<form class="am-form am-form-horizontal formBox">
+	  <div class="am-form-group">
+	    <div class="am-u-sm-10 am-u-sm-centered">
+			<span><i class="iconfont" style="display:inline-block;width: 20px;height: 21px;">&#xe627;</i></span>
+	      <input type="text" id="doc-ipt-3" class="userName" placeholder="请输入您的用户名" style="border:0;border-bottom:1px solid #ccc;width:90%;display: inline-block;">
+	    </div>
+	  </div>
+
+	  <div class="am-form-group">
+	    <div class="am-u-sm-10 am-u-sm-centered">
+			<span><i class="iconfont" style="font-size: 20px;">&#xe6b2;</i></span>
+	      <input type="password" id="doc-ipt-pwd-2" class="userPassWord" placeholder="请输入您的密码" style="border:0;border-bottom:1px solid #ccc;width:90%;display: inline-block;">
+	    </div>
+	  </div>
+
+	  <p>
+	  	<span></span>
+		<span></span>
+	  </p>
+	  <div class="am-form-group" style="margin-top:30px;">
+	    <div class="am-u-sm-10 am-u-sm-centered" style="text-align:center;">
+	     <button type="button" class="am-btn am-btn-danger am-btn-block" style="width:100%;display: inline-block;vertical-align:top;color:#000;" onclick="login();">登 录</button>
+		 <p style="text-align:left;color:#999;font-size:15px;margin-top:10px;">
+
+
+			 <button type="button" class="am-btn am-btn-danger am-btn-block" style="margin-bottom:10px;width:49%;display: inline-block;vertical-align:top;color:#000;"><a href="./password.html" style="color:#000;">找回密码</a></button>
+			 <button type="button" class="am-btn am-btn-default am-btn-block" style="color:#000000;width:49%;display: inline-block;margin:0px;vertical-align:top;" onclick="goto('./registered.html');">注 册</button>
+
+		 </p>
+	    </div>
+	  </div>
+
+	  <div class="am-g">
+		   <div class="am-u-sm-10 am-u-sm-centered ">
+
+			</div>
+	   </div>
+
+</form>
+
+	<p style="position:fixed;text-align:center;font-size:12px;width: 100%;bottom:0px;" id="bott">
+		专为解决金融行业投融资信息不对称而生
+	</p>
+
+<script type="text/javascript">
+    //跳转
+    function goto(url){
+        window.location.href = url;
+    }
+    // 登陆
+	function login() {
+		var userName = $('.userName').val();
+		var userPass = $('.userPassWord').val();
+		
+		console.log(66666,typeof userPass);
+
+		$.ajax({
+		    url: WWW_URL+'/user/login',
+		    type: 'post',
+		    data: {
+                phone : userName,
+                password:userPass
+		    },
+		    success:function(data){
+                if (data.status=="0"){
+                    
+                    console.log(987,data);
+                    //保存token
+                    sessionStorage.setItem("TRQtoken",data.data.token);
+
+                    // 审核状态
+                    var review = data.data.userInfo.review;
+
+                    if(review==0){
+                        layer.msg('您的资料还在审核中！');
+                    }else if (review == 1){
+                        //保存token
+                        sessionStorage.setItem("TRQuserid",data.data.userInfo.id);
+                        layer.msg('登录成功');
+                        setTimeout(function () {
+                            window.location.href = './index.html'; //跳转至首页
+                        },1200)
+                    }else {
+                        layer.msg('抱歉您的资料未通过审核！');
+                    }
+
+                }else{
+                    layer.msg(data.msg);
+				}
+		    }
+		})
+
+
+    }
+
+
+    $('.userName').bind('focus',function(){
+        $('#bott').css('display','none');
+//        $('#bott').css('position','static');
+        //或者$('#viewport').height($(window).height()+'px');
+    }).bind('blur',function(){
+        $('#bott').css('display','block');
+
+//        $('#bott').css({'position':'fixed','bottom':'10px'});
+        //或者$('#viewport').height('auto');
+    });
+
+    $('.userPassWord').bind('focus',function(){
+        $('#bott').css('display','none');
+//        $('#bott').css('position','static');
+        //或者$('#viewport').height($(window).height()+'px');
+    }).bind('blur',function(){
+//        $('#bott').css({'position':'fixed','bottom':'20px'});
+        //或者$('#viewport').height('auto');
+        $('#bott').css('display','block');
+    });
+
+</script>
+
+</body>
+</html>

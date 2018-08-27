@@ -1,0 +1,288 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="description" content="">
+  	<meta name="keywords" content="">
+  	<meta name="viewport"content="width=device-width, initial-scale=1">
+  	<meta name="renderer" content="webkit">
+  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<!-- common -->
+  	<link rel="stylesheet" href="../css/amazeui.min.css">
+  	<link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+  	<script src="../js/jquery.min.js"></script>
+	<script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+<!-- page -->
+	<link rel="stylesheet" href="../css/index.css">
+
+  	<title>太和·投融宝</title>
+</head>
+<body >
+    <!-- 轮播 -->
+    <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0" style="margin-bottom: 3px;">
+      <ul class="am-slides">
+        <li onclick="tioazhuan('http://www.taihetourongbao.com/xn203-www/html/about.html');"><img src="../images/banner1.jpg" /></li>
+        <!--<li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>-->
+      </ul>
+    </div>
+    <script>
+      $(function() {
+        var $slider = $('#demo-slider-0');
+        var counter = 0;
+        var getSlide = function() {
+          counter++;
+          return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+            (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+            '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
+        };
+
+        $('.js-demo-slider-btn').on('click', function() {
+          var action = this.getAttribute('data-action');
+          if (action === 'add') {
+            $slider.flexslider('addSlide', getSlide());
+          } else {
+            var count = $slider.flexslider('count');
+            count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+          }
+        });
+
+      });
+    </script>
+
+    <!-- 导航 -->
+    <div class="am-g navBox am-u-sm-offset-20">
+      <div class="am-u-sm-3" onclick="gotoTourongbao(294);">
+            <i class="iconfont">&#xe600;</i>
+            <p>房地产抵押类资金</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(296);">
+            <i class="iconfont">&#xe626;</i>
+            <p>矿产投资并购资金</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(297);">
+            <i class="iconfont">&#xe63b;</i>
+            <p>教育投资并购资金</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(298);">
+            <i class="iconfont">&#xe65f;</i>
+            <p>旅游养老投资资金</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(1039);">
+            <i class="iconfont">&#xe651;</i>
+            <p>企业过桥短拆资金</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(300);">
+            <i class="iconfont">&#xe63e;</i>
+            <p>上市企业信用贷款</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(302);">
+            <i class="iconfont">&#xe692;</i>
+            <p>PPP项目投资资金</p>
+      </div>
+      <div class="am-u-sm-3" onclick="gotoTourongbao(88888);">
+            <i class="iconfont">&#xe605;</i>
+
+            <p>更多资金方</p>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="am-g bigbox">
+        <div class="am-u-sm-7 am-u-sm-centered logobox">
+            <img src="../images/zjdk.png" alt="">
+        </div>
+    </div>
+
+    <div class="am-g" id="contentM">
+
+            <!--<div class="item" style="">-->
+                <!--<div class="am-g">-->
+                    <!--<div class="am-u-sm-2">-->
+                        <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503378049&di=ced682ef4dae8db40088598542e8d910&imgtype=jpg&er=1&src=http%3A%2F%2Fp9.qhimg.com%2Ft014c0b45fe12d2153c.jpg" alt="" class="logo">-->
+                    <!--</div>-->
+                    <!--<div class="am-u-sm-7">-->
+                        <!--<p class='nameBox'>-->
+                            <!--<span class="name">田雨</span>-->
+                            <!--<span class="sf">总经理</span>-->
+                        <!--</p>-->
+                        <!--<p class="zhiwei">-->
+                            <!--北京市金融交易所-->
+                        <!--</p>-->
+                    <!--</div>-->
+                    <!--<div class="am-u-sm-3">-->
+                        <!--<p class="djBox">-->
+                            <!--<span class="dj">123</span>次对接-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="am-g">-->
+                    <!--<div class="am-u-sm-12 am-u-sm-centered content">-->
+                        <!--个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，-->
+                        <!--个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，-->
+                        <!--个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，个人资料介绍信息，-->
+                        <!--个人资料介绍信息，-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="am-g lableBox">-->
+                    <!--<div class="am-u-sm-3">-->
+                        <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+                    <!--</div>-->
+                    <!--<div class="am-u-sm-3">-->
+                        <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+                    <!--</div>-->
+                    <!--<div class="am-u-sm-3">-->
+                        <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+                    <!--</div>-->
+                    <!--<div class="am-u-sm-3">-->
+                        <!--<button class="am-btn am-btn-default am-btn-xs label">机构类类别</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="am-g">-->
+                    <!--<button type="button" class="am-btn am-btn-danger" style="width:100%;">红色按钮</button>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+    </div>
+
+
+    <!--委托给系统-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="weituopxitong">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p style="text-align: center;">
+                已委托平台对接
+            </p>
+            <p style="text-align: center;margin-bottom: 75px;margin-top:20px;">
+                联系邮箱：xxx.sk@126.com
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+        </div>
+    </div>
+
+    <!--需成为会员-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="jiaonabaozhengjin">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p class="modal-title" style="text-align: center;margin-top:20px;font-size: 14px;">
+                仅限平台会员进行业务对接 <br>
+                <span class="chose-pay-span">选择支付方式并支付即可成为会员</span>
+            </p>
+            <div class="chose-pay">
+                <img class="cur" src="./../images/wxPay.png" alt="">
+                <img src="./../images/alipay.png" alt="">
+            </div>
+            <!--<p style="text-align: center">-->
+                <!--200元-->
+            <!--</p>-->
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" onclick="pay();">马上成为会员</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+        </div>
+    </div>
+
+    <!--邀请好友-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="yaoqinghaoyou">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p style="text-align: center;margin-bottom: 75px;margin-top:20px;font-size: 14px;">
+                邀请5个金融圈好友注册，后台审核通过后即可进行业务对接
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" onclick="goPage('./yaoqinghaoyou.html');">马上邀请</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">以后再说</button>
+        </div>
+    </div>
+
+    <!--直接查看联系方式-->
+     <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="chakanlianxifangshi">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p style="text-align: left;margin:3px 0px 5px;font-size: 14px;" class="card2">
+                名片：<span class="cardImage">点击此处查看名片</span>
+            </p>
+            <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="dianhua2">
+                电话：<span class="dianhua"></span>
+            </p>
+            <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="weixin2">
+                微信：<span class="weixin"></span>
+            </p>
+            <p style="margin:3px 0px;font-size: 14px;margin:4px 0px;" class="youxiang2">
+                邮件：<span class="youxiang"></span>
+            </p>
+
+            <p style="margin:3px 0px;font-size: 13px;margin-bottom: 10px;">
+                备注：<span class="beizhuxinxi">对接前请说明来自太和投融宝，谢谢！</span>
+            </p>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">确定</button>
+        </div>
+    </div>
+
+    <!--成为会员-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="chengweihuiyuan">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p class="modal-title" style="text-align: center;margin-top:20px;font-size: 14px;">
+                成为平台会员即可进行业务对接<br>
+            </p>
+            <div class="chose-pay-span">选择支付方式并支付即可成为会员</div>
+            <div class="chose-pay">
+                <img class="cur" src="./../images/wxPay.png" alt="wx">
+                <img src="./../images/alipay.png" alt="ali">
+            </div>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" onclick="pay();">马上成为会员</button>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
+        </div>
+    </div>
+
+    <!--二选一-->
+    <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="erxuanyi">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
+            <p style="text-align: center;">
+                业务对接
+            </p>
+            <p style="text-align: left;font-size:14px;">
+                若要进行业务对接，查看对接人联系方式，有以下两种方式：
+            </p>
+            <p style="font-size:14px;">1.免费方式：邀请5个金融好友进行注册，后台审核通过后即可进行业务对接。
+                </p>
+            <p style="margin-bottom: 15px;font-size:14px;">2.收费方式：成为平台会员，缴纳会员费后即可进行正常业务对接</p>
+            <div class="chose-pay-span">选择支付方式并支付即可成为会员</div>
+
+            <div>
+                <div class="chose-pay">
+                    <img class="cur" src="./../images/wxPay.png" alt="wx">
+                    <img src="./../images/alipay.png" alt="ali">
+                </div>
+                <button type="button" class="am-btn am-btn-danger" style="width:49%;margin-bottom: 10px;display: inline-block;"onclick="pay();" >马上成为会员</button>
+                <button type="button" class="am-btn am-btn-danger" style="width:49%;margin-bottom: 10px;display: inline-block;" >马上邀请好友</button>
+            </div>
+            <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
+        </div>
+    </div>
+
+<script src="../js/tab.js" charset="utf-8"></script>
+<script src="../js/index.js" charset="utf-8"></script>
+<script src="../js/yewuduijie.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function tioazhuan(url) {
+            window.location.href = url;
+        }
+        function goPage(url) {
+            window.location.href = url + '?userId=' + userData.id;
+        }
+    </script>
+<div id="alipay"></div>
+</body>
+</html>

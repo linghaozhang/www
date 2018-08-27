@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/plupload.full.min.js" charset="utf-8"></script>
+    <script src="../plugin/plupload/jquery.ui.plupload.min.js" charset="utf-8"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .xxxddd{
+            display:block;
+            padding-top:2px;
+        }
+    </style>
+
+    <title>太和·投融宝</title>
+</head>
+<body style="padding:15px;">
+<form class="am-form" style="border:0;">
+    <legend style="padding-left:5px;">举报</legend>
+    <fieldset>
+        <div class="am-form-group"style="border:0;">
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="虚假资方" name="description"> <span class="xxxddd">虚假资方</span>
+            </label>
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="色情" name="description"> <span class="xxxddd">色情</span>
+            </label>
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="虚假个人资料" name="description"> <span class="xxxddd">虚假个人资料</span>
+            </label>
+        </div>
+        <div class="am-form-group" style="border:0;">
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="索取隐私" name="description"> <span class="xxxddd">索取隐私</span>
+            </label>
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="猎头骚扰" name="description"> <span class="xxxddd">猎头骚扰</span>
+            </label>
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="人身攻击" name="description"> <span class="xxxddd">人身攻击</span>
+            </label>
+        </div>
+        <div class="am-form-group" style="border:0;">
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="广告" name="description"> <span class="xxxddd">广告</span>
+            </label>
+
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="违法政治敏感" name="description"> <span class="xxxddd">违法政治敏感</span>
+            </label>
+            <label class="am-checkbox-inline">
+                <input type="checkbox" value="其他" name="description"> <span class="xxxddd">其他</span>
+            </label>
+        </div>
+        <div class="am-form-group" style="border:0;">
+            <label for="doc-ta-1">举报内容描述：</label>
+            <textarea class="" rows="5" id="content"></textarea>
+        </div>
+
+        <label for="doc-ta-1">上传图片证据：</label>
+
+        <div class="am-form-group" style="background:#eee;height:150px;text-align: center;line-height: 150px;border:0;display:block;" id="browse">
+            <span style="color:#666;border:0;" id="ool">点此上传图片</span>
+            <img src="" alt="" style="width:100%;height:100%;border:0;display:none;" id="zhengjuzhaopian" >
+        </div>
+
+        <input type="hidden" id="avatar" style="border:0;">
+
+        <p style="text-align: center;border:0px;display: block;">
+            <button type="button" class="am-btn am-btn-danger" style="width: 100%;border:0px;" onclick="sub();">提交</button>
+        </p>
+    </fieldset>
+</form>
+</body>
+<script src="../js/jubao.js" charset="utf-8"></script>
+<script type="text/javascript">
+    //实例化一个plupload上传对象
+    var uploader = new plupload.Uploader({
+        browse_button : 'browse', //触发文件选择对话框的按钮，为那个元素id
+        url : WWW_URL+'/file/upload', //服务器端的上传页面地址
+//        flash_swf_url : 'js/Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
+//        silverlight_xap_url : 'js/Moxie.xap' //silverlight文件，当需要使用silverlight方式进行上传时需要配置该参数
+
+    });
+
+    //在实例对象上调用init()方法进行初始化
+    uploader.init();
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader.bind('FilesAdded',function(uploader,files){
+        uploader.start();
+    });
+
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader.bind('FileUploaded',function(uploader,files,responseObject){
+        var url = responseObject.response;
+        var data = eval('('+url+')');
+
+        var rkUrl = data.data; //入库URL
+        var zsUrl = IMG_URL + data.data; //展示URL
+
+        console.log(5566,zsUrl);
+        
+        $('#zhengjuzhaopian').attr({src:zsUrl});
+        $('#zhengjuzhaopian').css({display:'block'});
+        $('#ool').remove();
+        $('#avatar').val(rkUrl);
+
+        console.log(666,data);
+
+
+        //每个事件监听函数都会传入一些很有用的参数，
+        //我们可以利用这些参数提供的信息来做比如更新UI，提示上传进度等操作
+    });
+
+
+
+
+    uploader.bind('UploadProgress',function(uploader,file){
+
+
+        console.log(33333,uploader,file);
+        //每个事件监听函数都会传入一些很有用的参数，
+        //我们可以利用这些参数提供的信息来做比如更新UI，提示上传进度等操作
+    });
+
+
+
+    // 取出用户ID
+    function getUrlPar(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    };
+    var userId = getUrlPar('userId');
+
+    //提交举报
+    function sub() {
+
+        var description = '';
+        var y = $("input:checkbox[name='description']:checked");
+        for (var i=0;i<y.length;i++){
+            if (i ==0){
+                console.log(789,$(y[i]).val());
+                description += $(y[i]).val();
+            }else{
+                description += '-'+$(y[i]).val();
+            }
+        }
+
+        console.log(3333,description);
+
+
+        $.ajax({
+            url: WWW_URL+'/tipOff/create',
+            type: 'POST',
+            headers:HEADER,
+            data: {
+                fromId:sessionStorage.getItem('TRQuserid'),
+                toId:userId,
+                description:description,
+                content:$('#content').val(),
+                img:$('#avatar').val(),
+            },
+            success:function(data){
+                if (data.status==0){
+                    layer.msg('举报成功')
+                    setTimeout(function () {
+                        window.location.href = './index.html'
+                    },1000)
+                }else{
+                    layer.msg(data.msg);
+                }
+            }
+        })
+    }
+
+
+</script>
+</html>

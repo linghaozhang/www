@@ -1,0 +1,332 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- common -->
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/amazeui.min.js"></script>
+    <script src="../plugin/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+
+    <!-- page -->
+    <link rel="stylesheet" href="../css/shezhixiangxiziliao.css">
+
+    <title>太和·投融宝</title>
+    <style>
+        .am-btn-default:focus, .am-btn-default:hover{
+            background-color:#d7342e;
+        }
+        .quxiaoquanguo{
+            color:red !important;
+        }
+        .xnbtnSelected,.xnbtnSelected2{
+            background-color:#d7342e !important;
+            color:#fff !important;
+            width: 95%;
+        }
+        [class*=am-u-]+[class*=am-u-]:last-child{
+            float: left;
+        }
+
+        .am-btn-default{
+            background:#d4d4d4;
+        }
+    </style>
+</head>
+<body>
+<form class="am-form" id="myForm">
+    <fieldset>
+        <legend style="margin-bottom: 0rem;">资金投向及偏好设置</legend>
+        <!--<div class="am-form-group">-->
+        <!--<label for="doc-ta-1">自我介绍</label>-->
+        <!--<textarea class="" rows="5"  id="introduce"></textarea>-->
+        <!--</div>-->
+
+        <!--<div class="am-form-group">-->
+        <!--<label for="doc-ta-1">工作经历</label>-->
+        <!--<textarea class="" rows="5" id="workExp"></textarea>-->
+        <!--</div>-->
+
+        <!--<div class="am-form-group">-->
+        <!--<label for="doc-ta-1">教育经历</label>-->
+        <!--<textarea class="" rows="5" id="educationExp"></textarea>-->
+        <!--</div>-->
+
+        <div class="zijinxiangxipeizhi">
+
+            <div class="am-g xuanzeList" style="padding:10px;">
+
+                <div class="jigouleibie">
+                    <p class="tit">投资方式：</p>
+                    <div class="am-g" id="touzifangshi">
+                        <div class="am-u-sm-6 xnbtnbox"><button type="button" class="am-btn am-btn-default am-btn-xs xnbtn2 xnbtnSelected2" configId="215" id="xn_gqtz">股权投资</button></div>
+                        <div class="am-u-sm-6 xnbtnbox"><button type="button" class="am-btn am-btn-default am-btn-xs xnbtn2" configId="216" id="xn_zqtz">债权投资</button></div>
+                        <div class="am-u-sm-6 xnbtnbox"><button type="button" class="am-btn am-btn-default am-btn-xs xnbtn2" configId="217" id="xn_jrtz">金融投资</button></div>
+                        <div class="am-u-sm-6 xnbtnbox"><button type="button" class="am-btn am-btn-default am-btn-xs xnbtn2" configId="218" id="xn_ppp">PPP/BT/BOT项目投资</button></div>
+                        <div class="am-u-sm-6 xnbtnbox"><button type="button" class="am-btn am-btn-default am-btn-xs xnbtn2" configId="219" id="xn_qttz">其它投资</button></div>
+                    </div>
+                </div>
+
+                <div class="jigouleibie biandong zqtzclass">
+                    <p class="tit">投资风控要求：</p>
+                    <div class="am-g" id="toufengkongyaoqiu">
+                    </div>
+                </div>
+
+                <div class="jigouleibie biandong zqtzclass">
+                    <p class="tit">抵押物类型：</p>
+                    <div class="am-g" id="diyawuleixing">
+                    </div>
+                </div>
+                <div class="am-form-group biandong zqtzclass">
+                    <label for="doc-ipt-email-1">最低回报要求</label>
+                    <input type="text" class="" id="zuidihuibaoyaoqiu" placeholder="请输入最低回报要求">
+                </div>
+
+                <div class="am-form-group biandong zqtzclass">
+                    <label for="doc-ipt-email-1">抵押物折扣率</label>
+                    <input type="text" class="" id="zuidihuibaoyaoqiu2" placeholder="请输入抵押物折扣率">
+                </div>
+
+
+
+
+                <div class="jigouleibie biandong gqtzclass">
+                    <p class="tit">投资阶段：</p>
+                    <div class="am-g" id="touzijieduan">
+                    </div>
+                </div>
+
+                <div class="jigouleibie biandong gqtzclass">
+                    <p class="tit">股权投资类型：</p>
+                    <div class="am-g" id="guquanleixing">
+                    </div>
+                </div>
+                <div class="am-form-group biandong gqtzclass">
+                    <label for="doc-ipt-email-1">参股比例</label>
+                    <input type="text" class="" id="cangubili" placeholder="请输入参股比例">
+                </div>
+                <div class="am-form-group biandong gqtzclass">
+                    <label for="doc-ipt-email-1">投资期限</label>
+                    <input type="text" class="" id="touziqixian" placeholder="请输入投资期限">
+                </div>
+
+                <div class="jigouleibie biandong jrtzclass">
+                    <p class="tit">风险偏好：</p>
+                    <div class="am-g" id="fengxianpianhao"></div>
+                </div>
+
+                <div class="jigouleibie biandong jrtzclass">
+                    <p class="tit">产品偏好：</p>
+                    <div class="am-g" id="chanpinpianhao"></div>
+                </div>
+
+                <div class="jigouleibie">
+                    <p class="tit">前期费用：</p>
+                    <div class="am-g" id="qianqifeiyong">
+                    </div>
+                </div>
+                <div class="jigouleibie">
+                    <p class="tit">需提供资料：</p>
+                    <div class="am-g" id="tigongziliao">
+                    </div>
+                </div>
+                <div class="jigouleibie">
+                    <p class="tit">资金来源：</p>
+                    <div class="am-g" id="zijinlaiyuan">
+                    </div>
+                </div>
+                <div class="jigouleibie">
+                    <p class="tit">机构类别：</p>
+                    <div class="am-g" id="jigouleibie">
+                    </div>
+                </div>
+                <div class="jigouleibie">
+                    <p class="tit">投资行业：</p>
+                    <div class="am-g" id="touzihangye">
+                    </div>
+                </div>
+
+                <div class="jigouleibie">
+                    <p class="tit">资金偏好标签：</p>
+                    <div class="am-g" id="zichanpianhaobiaoqian">
+                    </div>
+                </div>
+                <div class="jigouleibie">
+                    <p class="tit">投资金额：</p>
+                    <div class="am-g" id="touzijine">
+                    </div>
+                </div>
+
+                <div class="jigouleibie">
+                    <p class="tit">投资地区：</p>
+                    <div class="am-g" id="touzidiqu">
+                    </div>
+                </div>
+
+
+
+                <div class="am-form-group">
+                    <label for="doc-ta-1">投资要求</label>
+                    <textarea class="" rows="8"  id="touziyaoqiu" placeholder="温馨提示：请点击右上方“···”功能，使用“浮窗”功能，切换到微信，复制粘贴文字会更方便！为更高效的进行业务对接，请您用文字尽可能详细描述单位资金投向及偏好，且发布内容不少于100字，另外发布内容中不可带有任何联系方式，一经发现后台将自动删除信息，并警告封号处理。"></textarea>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-ta-1">投资案例</label>
+                    <textarea class="" rows="5" id="touzianli" placeholder="为促进资金与资产双方互信，在不影响保密协议的情况下，请列举部分投资案例。"></textarea>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-ta-1">备注</label>
+                    <textarea class="" rows="5"  id="beizhu"></textarea>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p><button type="button" style="width: 94.5%;margin-left: 10px;" class="am-btn am-btn-danger" onclick="tijiao();" style="width:100%">保存</button></p>
+
+    </fieldset>
+</form>
+
+<script src="../js/shezhixiangxiziliao.js"></script>
+</body>
+<script type="text/javascript">
+
+
+
+
+
+
+    // 判断用户类型 显示对应内容  如果是资产方 删除资金配置相关
+    $.ajax({
+        url: WWW_URL+'/user',
+        type: 'GET',
+        headers:HEADER,
+        success:function(data){
+            
+            var d = data.data;
+
+
+
+
+
+
+            console.log(333,d);
+            xunaze(d.investStyle); //投资阶段
+            xunaze(d.investmentStage); //投资阶段
+            xunaze(d.equity); //股权投资类型
+            xunaze(d.preCost); //股权投资类型
+            xunaze(d.investRegion); //股权投资类型
+            xunaze(d.investmentStage); //股权投资类型
+            xunaze(d.itemsType); //股权投资类型
+            xunaze(d.means); //股权投资类型
+            xunaze(d.preference); //股权投资类型
+            xunaze(d.product); //股权投资类型
+            xunaze(d.riskAppetite); //股权投资类型
+            xunaze(d.riskControl); //股权投资类型
+            xunaze(d.source); //股权投资类型
+             xunaze(d.mechanismSpecies); //股权投资类型
+             xunaze(d.industry); //股权投资类型
+             xunaze(d.investAmount); //股权投资类型
+
+            // xunaze(d.equity); //股权投资类型
+
+
+
+            $('#cangubili').val(d.stake);
+            $('#touziqixian').val(d.horizon);
+            $('#touziyaoqiu').val(d.investReq);
+            $('#touzianli').val(d.investCase);
+            $('#beizhu').val(d.remark);
+            $('#zuidihuibaoyaoqiu').val(d.minReturn);
+            $('#zuidihuibaoyaoqiu2').val(d.discount);
+
+            xunaze(); //股权投资类型
+            var kk = eval(d.investStyle);
+            var k = kk[0];
+            var kkk = '';
+            
+            console.log(11122233355);
+            console.log(111222333,k);
+
+            // 股权
+            if (k==215) {
+                $('.biandong').hide();
+                $('.gqtzclass').show();
+                $('.xnbtn2').removeClass('xnbtnSelected2');
+                $('#xn_gqtz').addClass('xnbtnSelected2')
+            }
+
+            // 债权
+            if (k==216) {
+                $('.biandong').hide();
+                $('.zqtzclass').show();
+                $('.xnbtn2').removeClass('xnbtnSelected2');
+                $('#xn_zqtz').addClass('xnbtnSelected2')
+            }
+
+            // 金融
+            if (k==217) {
+                $('.biandong').hide();
+                $('.jrtzclass').show();
+                $('.xnbtn2').removeClass('xnbtnSelected2');
+                $('#xn_jrtz').addClass('xnbtnSelected2')
+            }
+
+            // PPP
+            if (k==218) {
+                $('.biandong').hide();
+                $('.xnbtn2').removeClass('xnbtnSelected2');
+                $('#xn_ppp').addClass('xnbtnSelected2')
+            }
+
+            // 其他
+            if (k==219) {
+                console.log(63666666);
+                $('.biandong').hide();
+                $('.xnbtn2').removeClass('xnbtnSelected2');
+                $('#xn_qttz').addClass('xnbtnSelected2')
+            }
+
+
+
+
+//            var Aa = eval(d.investStyle);
+//            console.log(223344,Aa,Aa[0]==219);
+//
+//            if (Aa[0]==215) $('#xn_gqtz').addClass('xnbtnSelected2');
+//            if (Aa[0]==216) $('#xn_zqtz').addClass('xnbtnSelected2');
+//            if (Aa[0]==217) $('#xn_jrtz').addClass('xnbtnSelected2');
+//            if (Aa[0]==218) $('#xn_ppp').addClass('xnbtnSelected2');
+//            if (Aa[0]==219) $('#xn_qttz').addClass('xnbtnSelected2');
+
+
+        }
+    })
+    
+
+
+    $(document).on('click','#fengxianpianhao button',function () {
+        console.log(789);
+
+        $('#fengxianpianhao button').removeClass('xnbtnSelected');
+        $('#fengxianpianhao button').addClass('xnbtn');
+        $(this).addClass('xnbtnSelected');
+        $(this).removeClass('xnbtn');
+
+    })
+    
+    
+</script>
+</html>
