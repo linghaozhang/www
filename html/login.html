@@ -98,7 +98,7 @@
                     
                     console.log(987,data);
                     //保存token
-                    sessionStorage.setItem("TRQtoken",data.data.token);
+                    localStorage.setItem("TRQtoken",data.data.token);
 
                     // 审核状态
                     var review = data.data.userInfo.review;

@@ -148,10 +148,11 @@ function yewuduijie(duijieId) {
     }
 
     //是不是要交钱
-    if(userData.dockingType==2){
+    if(userData.dockingType==3){
         $('#chengweihuiyuan').show();
         return false;
     }
+
 
     // 二选一
     if(userData.dockingType==4){
@@ -404,8 +405,13 @@ if(!isWx()){
         }
     });
 }
+$('._pay').on('click',function(e){
+    pay(e);
+});
 // 支付
-function pay() {
+function pay(e) {
+
+
     if(isWx()){
         $.ajax({
             // url: WWW_URL+'/pay/wx?amount=200',
@@ -419,10 +425,12 @@ function pay() {
             }
         });
     }else{
-        var type=$('.chose-pay .cur').attr('alt');
+        var type=$(e.target).prev().children('.cur').attr('alt');
+        console.log(type);
         if(type==='wx'){
-
+            console.log('微信h5支付');
         }else{
+            console.log('支付宝h5支付');
             $.ajax({
                  url: WWW_URL+'/pay/alipay',
                 type: 'GET',

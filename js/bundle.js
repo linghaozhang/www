@@ -23630,7 +23630,7 @@ var SignIn = function (_React$Component) {
             var d = data.data; // 主要信息
             var token = d.token; // token
 
-            sessionStorage.setItem('TRQtoken', token);
+            localStorage.setItem('TRQtoken', token);
 
             this.props.history.push('/admin/user'); // 跳转到主页
         }
@@ -23667,7 +23667,7 @@ exports.default = SignIn;
 * 项目所有全局变量(除项目配置之外的)
 * */
 
-window.G_token = sessionStorage.getItem('TRQtoken');
+window.G_token = localStorage.getItem('TRQtoken');
 window.WWW_URL = '';
 window.IMG_URL = 'http://www.taihetourongbao.com/xn203-backend/public/uploads/'; //图片访问地址
 

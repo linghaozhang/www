@@ -89,7 +89,24 @@
 
 }
 
-
+.chose-pay{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom:15px;
+}
+.chose-pay img{
+    width:45%;
+    border:2px solid transparent;
+}
+.chose-pay .cur{
+    border-color:#dd514c;
+}
+.chose-pay-span{
+    font-size:14px;
+    margin:10px 0;
+    text-align: center;
+}
 
 
 

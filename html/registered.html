@@ -202,7 +202,7 @@
     uploader.bind('FilesAdded',function(uploader,files){
         uploader.start();
     });
-
+    $('.photoBox>img').hide()
     //绑定各种事件，并在事件监听函数中做你想做的事
     uploader.bind('FileUploaded',function(uploader,files,responseObject){
         var url = responseObject.response;
@@ -211,7 +211,7 @@
         var rkUrl = data.data; //入库URL
         var zsUrl = IMG_URL + data.data; //展示URL
 
-        $('.photoBox>img').attr({src:zsUrl});
+        $('.photoBox>img').attr({src:zsUrl}).show();
         $('#avatar').val(rkUrl);
 
     });
@@ -247,7 +247,7 @@
         //每个事件监听函数都会传入一些很有用的参数，
         //我们可以利用这些参数提供的信息来做比如更新UI，提示上传进度等操作
     });
-
+    $('.cardBox>img').hide();
     //绑定各种事件，并在事件监听函数中做你想做的事
     uploader2.bind('FileUploaded',function(uploader,files,responseObject){
         var url = responseObject.response;
@@ -256,7 +256,7 @@
         var rkUrl = data.data; //入库URL
         var zsUrl = IMG_URL + data.data; //展示URL
 
-        $('.cardBox>img').attr({src:zsUrl});
+        $('.cardBox>img').attr({src:zsUrl}).show();
         $('#card').val(rkUrl);
 
         console.log(666,data);

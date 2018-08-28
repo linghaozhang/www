@@ -12,7 +12,7 @@ var Api = {
 };
 
 //请求头部
-var HEADERTOKEN = "Bearer "+sessionStorage.getItem('TRQtoken');
+var HEADERTOKEN = "Bearer "+localStorage.getItem('TRQtoken');
 HEADER = {"Authorization":HEADERTOKEN};
 
 
