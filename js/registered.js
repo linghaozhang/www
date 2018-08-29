@@ -150,21 +150,20 @@ function submitBtn(){
     }
 
     // 记录所在地区
-    var diquDD = $('#diquDD').html().replace(/\s/g, "");
-    var diquDDArr = diquDD.split('&gt;');
-    var diquStr = JSON.stringify(diquDDArr);
-    $('#regionInput').val(diquStr);
+    // var diquDD = $('#diquDD').html().replace(/\s/g, "");
+    // var diquDDArr = diquDD.split('&gt;');
+    // var diquStr = JSON.stringify(diquDDArr);
+    // $('#regionInput').val(diquStr);
 
     // 判断是否填写完整
-    // var content = $('#formReg').serialize();
-    // var patt1=new RegExp("=&");
-    // if (patt1.test(content)){
-    //     layer.msg('请将注册信息填写完整');
-    //     return false;
-    // }
-    //
+    var content = $('#formReg').serialize();
+    var patt1=new RegExp("=&");
+    if (patt1.test(content)){
+        layer.msg('请将注册信息填写完整');
+        return false;
+    }
 
-
+console.log($('#formReg').serialize());
     // 提交注册信息
     $.ajax({
         url: WWW_URL+'/user/register',

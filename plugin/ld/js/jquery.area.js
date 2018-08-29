@@ -579,7 +579,7 @@ function selectD(p,c,d) {
 /*关闭省市区选项*/
 function clockArea() {
 	$("#areaMask").fadeOut();
-	$("#areaLayer").animate({"bottom": "-100%"}).hide();
+	$("#areaLayer").animate({"bottom": "-200%"}).hide();
 	intProvince();
 }
 

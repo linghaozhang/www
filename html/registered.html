@@ -10,10 +10,14 @@
   	<meta http-equiv="Cache-Control" content="no-siteapp"/>
 <!-- common -->
   	<link rel="stylesheet" href="../css/amazeui.min.css">
+  	<link rel="stylesheet" href="../css/amazeui.address.min.css">
+
   	<link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/common.css">
   	<script src="../js/jquery.min.js"></script>
 	<script src="../js/amazeui.min.js"></script>
+	<script src="../js/address.min.js"></script>
+	<script src="../js/iscroll.min.js"></script>
 	<script src="../js/common.js"></script>
 <!-- page -->
 	<link rel="stylesheet" href="../css/registered.css">
@@ -22,8 +26,6 @@
     <script src="../plugin/layer/layer.js"></script>
     <script src="../js/md5.js" charset="utf-8"></script>
     <script src="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js" charset="utf-8"></script>
-
-
     <script src="../plugin/plupload/jquery.ui.plupload.min.js" charset="utf-8"></script>
 
     <style>
@@ -66,33 +68,38 @@
       <!--<label for="doc-ipt-text-1">出生日期</label>-->
       <!--<input name="birthday" type="text" class="am-form-field" placeholder="选择您的出生日期" data-am-datepicker readonly required />-->
     <!--</div>-->
-      <label >选择地区</label>
-    <div class="browser">
-        <input type="hidden" name="region" id="regionInput">
-        <!--选择地区-->
-        <section class="express-area" style=" border: 0.1px solid #cccccc" name="region">
-            <a id="expressArea" style="background: none; background-size: 8px 8px; " href="javascript:void(0)">
-                <dl>
+          <div class="am-form-group am-input-group" id="address2" style="width:100%;">
+              <label>选择地区</label>
+              <input  disabled style="background:#fff;" type="text" name="nickname" class="am-form-field am-radius" placeholder="请选择地址" required="" id="regionInput">
+          </div>
+      <!--<label>选择地区</label>-->
+      <!--<input type="text"  id='city-picker'>-->
+    <!--<div class="browser">-->
+        <!--<input type="hidden" name="region" id="regionInput">-->
+        <!--&lt;!&ndash;选择地区&ndash;&gt;-->
+        <!--<section class="express-area" style=" border: 0.1px solid #cccccc" name="region">-->
+            <!--<a id="expressArea" style="background: none; background-size: 8px 8px; " href="javascript:void(0)">-->
+                <!--<dl>-->
 
-                    <dd id="diquDD" style="font-size: 1.6rem;line-height:28px;height: 17px;margin-left: 3px;"><div style="color: 	#A9A9A9;">请选择所在地区</div></dd>
-                </dl>
-            </a>
-        </section>
-        <!--选择地区弹层-->
-        <section id="areaLayer" class="express-area-box">
-            <header>
-                <p>选择地区</p>
-                <a id="backUp" class="back" href="javascript:;" title="返回"></a>
-                <a id="closeArea" class="close" href="javascript:;" title="关闭"></a>
-            </header>
-            <article id="areaBox">
-                <ul id="areaList" class="area-list"></ul>
-            </article>
-        </section>
-        <!--遮罩层-->
-        <div id="areaMask" class="mask"></div>
-        <script src="../plugin/ld/js/jquery.area.js"></script>
-    </div>
+                    <!--<dd id="diquDD" style="font-size: 1.6rem;line-height:28px;height: 17px;margin-left: 3px;"><div style="color: 	#A9A9A9;">请选择所在地区</div></dd>-->
+                <!--</dl>-->
+            <!--</a>-->
+        <!--</section>-->
+        <!--&lt;!&ndash;选择地区弹层&ndash;&gt;-->
+        <!--<section id="areaLayer" class="express-area-box">-->
+            <!--<header>-->
+                <!--<p>选择地区</p>-->
+                <!--<a id="backUp" class="back" href="javascript:;" title="返回"></a>-->
+                <!--<a id="closeArea" class="close" href="javascript:;" title="关闭"></a>-->
+            <!--</header>-->
+            <!--<article id="areaBox">-->
+                <!--<ul id="areaList" class="area-list"></ul>-->
+            <!--</article>-->
+        <!--</section>-->
+        <!--&lt;!&ndash;遮罩层&ndash;&gt;-->
+        <!--<div id="areaMask" class="mask"></div>-->
+        <!--<script src="../plugin/ld/js/jquery.area.js"></script>-->
+    <!--</div>-->
 
     <div class="am-form-group">
       <label for="doc-select-1">机构类别</label>
@@ -138,7 +145,7 @@
       <!--名片-->
       <div class="am-form-group photoBigBox">
           <button type="button" style="border:0;height: 50px;background: #dd514c;color: #FFFFFF" id="cardbtn" style="border:0;height: 60px;background:#dd514c;color:#fff;">选择名片</button>
-          <div class="cardBox" style="width:100px;height:60px;">
+          <div class="cardBox" style="width:76px;height:50px;">
               <img src="" alt="" style="width:100%;height: 100%;">
           </div>
 
@@ -275,5 +282,18 @@
     });
 
     // $('#areaLayer p').html('');
+    $(function() {
+        document.addEventListener('touchmove', function (e) {
+            // e.preventDefault();
+        }, false);
+        $("#address2").address({
+            prov: "广东省",
+            city: "中山市",
+            scrollToCenter: true,
+            selectNumber: 2,
+            footer: true,
+        });
+
+    });
 </script>
 </html>
