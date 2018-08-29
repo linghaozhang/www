@@ -10,10 +10,13 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <!-- common -->
     <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/amazeui.address.min.css">
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/common.css">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/amazeui.min.js"></script>
+    <script src="../js/address.min.js"></script>
+    <script src="../js/iscroll.min.js"></script>
     <script src="../js/common.js"></script>
     <!-- page -->
     <link rel="stylesheet" href="../css/registered.css">
@@ -72,7 +75,10 @@
             <label for="doc-ipt-text-1">姓名</label>
             <input type="text" class="" id="name" name="name" placeholder="请输入用户名">
         </div>
-
+        <div class="am-form-group am-input-group" id="address2" style="width:100%;">
+            <label>选择地区</label>
+            <input  disabled style="background:#fff;" type="text" class="am-form-field am-radius" placeholder="请选择地址" required="" id="regionInput">
+        </div>
         <!--<div class="am-form-group">-->
             <!--<label for="doc-ipt-text-1">出生日期</label>-->
             <!--<input name="birthday" id="birthday" type="text" class="am-form-field" placeholder="选择您的出生日期" data-am-datepicker readonly required />-->
@@ -81,83 +87,81 @@
             <!--<label for="doc-ipt-text-1">选择地区</label>-->
             <!--<input type="text" class="" id="name" name="name" placeholder="请选择所在地区">-->
         <!--</div>-->
-        <label >选择地区</label>
-        <div class="browser">
+        <!--<label >选择地区</label>-->
+        <!--<div class="browser">-->
 
-            <input type="hidden" name="region" id="regionInput">
-            <!--选择地区-->
-            <section class="express-area" style=" border: 0.1px solid #cccccc" name="region">
-                <a id="expressArea" style="background: none; background-size: 8px 8px; " href="javascript:void(0)">
-                    <dl>
-                        <!--<div class="am-form-group">-->
-                            <!--<label >选择地区</label>-->
-                            <!--<input  class="am-form-group" type="text" class="" id="diquDD" name="name" placeholder="请选择所在地区">-->
-                        <!--</div>-->
+            <!--<input type="hidden" name="region" id="regionInput">-->
+            <!--&lt;!&ndash;选择地区&ndash;&gt;-->
+            <!--<section class="express-area" style=" border: 0.1px solid #cccccc" name="region">-->
+                <!--<a id="expressArea" style="background: none; background-size: 8px 8px; " href="javascript:void(0)">-->
+                    <!--<dl>-->
+                        <!--&lt;!&ndash;<div class="am-form-group">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<label >选择地区</label>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input  class="am-form-group" type="text" class="" id="diquDD" name="name" placeholder="请选择所在地区">&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                        <dd id="diquDD" style="font-size: 1.6rem;line-height:28px;height: 17px;margin-left: 3px;"><div style="color: 	#A9A9A9;">请选择所在地区</div></dd>
-                    </dl>
-                </a>
-            </section>
-            <!--选择地区弹层-->
-            <section id="areaLayer" class="express-area-box">
-                <header>
-                    <h3>选择地区</h3>
-                    <a id="backUp" class="back" style="width: 34px;height: 15px;margin-top: 13px;" href="javascript:void(0)" title="返回"></a>
-                    <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
-                </header>
-                <article id="areaBox">
-                    <ul id="areaList" class="area-list"></ul>
-                </article>
-            </section>
-            <!--遮罩层-->
-            <div id="areaMask" class="mask"></div>
-            <script src="../plugin/ld/js/jquery.area.js"></script>
-        </div>
+                        <!--<dd id="diquDD" style="font-size: 1.6rem;line-height:28px;height: 17px;margin-left: 3px;"><div style="color: 	#A9A9A9;">请选择所在地区</div></dd>-->
+                    <!--</dl>-->
+                <!--</a>-->
+            <!--</section>-->
+            <!--&lt;!&ndash;选择地区弹层&ndash;&gt;-->
+            <!--<section id="areaLayer" class="express-area-box">-->
+                <!--<header>-->
+                    <!--<h3>选择地区</h3>-->
+                    <!--<a id="backUp" class="back" style="width: 34px;height: 15px;margin-top: 13px;" href="javascript:void(0)" title="返回"></a>-->
+                    <!--<a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>-->
+                <!--</header>-->
+                <!--<article id="areaBox">-->
+                    <!--<ul id="areaList" class="area-list"></ul>-->
+                <!--</article>-->
+            <!--</section>-->
+            <!--&lt;!&ndash;遮罩层&ndash;&gt;-->
+            <!--<div id="areaMask" class="mask"></div>-->
+            <!--<script src="../plugin/ld/js/jquery.area.js"></script>-->
+        <!--</div>-->
 
         <div class="am-form-group">
-            <label for="doc-select-1">机构类别</label>
+            <label for="orgType">机构类别</label>
             <select id="orgType" name="orgType" class="orgType">
-                <!--<option value="option3">选项三........</option>-->
             </select>
             <span class="am-form-caret"></span>
         </div>
 
         <div class="am-form-group">
-            <label for="doc-select-1">机构选择</label>
+            <label for="org">机构选择</label>
             <select name="org" class="org" id="org">
-                <!--<option value="信诺科技工作室">信诺科技工作室</option>-->
             </select>
             <span class="am-form-caret"></span>
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-text-1">机构名称</label>
+            <label for="orgName">机构名称</label>
             <input type="text" name="orgName" class="" id="orgName" placeholder="请输入机构名称">
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-text-1">部门名称</label>
+            <label for="department">部门名称</label>
             <input type="text" class="" name="department"  id="department" placeholder="请输入部门名称">
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-text-1">职位名称</label>
+            <label for="position">职位名称</label>
             <input type="text" class="" name="position" id="position" placeholder="请输入职位名称">
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-text-1">微信号码</label>
+            <label for="wechat">微信号码</label>
             <input type="text" class="" name="wechat" id="wechat" placeholder="请输入微信号码">
         </div>
 
         <div class="am-form-group">
-            <label for="doc-ipt-text-1">联系邮箱</label>
+            <label for="email">联系邮箱</label>
             <input type="text" class="" name="email" id="email" placeholder="请输入邮箱地址">
         </div>
 
         <!--名片-->
         <div class="am-form-group photoBigBox">
-            <button type="button" style="height: 50px" id="cardbtn" style="background: rgb(221, 81, 76); color: rgb(255, 255, 255);border:0;">选择名片</button>
+            <button type="button"  id="cardbtn" style="background: rgb(221, 81, 76); color: rgb(255, 255, 255);border:0;">选择名片</button>
             <div class="cardBox" style="width:100px;height:60px;">
                 <img src="" alt="" style="width:100%;height: 100%;">
             </div>
