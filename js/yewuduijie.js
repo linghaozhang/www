@@ -155,15 +155,31 @@ function yewuduijie(duijieId) {
 
 
     // 二选一
+    // if(userData.dockingType==4){
+    //     // 被对接人是限制模式
+    //     if (duijieData.beDockingType == 2){
+    //         $('#jiaonabaozhengjin').show();
+    //         return false;
+    //         // 被对接人是正常模式
+    //     }else {
+    //         $('#erxuanyi').show();
+    //         return false;
+    //     }
+    // }
+    // 二选一
     if(userData.dockingType==4){
-        // 被对接人是限制模式
-        if (duijieData.beDockingType == 2){
-            $('#jiaonabaozhengjin').show();
-            return false;
-            // 被对接人是正常模式
-        }else {
+        if (dqyhyqs<yaoqingfz) {
             $('#erxuanyi').show();
             return false;
+        }else {
+            // 被对接人为限制模式
+            if (duijieData.beDockingType == 2) {
+                $('#jiaonabaozhengjin').show();
+                return false;
+            }else {
+                $('#erxuanyi').show();
+                return false;
+            }
         }
     }
 }
@@ -228,7 +244,6 @@ function duiduiren(userId) {
     console.log('===== duijieData',duijieData);
     console.log('==== userData',userData);
 
-
     // 判断被对接人是否要求必须是会员 如果是就显示要会员才能对接
     // if (duijieData.beDockingType == 2){
     //     if (userData.payOk==0){
@@ -236,7 +251,6 @@ function duiduiren(userId) {
     //         return false;
     //     }
     // }
-
     // 判断是不是为普通对接模式
     if(userData.dockingType==1){
         // 被对接人为限制模式
@@ -252,10 +266,8 @@ function duiduiren(userId) {
         }
         return false;
     }
-
     //是不是要邀请好友
     if(userData.dockingType==2){
-
         // 如果没邀请够人数
         if (dqyhyqs<yaoqingfz){
             $('#yaoqinghaoyou').show();
@@ -266,14 +278,13 @@ function duiduiren(userId) {
             // 被对接人是限制模式
             if (duijieData.beDockingType == 2){
                 $('#jiaonabaozhengjin').show();
-                return fals正常模式
+                return false
             }else {
                 $('#chakanlianxifangshi').show();
                 return false;
             }
         }
     }
-
     //是不是要交钱
     if(userData.dockingType==3){
         if (userData.payOk == 0) {
@@ -281,23 +292,7 @@ function duiduiren(userId) {
         }else {
 
         }
-
-
-
-
-        // 被对接人为限制模式
-        // if (duijieData.beDockingType == 2) {
-        //     $('#jiaonabaozhengjin').show();
-        //     return false;
-        // }else {
-        //     $('#chengweihuiyuan').show();
-        //     // $('#jiaonabaozhengjin').show();
-        //
-        //     return false;
-        // }
-
     }
-
     // 二选一
     if(userData.dockingType==4){
         if (dqyhyqs<yaoqingfz) {
@@ -313,8 +308,6 @@ function duiduiren(userId) {
                 return false;
             }
         }
-
-
     }
 }
 
