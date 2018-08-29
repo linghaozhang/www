@@ -15,14 +15,8 @@
     margin:0;
     font-size: 12px;
 }
-.logobox{
-    margin-top: 20px;
-}
 .logobox>img{
     width: 100%;
-}
-.bigbox{
-    margin-bottom:20px;
 }
 .item{
     box-sizing: border-box;

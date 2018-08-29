@@ -156,14 +156,12 @@ function submitBtn(){
     // $('#regionInput').val(diquStr);
 
     // 判断是否填写完整
-    var content = $('#formReg').serialize();
+    var content = $('#formReg').serialize()+'&region='+$('#regionInput').val();
     var patt1=new RegExp("=&");
     if (patt1.test(content)){
         layer.msg('请将注册信息填写完整');
         return false;
     }
-
-console.log($('#formReg').serialize());
     // 提交注册信息
     $.ajax({
         url: WWW_URL+'/user/register',
