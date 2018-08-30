@@ -340,9 +340,9 @@ function allSer() {
                 }
                 html += '</div>';
                 html += '<div class="am-g">';
-                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%" onclick="yewuduijie('+obj.id+');">业务对接</button>';
+                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%" onclick="yewuduijie('+obj.userId+');">业务对接</button>';
                 html += '</div></div>';
-            
+                console.log(html);
                 $('.contentBox').prepend(html);
             }
         }

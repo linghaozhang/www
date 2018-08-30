@@ -80,7 +80,7 @@ function yewuduijie(duijieId) {
             $('.weixin2').css({display:'block'});
             $('.dianhua2').css({display:'block'});
             $('.youxiang2').css({display:'block'});
-            console.log(888888,duijieData);
+            console.log(888888,duijieData,userData);
             
             if (duijieData.openWechat==1){
                 $('.weixin').html(duijieData.wechat);
@@ -290,7 +290,7 @@ function duiduiren(userId) {
         if (userData.payOk == 0) {
             $('#chengweihuiyuan').show();
         }else {
-
+            $('#chakanlianxifangshi').show();
         }
     }
     // 二选一

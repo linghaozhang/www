@@ -1,8 +1,8 @@
 .btnsBox{
     margin:0;
 }
-.btnsBox>li{
-    padding:12px 20px !important;
+.am-list.am-list-static.btnsBox>li{
+    padding:12px 20px ;
 }
 .btnsBox>li>span{
 margin-left:6px;
