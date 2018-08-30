@@ -166,7 +166,7 @@ function submitBtn(){
     $.ajax({
         url: WWW_URL+'/user/register',
         type: 'POST',
-        data: $('#formReg').serialize(),
+        data: content,
         success:function(data){
             console.log(112233445566,data);
             if (data.status=="0"){
