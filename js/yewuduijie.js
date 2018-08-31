@@ -20,6 +20,7 @@ var userData;
 var dqyhyqs = 0;
 // 邀请人数的阀值
 var yaoqingfz = 5;
+var userId;
 
 function init() {
     // 获取当前用户数据
@@ -30,6 +31,7 @@ function init() {
         headers:HEADER,
         success:function(data){
             userData = data.data;
+            userId=data.userId;
         }
     });
 
@@ -243,7 +245,6 @@ function duiduiren(userId) {
     });
     console.log('===== duijieData',duijieData);
     console.log('==== userData',userData);
-
     // 判断被对接人是否要求必须是会员 如果是就显示要会员才能对接
     // if (duijieData.beDockingType == 2){
     //     if (userData.payOk==0){
@@ -430,7 +431,8 @@ function pay(e) {
                 headers:HEADER,
                 data:{
                     amount:0.01 ,
-                    callurl:location.href
+                    callurl:location.href,
+                    userid:userId
                 },
                 success:function(data){
                     console.log('data,',data);
