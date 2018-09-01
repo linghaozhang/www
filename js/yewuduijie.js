@@ -30,8 +30,9 @@ function init() {
         async:false,
         headers:HEADER,
         success:function(data){
+            console.log('ddata',data);
             userData = data.data;
-            userId=data.userId;
+            userId=data.userid;
         }
     });
 
@@ -425,6 +426,11 @@ function pay(e) {
             console.log('微信h5支付');
         }else{
             console.log('支付宝h5支付');
+            console.log({
+                amount:0.01 ,
+                callurl:location.href,
+                userid:userId
+            })
             $.ajax({
                  url: WWW_URL+'/pay/alipay',
                 type: 'GET',

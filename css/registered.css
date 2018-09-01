@@ -30,3 +30,47 @@
     font-size: 16px;
     font-weight: 800;
 }
+.register-modal{
+    display:none;
+    position:fixed;
+    z-index:99999;
+    left:0;right:0;
+    bottom:0;top:0;
+    background:rgba(0,0,0,0.4);
+}
+.register-modal .inner{
+    position:fixed;
+    top:70px;
+    width:80%;
+    margin-left:10%;
+    background-color:#fff;
+    overflow:hidden;
+    border-radius: 5px;
+    padding-bottom:30px;
+}
+.register-modal .inner img{
+    width:60%;
+    display:block;
+    margin:10px auto 0 ;
+}
+.register-modal .inner .tit{
+    height:50px;
+    line-height:30px;
+    text-align:center;
+    padding:10px 0;
+    color:#fff;
+    background-color:#dd514c;
+}
+.register-modal .inner .text{
+    text-align: center;
+}
+.register-modal .inner .modalBtn{
+    width:70%;
+    margin:25px auto 25px;
+    height:37px;
+    line-height:37px;
+    color:#fff;
+    background-color:#dd514c;
+    border-radius: 5px;
+    text-align:center;
+}

@@ -137,10 +137,12 @@ function getUrlPar(name){
     var r = window.location.search.substr(1).match(reg);
     if(r!=null)return  unescape(r[2]); return null;
 };
-
+// function registerss(){
+//     $(".register-modal").fadeIn();
+//
+// }
 // 提交注册
 function submitBtn(){
-
     // 判断验证码是否正确
     var yzmInput = $('#yanzmtxt').val();
     var yanzhengma = calcMD5(yzmInput);
@@ -170,8 +172,8 @@ function submitBtn(){
         success:function(data){
             console.log(112233445566,data);
             if (data.status=="0"){
-                layer.msg('提交注册信息成功，请等待管理员审核！');
-
+                // layer.msg('提交注册信息成功，请等待管理员审核！');
+                $(".register-modal").fadeIn();
                 var uid = getUrlPar('userId');
                 if (uid != null){
 
@@ -184,22 +186,15 @@ function submitBtn(){
                             inviteId:uid  //邀请人
                         },
                         success:function(data){
-
                             return false;
-
-                            setTimeout(function () {
-                                window.location.href = './login.html'; //跳转至登录页
-                            },1200)
-
-
                         }
                     })
 
 
                 }else{
-                    setTimeout(function () {
-                        window.location.href = './login.html'; //跳转至登录页
-                    },1200)
+                    // setTimeout(function () {
+                    //     window.location.href = './login.html'; //跳转至登录页
+                    // },1200)
                 }
 
 
