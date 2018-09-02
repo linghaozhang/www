@@ -409,14 +409,14 @@ function pay(e) {
 
     if(isWx()){
         $.ajax({
-            // url: WWW_URL+'/pay/wx?amount=200',
-            url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx?amount=200',
-            // url: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri=http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx?amount=30&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1',
+            url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx',
             type: 'GET',
+            data:{
+                amount:"0.01"
+            },
             success:function(data){
-                var newHref = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri='+ location.href +'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect'
+                var newHref = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri='+ location.href +'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
                 location.href = newHref;
-                console.log('newHref,',newHref);
             }
         });
     }else{
