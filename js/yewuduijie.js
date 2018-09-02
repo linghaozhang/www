@@ -412,7 +412,8 @@ function pay(e) {
             url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx',
             type: 'GET',
             data:{
-                amount:"0.01"
+                amount:"0.01",
+                userId:userId
             },
             success:function(data){
                 var newHref = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri='+ location.href +'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
