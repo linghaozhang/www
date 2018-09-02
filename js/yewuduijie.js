@@ -424,6 +424,51 @@ function pay(e) {
         console.log(type);
         if(type==='wx'){
             console.log('微信h5支付');
+            $.ajax({
+                url:' http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wxh5',
+                type: 'GET',
+                async:false,
+                headers:HEADER,
+                data:{
+                    userId:userId,
+                    amount:"0.01"
+                },
+                success:function(data){
+                    // alert(JSON.stringify(data));
+                    $('#alipay').html(data).hide();
+                    // console.log('wxdata',data);
+                    // $('#chengweihuiyuan').fadeOut();
+                    // $('#alipay').fadeIn().css({
+                    //     position:"fixed",
+                    //     top:'0',
+                    //     left:'0',
+                    //     right:'0',
+                    //     bottom:'0',
+                    //     background:'rgba(0,0,0,0.4)'
+                    // }).html(data);
+                    // $('#alipay h1').css({
+                    //     position:'fixed',
+                    //     bottom:'0',
+                    //     right:'0',
+                    //     left:'0',
+                    //     background:"#dd514c",
+                    //     height:'40px',
+                    //     lineHeight:'40px',
+                    //     textAlign:'center',
+                    //     margin:'0',
+                    //     color:'#fff'
+                    // });
+                    // $('#alipay h1 a').css({
+                    //     display:'block',
+                    //     color:'#fff',
+                    //     fontSize:'15px',
+                    //     fontWeight:'normal'
+                    // });
+                    // $('#alipay').on('click',function(){
+                    //     $(this).fadeOut();
+                    // })
+                }
+            });
         }else{
             console.log('支付宝h5支付');
             console.log({
