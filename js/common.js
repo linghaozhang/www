@@ -18,7 +18,8 @@ HEADER = {"Authorization":HEADERTOKEN};
 
 //进入个人资料页面
 function QJgotoGeren(id){
-    window.location.href = 'http://www.taihetourongbao.com/www/html/gerenxiangqing.html?userId='+id;
+    // window.location.href = 'http://www.taihetourongbao.com/www/html/gerenxiangqing.html?userId='+id;
+    window.location.href = './gerenxiangqing.html?userId='+id;
 }
 
 
