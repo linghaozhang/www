@@ -172,7 +172,7 @@
             type: 'POST',
             headers:HEADER,
             data: {
-                fromId:sessionStorage.getItem('TRQuserid'),
+                fromId:localStorage.getItem('TRQuserid'),
                 toId:userId,
                 description:description,
                 content:$('#content').val(),

@@ -107,7 +107,7 @@
                         layer.msg('您的资料还在审核中！');
                     }else if (review == 1){
                         //保存token
-                        sessionStorage.setItem("TRQuserid",data.data.userInfo.id);
+                        localStorage.setItem("TRQuserid",data.data.userInfo.id);
                         layer.msg('登录成功');
                         setTimeout(function () {
                             window.location.href = './index.html'; //跳转至首页

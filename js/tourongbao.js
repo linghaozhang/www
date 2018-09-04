@@ -179,7 +179,7 @@ function shoucangList() {
         async:false,
         headers:HEADER,
         data: {
-            userId : sessionStorage.getItem('TRQuserid')
+            userId : localStorage.getItem('TRQuserid')
         },
         success:function(data){
             shoucangList = data.data;
@@ -388,7 +388,7 @@ function shoucang(that,collectId) {
         headers:HEADER,
         async:false,
         data: {
-            userId : sessionStorage.getItem('TRQuserid'),
+            userId : localStorage.getItem('TRQuserid'),
             type:'1', // 1是人 2是帖子
             collectId:collectId,
             txt:''
@@ -404,7 +404,7 @@ function shoucang(that,collectId) {
                     async:false,
                     headers:HEADER,
                     data: {
-                        userId : sessionStorage.getItem('TRQuserid')
+                        userId : localStorage.getItem('TRQuserid')
                     },
                     success:function(data){
                         shoucangList();
@@ -428,7 +428,7 @@ function quxiaoshoucang(id){
         headers:HEADER,
         async:false,
         data: {
-            userId:sessionStorage.getItem('TRQuserid'),
+            userId:localStorage.getItem('TRQuserid'),
             collectId:id,
         },
         success:function(data){
@@ -440,7 +440,7 @@ function quxiaoshoucang(id){
                     async:false,
                     headers:HEADER,
                     data: {
-                        userId : sessionStorage.getItem('TRQuserid')
+                        userId : localStorage.getItem('TRQuserid')
                     },
                     success:function(data){
                         shoucangList = data.data;

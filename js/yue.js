@@ -19,7 +19,7 @@ $.ajax({
     type: 'get',
     headers:HEADER,
     data: {
-        userId : sessionStorage.getItem('TRQuserid')
+        userId : localStorage.getItem('TRQuserid')
     },
     success:function(data){
         var d = data.data;

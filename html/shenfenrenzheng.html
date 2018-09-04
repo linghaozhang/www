@@ -63,7 +63,7 @@
         type: 'GET',
         headers:HEADER,
         data: {
-            userId  : sessionStorage.getItem('TRQuserid')
+            userId  : localStorage.getItem('TRQuserid')
         },
         success:function(data){
             console.log(6666,data);
@@ -222,7 +222,7 @@
             type: 'POST',
             headers:HEADER,
             data: {
-                id  : sessionStorage.getItem('TRQuserid'),
+                id  : localStorage.getItem('TRQuserid'),
                 identityCard:identityCardReview,
                 card:mpUrl,
                 identityCardReview:1,

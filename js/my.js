@@ -70,7 +70,7 @@ $.ajax({
 * 页面跳转
 * */
 function goto(url){
-    window.location.href = url+'?userId='+sessionStorage.getItem('TRQuserid');
+    window.location.href = url+'?userId='+localStorage.getItem('TRQuserid');
 }
 
 $('._exit').on('click',function(){

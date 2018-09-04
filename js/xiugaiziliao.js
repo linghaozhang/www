@@ -31,7 +31,7 @@ $.ajax({
     type: 'GET',
     headers:HEADER,
     data: {
-        userId:sessionStorage.getItem('TRQuserid'),
+        userId:localStorage.getItem('TRQuserid'),
     },
     success:function(data){
         var d = data.data;
@@ -91,7 +91,7 @@ function submitBtn() {
         type: 'POST',
         headers: HEADER,
         data: {
-            id: sessionStorage.getItem('TRQuserid'),
+            id: localStorage.getItem('TRQuserid'),
 
             avatar:avatarStr,
             card:cardStr,

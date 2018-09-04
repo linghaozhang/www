@@ -318,7 +318,7 @@ function shoucang() {
         headers: HEADER,
         async: false,
         data: {
-            userId: sessionStorage.getItem('TRQuserid'),
+            userId: localStorage.getItem('TRQuserid'),
             type: '1', // 1是人 2是帖子
             collectId: userId,
             txt: ''

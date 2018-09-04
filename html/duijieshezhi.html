@@ -52,7 +52,7 @@
         type: 'GET',
         headers:HEADER,
         data:{
-            id:sessionStorage.getItem('TRQuserid'),
+            id:localStorage.getItem('TRQuserid'),
         },
         success:function(data){
             var d = data.data;
@@ -130,7 +130,7 @@
             type: 'POST',
             headers:HEADER,
             data:{
-                id:sessionStorage.getItem('TRQuserid'),
+                id:localStorage.getItem('TRQuserid'),
                 joinType:joinType,
                 openWechat:openWechat,
                 openPhone:openPhone,

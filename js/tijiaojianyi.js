@@ -17,7 +17,7 @@ function submitFun() {
         type: 'POST',
         headers:HEADER,
         data: {
-            userId : sessionStorage.getItem('TRQuserid'),
+            userId : localStorage.getItem('TRQuserid'),
             title:$('.title').val(),
             content:$('.content').val()
         },

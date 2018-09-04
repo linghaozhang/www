@@ -54,7 +54,7 @@
         type: 'get',
         headers:HEADER,
         data: {
-            inviteId : sessionStorage.getItem('TRQuserid')
+            inviteId : localStorage.getItem('TRQuserid')
         },
         success:function(data){
             console.log(6666,data);

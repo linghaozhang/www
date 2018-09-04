@@ -214,14 +214,14 @@ function tijiao() {
         return false;
     }
 
-    var data = $('#myForm').serialize()+"&id="+sessionStorage.getItem('TRQuserid')+"&detailedOk=1";
+    var data = $('#myForm').serialize()+"&id="+localStorage.getItem('TRQuserid')+"&detailedOk=1";
 
     $.ajax({
         url: WWW_URL+'/user/update',
         type: 'post',
         headers:HEADER,
         data:{
-            id:sessionStorage.getItem('TRQuserid'),
+            id:localStorage.getItem('TRQuserid'),
 
             // introduce:$('#introduce').val(), // 自我介绍
             // workExp:$('#workExp').val(), // 工作经历
