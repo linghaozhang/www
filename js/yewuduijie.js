@@ -329,19 +329,33 @@ function getUrlParam(name) {
 var weixinCode = getUrlParam('code');
 if(weixinCode){
     $.ajax({
-        url: WWW_URL+'/pay/wx?amount=1&code='+weixinCode,
+        url: WWW_URL+'/pay/wx?amount=1&sss=3333333&code='+weixinCode,
         type: 'GET',
         success:function(data){
             console.log(123456,data);
-            // var d = eval(data);
-            WeixinJSBridge.invoke(
-        		'getBrandWCPayRequest',
-        		$.parseJSON(data),
-        		function(res){
-        			WeixinJSBridge.log(res.err_msg);
-        			alert(res.err_code+res.err_desc+res.err_msg);
-        		}
-        	);
+			
+			function onBridgeReady(){
+			   WeixinJSBridge.invoke(
+				   'getBrandWCPayRequest', temp,
+					function(res){     
+					   if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+						   alert('恭喜你，把你钱扣走了。');
+						//window.location.href = '/home/?gzh={gzh}&soure={soure}';
+					   }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+				   }
+			   ); 
+			}
+			
+			if (typeof WeixinJSBridge == "undefined"){
+			   if( document.addEventListener ){
+				   document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+			   }else if (document.attachEvent){
+				   document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+				   document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+			   }
+			}else{
+			   onBridgeReady();
+			}
         }
     });
 }
@@ -428,8 +442,45 @@ function wxPay(code){
 // 支付
 function pay(e) {
     if(isWx()){
-        var newHref = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri='+location.href +'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-        location.href = newHref;
+        var openId = localStorage.getItem('openId');
+        $.ajax({
+        url: WWW_URL+'/pay/wx'+openId+'&amount=1&userId='+userId,
+        type: 'GET',
+        success:function(data){
+			
+			var value = JSON.parse(data);
+			alert(value);
+			var temp = {};
+			temp.appId = value.appId;
+			temp.timeStamp = value.timeStamp;
+			temp.nonceStr = value.nonceStr;
+			temp.package = value.package;
+			temp.signType = value.signType;
+			temp.paySign = value.paySign;
+			
+			function onBridgeReady(){
+			   WeixinJSBridge.invoke(
+				   'getBrandWCPayRequest', temp,
+					function(res){
+					   if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+						   alert('恭喜你，把你钱扣走了。');
+					   }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+				   }
+			   ); 
+			}
+			
+			if (typeof WeixinJSBridge == "undefined"){
+			   if( document.addEventListener ){
+				   document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+			   }else if (document.attachEvent){
+				   document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+				   document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+			   }
+			}else{
+			   onBridgeReady();
+			}
+        }
+    });
     }else{
         var type=$(e.target).prev().children('.cur').attr('alt');
         console.log(type);

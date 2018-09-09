@@ -25,8 +25,8 @@
     <!-- 轮播 -->
     <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0" style="margin-bottom: 3px;">
       <ul class="am-slides">
-        <li onclick="tioazhuan('http://www.taihetourongbao.com/xn203-www/html/about.html');"><img src="../images/banner1.jpg" /></li>
-        <!--<li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>-->
+        <li onclick="tioazhuan('https://www.taihetourongbao.com/xn203-www/html/about.html');"><img src="../images/banner1.jpg" /></li>
+        <!--<li><img src="https://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>-->
       </ul>
     </div>
     <script>
@@ -35,7 +35,7 @@
         var counter = 0;
         var getSlide = function() {
           counter++;
-          return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+          return '<li><img src="https://s.amazeui.org/media/i/demos/bing-' +
             (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
             '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
         };
@@ -227,14 +227,19 @@
 <script src="../js/tab.js" charset="utf-8"></script>
 <script src="../js/index.js" charset="utf-8"></script>
 <script src="../js/yewuduijie.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        function tioazhuan(url) {
-            window.location.href = url;
+<script type="text/javascript">
+    function tioazhuan(url) {
+        window.location.href = url;
+    }
+    function goPage(url) {
+        window.location.href = url + '?userId=' + userData.id;
+    }
+    window.onload=function(){
+        if(location.search){
+            localStorage.setItem('openId',location.search);
         }
-        function goPage(url) {
-            window.location.href = url + '?userId=' + userData.id;
-        }
-    </script>
+    }
+</script>
 <div id="alipay"></div>
 </body>
 </html>

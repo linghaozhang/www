@@ -121,7 +121,7 @@
                         localStorage.setItem("TRQuserid",data.data.userInfo.id);
                         layer.msg('登录成功');
                         setTimeout(function () {
-                            window.location.href = WWW_URL+'/user/getopenid/'; //跳转至首页
+                            window.location.href = WWW_URL+'/user/getopenid'; //跳转至首页
                         },1200)
                     }else {
                         layer.msg('抱歉您的资料未通过审核！');

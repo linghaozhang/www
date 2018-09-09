@@ -49,7 +49,7 @@ var yzm;  // 短信验证码
 //     swf: BASE_URL + '/js/Uploader.swf',
 //
 //     // 文件接收服务端。
-//     server: 'http://webuploader.duapp.com/server/fileupload.php',
+//     server: 'https://webuploader.duapp.com/server/fileupload.php',
 //
 //     // 选择文件的按钮。可选。
 //     // 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -122,7 +122,7 @@ function yanzhengma() {
             "Authorization":Authorization,
             "Content-Type":'application/json;charset=utf-8'
         },
-        url: 'http://apis.7moor.com/v20160818/sms/sendInterfaceTemplateSms/N00000014371?sig='+sig,
+        url: 'https://apis.7moor.com/v20160818/sms/sendInterfaceTemplateSms/N00000014371?sig='+sig,
         type: 'POST',
         dataType:'json',
         data: jsonData,
