@@ -18,7 +18,7 @@ $('body').append(TABHTML);
 $('body').css({paddingBottom:'65px'});
 
 function GOTOINDEX() {
-    window.location.href = '/index.html'
+    window.location.href = '/www/html/index.html'
 }
 
 function GOTOTOURONGBAO() {

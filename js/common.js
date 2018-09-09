@@ -1,5 +1,5 @@
-var WWW_URL = 'http://www.taihetourongbao.com/xn203-backend/public/index.php';
-var IMG_URL = 'http://www.taihetourongbao.com/xn203-backend/public/uploads/'; //图片访问地址
+var WWW_URL = 'https://www.taihetourongbao.com/xn203-backend/public/index.php';
+var IMG_URL = 'https://www.taihetourongbao.com/xn203-backend/public/uploads/'; //图片访问地址
 
 var Api = {
 

@@ -329,7 +329,7 @@ function getUrlParam(name) {
 var weixinCode = getUrlParam('code');
 if(weixinCode){
     $.ajax({
-        url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx?amount=1&code='+weixinCode,
+        url: WWW_URL+'/pay/wx?amount=1&code='+weixinCode,
         type: 'GET',
         success:function(data){
             console.log(123456,data);
@@ -414,7 +414,7 @@ window.onload=function(){
 };
 function wxPay(code){
     $.ajax({
-        url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx',
+        url: WWW_URL+'/pay/wx',
         type: 'GET',
         data:{
             amount:"0.01",
@@ -436,7 +436,7 @@ function pay(e) {
         if(type==='wx'){
             console.log('微信h5支付');
             $.ajax({
-                url:' http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wxh5',
+                url:WWW_URL+'/pay/wxh5',
                 type: 'GET',
                 async:false,
                 headers:HEADER,
