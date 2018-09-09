@@ -79,6 +79,17 @@
     function goto(url){
         window.location.href = url;
     }
+    //获取openid
+	function getOpenId(){
+        $.ajax({
+            url: WWW_URL+'/get/openid',
+            type: 'GET',
+            success:function(data){
+                alert(JSON.stringify(data))
+                // login();
+            }
+        })
+	}
     // 登陆
 	function login() {
 		var userName = $('.userName').val();

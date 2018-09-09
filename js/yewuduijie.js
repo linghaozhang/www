@@ -403,23 +403,33 @@ if(!isWx()){
 $('._pay').on('click',function(e){
     pay(e);
 });
+window.onload=function(){
+    if(location.search){
+        let search=location.search;
+        let code=search.split('&')[0].split('=')[1];
+        if(code){
+            wxPay(code);
+        }
+    }
+};
+function wxPay(code){
+    $.ajax({
+        url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx',
+        type: 'GET',
+        data:{
+            amount:"0.01",
+            userId:userId,
+            code:code
+        },
+        success:function(data){
+        }
+    });
+}
 // 支付
 function pay(e) {
-
-
     if(isWx()){
-        $.ajax({
-            url: 'http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wx',
-            type: 'GET',
-            data:{
-                amount:"0.01",
-                userId:userId
-            },
-            success:function(data){
-                var newHref = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri='+ location.href +'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-                location.href = newHref;
-            }
-        });
+        var newHref = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf3c87bb5dccc3789&redirect_uri='+location.href +'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+        location.href = newHref;
     }else{
         var type=$(e.target).prev().children('.cur').attr('alt');
         console.log(type);
