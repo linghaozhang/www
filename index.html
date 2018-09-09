@@ -234,6 +234,11 @@
         function goPage(url) {
             window.location.href = url + '?userId=' + userData.id;
         }
+        window.onload=function(){
+            if(location.search){
+                localStorage.setItem('openId',location.search);
+            }
+        }
     </script>
 <div id="alipay"></div>
 </body>

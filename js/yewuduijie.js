@@ -447,17 +447,14 @@ function pay(e) {
         url: WWW_URL+'/pay/wx'+openId+'&amount=1&userId='+userId,
         type: 'GET',
         success:function(data){
-			
-			var value = JSON.parse(data);
-			alert(value);
+			var val=JSON.parse(data);
 			var temp = {};
-			temp.appId = value.appId;
-			temp.timeStamp = value.timeStamp;
-			temp.nonceStr = value.nonceStr;
-			temp.package = value.package;
-			temp.signType = value.signType;
-			temp.paySign = value.paySign;
-			
+			temp.appId = val.appId;
+			temp.timeStamp = val.timeStamp;
+			temp.nonceStr = val.nonceStr;
+			temp.package = val.package;
+			temp.signType = val.signType;
+			temp.paySign = val.paySign;
 			function onBridgeReady(){
 			   WeixinJSBridge.invoke(
 				   'getBrandWCPayRequest', temp,
