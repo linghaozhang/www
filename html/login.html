@@ -89,6 +89,15 @@
             }
         })
 	}
+    function isWx(){
+        var ua = navigator.userAgent.toLowerCase();
+        var isWeixin = ua.indexOf('micromessenger') != -1;
+        if (isWeixin) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     // 登陆
 	function login() {
 		var userName = $('.userName').val();
@@ -120,7 +129,11 @@
                         localStorage.setItem("TRQuserid",data.data.userInfo.id);
                         layer.msg('登录成功');
                         setTimeout(function () {
-                            window.location.href = WWW_URL+'/user/getopenid'; //跳转至首页
+                            if(isWx()){
+                                window.location.href = WWW_URL+'/user/getopenid'; //跳转至首页
+                            }else{
+                                window.location.href = './index.html'; //跳转至首页
+                            }
                         },1200)
                     }else {
                         layer.msg('抱歉您的资料未通过审核！');

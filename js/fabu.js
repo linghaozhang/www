@@ -286,7 +286,9 @@ function tijiao() {
     })
 
 }
-
+function back(){
+    location.href='./tourongbao-zichanfang.html'
+}
 
 $('.biandong').hide();
 $('.propertyTypeLabel_zhaiquan').show();

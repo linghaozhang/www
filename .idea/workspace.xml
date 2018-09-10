@@ -2,47 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fae5d69-4f1e-4c41-8ebb-50d99d28c3cb" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/checkLogin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/about.html" afterPath="$PROJECT_DIR$/html/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/beiyaoqing.html" afterPath="$PROJECT_DIR$/html/beiyaoqing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/demo.html" afterPath="$PROJECT_DIR$/html/demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/duijieshezhi.html" afterPath="$PROJECT_DIR$/html/duijieshezhi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/tourongquan-zichanfang.css" afterPath="$PROJECT_DIR$/css/tourongquan-zichanfang.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/fabu.html" afterPath="$PROJECT_DIR$/html/fabu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/fabuList.html" afterPath="$PROJECT_DIR$/html/fabuList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/gerenxiangqing.html" afterPath="$PROJECT_DIR$/html/gerenxiangqing.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/jubao.html" afterPath="$PROJECT_DIR$/html/jubao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/login.html" afterPath="$PROJECT_DIR$/html/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/my.html" afterPath="$PROJECT_DIR$/html/my.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/password.html" afterPath="$PROJECT_DIR$/html/password.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/registered.html" afterPath="$PROJECT_DIR$/html/registered.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/shenfenrenzheng.html" afterPath="$PROJECT_DIR$/html/shenfenrenzheng.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/shezhixiangxiziliao.html" afterPath="$PROJECT_DIR$/html/shezhixiangxiziliao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/shoucangList.html" afterPath="$PROJECT_DIR$/html/shoucangList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/shouzhimingxi.html" afterPath="$PROJECT_DIR$/html/shouzhimingxi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/tijiaojianyi.html" afterPath="$PROJECT_DIR$/html/tijiaojianyi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/tourongbao-renmaiquan.html" afterPath="$PROJECT_DIR$/html/tourongbao-renmaiquan.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/tourongbao-zichanfang.html" afterPath="$PROJECT_DIR$/html/tourongbao-zichanfang.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/tourongbao.html" afterPath="$PROJECT_DIR$/html/tourongbao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/xitongtongzhi.html" afterPath="$PROJECT_DIR$/html/xitongtongzhi.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html" afterPath="$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/xiugaiziliao.html" afterPath="$PROJECT_DIR$/html/xiugaiziliao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/yaoqinghaoyou.html" afterPath="$PROJECT_DIR$/html/yaoqinghaoyou.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/yue.html" afterPath="$PROJECT_DIR$/html/yue.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/ziliao.html" afterPath="$PROJECT_DIR$/html/ziliao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fabu.js" afterPath="$PROJECT_DIR$/js/fabu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fabuList.js" afterPath="$PROJECT_DIR$/js/fabuList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/my.js" afterPath="$PROJECT_DIR$/js/my.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/shezhixiangxiziliao.js" afterPath="$PROJECT_DIR$/js/shezhixiangxiziliao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/shoucangList.js" afterPath="$PROJECT_DIR$/js/shoucangList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tijiaojianyi.js" afterPath="$PROJECT_DIR$/js/tijiaojianyi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tourongbao-renmaiquan.js" afterPath="$PROJECT_DIR$/js/tourongbao-renmaiquan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tourongbao-zichanfang.js" afterPath="$PROJECT_DIR$/js/tourongbao-zichanfang.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/yue.js" afterPath="$PROJECT_DIR$/js/yue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ziliao.js" afterPath="$PROJECT_DIR$/js/ziliao.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -137,16 +107,133 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html/login.html">
+      <file leaf-file-name="tourongbao.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/tourongbao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="323" column="10" lean-forward="true" selection-start-line="323" selection-start-column="10" selection-end-line="323" selection-end-column="10" />
               <folding>
-                <element signature="n#style#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tourongbao-zichanfang.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/tourongbao-zichanfang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="174" column="21" lean-forward="true" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="21" />
+              <folding>
+                <element signature="e#3640#3646#0" expanded="true" />
+                <element signature="e#3736#3742#0" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fabu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/fabu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="692">
+              <caret line="138" column="22" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#p#1;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fabu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fabu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="288" column="0" lean-forward="true" selection-start-line="288" selection-start-column="0" selection-end-line="290" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xiugaishezhixiangxiziliao.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="499">
+              <caret line="205" column="20" lean-forward="true" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#p#1;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#1;n#button#0;n#p#1;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tourongquan-zichanfang.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/tourongquan-zichanfang.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tourongbao-zichanfang.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/tourongbao-zichanfang.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="18" />
+              <folding>
+                <marker date="1536582102416" expanded="true" signature="1020:1030" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="1411:1421" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="1810:1820" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="2212:2222" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="4774:4806" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="5102:5116" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="5207:5255" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="5340:5372" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="5588:5613" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="9254:9286" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="10579:10593" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="10680:10728" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="10785:10857" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="10949:10997" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="11350:11364" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="11650:11664" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="11982:11996" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="12318:12332" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="12636:12650" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="12872:12897" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="13576:13687" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="14319:14351" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="14503:14517" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="14604:14651" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="14708:14780" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="14872:14920" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="15203:15217" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="15521:15535" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="15853:15867" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="16189:16203" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="16507:16521" ph="..." />
+                <marker date="1536582102416" expanded="true" signature="16740:16765" ph="..." />
               </folding>
             </state>
           </provider>
@@ -155,93 +242,36 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="213" column="22" lean-forward="true" selection-start-line="213" selection-start-column="22" selection-end-line="213" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registered.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/registered.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="password.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/password.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkLogin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/checkLogin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tourongbao-zichanfang.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/tourongbao-zichanfang.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xitongtongzhi.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/xitongtongzhi.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding>
-                <marker date="1536582416061" expanded="true" signature="1957:1981" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xiugaishezhixiangxiziliao.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xiugaiziliao.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/xiugaiziliao.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yaoqinghaoyou.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/yaoqinghaoyou.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yue.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/yue.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ziliao.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/ziliao.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -250,11 +280,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.toolbar</find>
-      <find>body</find>
-      <find>html</find>
-      <find>expressArea</find>
-      <find>areaBox</find>
       <find>address2</find>
       <find>regionInput</find>
       <find>diquDD</find>
@@ -280,6 +305,11 @@
       <find>https://www.taihetourongbao.com/xn203-backend/public/uploads/</find>
       <find>alert</find>
       <find>您还未</find>
+      <find>openId</find>
+      <find>isWx</find>
+      <find>ISwX</find>
+      <find>二选一</find>
+      <find>xuanzeList</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -300,7 +330,6 @@
         <option value="$PROJECT_DIR$/plugin/ld/css/style.css" />
         <option value="$PROJECT_DIR$/plugin/ld/js/jquery.area.js" />
         <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/css/tourongquan-zichanfang.css" />
         <option value="$PROJECT_DIR$/css/tourongquan.css" />
         <option value="$PROJECT_DIR$/js/my.js" />
         <option value="$PROJECT_DIR$/css/jquery-weui.min.css" />
@@ -317,34 +346,37 @@
         <option value="$PROJECT_DIR$/js/yewuduijie.js" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/tourongbao-renmaiquan.js" />
-        <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/html/about.html" />
         <option value="$PROJECT_DIR$/html/beiyaoqing.html" />
         <option value="$PROJECT_DIR$/html/demo.html" />
         <option value="$PROJECT_DIR$/html/duijieshezhi.html" />
-        <option value="$PROJECT_DIR$/html/fabu.html" />
         <option value="$PROJECT_DIR$/html/fabuList.html" />
         <option value="$PROJECT_DIR$/html/gerenxiangqing.html" />
         <option value="$PROJECT_DIR$/html/jubao.html" />
         <option value="$PROJECT_DIR$/html/my.html" />
-        <option value="$PROJECT_DIR$/html/password.html" />
-        <option value="$PROJECT_DIR$/html/registered.html" />
         <option value="$PROJECT_DIR$/html/shenfenrenzheng.html" />
         <option value="$PROJECT_DIR$/html/shezhixiangxiziliao.html" />
         <option value="$PROJECT_DIR$/html/shoucangList.html" />
         <option value="$PROJECT_DIR$/html/tijiaojianyi.html" />
-        <option value="$PROJECT_DIR$/html/tourongbao.html" />
         <option value="$PROJECT_DIR$/html/tourongbao-renmaiquan.html" />
-        <option value="$PROJECT_DIR$/html/tourongbao-zichanfang.html" />
         <option value="$PROJECT_DIR$/html/xitongtongzhi.html" />
-        <option value="$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html" />
         <option value="$PROJECT_DIR$/html/xiugaiziliao.html" />
         <option value="$PROJECT_DIR$/html/yaoqinghaoyou.html" />
         <option value="$PROJECT_DIR$/html/yue.html" />
         <option value="$PROJECT_DIR$/html/ziliao.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/checkLogin.js" />
+        <option value="$USER_HOME$/Documents/WeChat Files/hehe7894021/Files/login(1).html" />
         <option value="$PROJECT_DIR$/html/login.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/html/index.html" />
+        <option value="$PROJECT_DIR$/html/tourongbao.html" />
+        <option value="$PROJECT_DIR$/html/registered.html" />
+        <option value="$PROJECT_DIR$/html/password.html" />
+        <option value="$PROJECT_DIR$/html/tourongbao-zichanfang.html" />
+        <option value="$PROJECT_DIR$/css/tourongquan-zichanfang.css" />
+        <option value="$PROJECT_DIR$/html/fabu.html" />
+        <option value="$PROJECT_DIR$/js/fabu.js" />
+        <option value="$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html" />
       </list>
     </option>
   </component>
@@ -399,11 +431,6 @@
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="www" type="b2602c69:ProjectViewProjectNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -462,12 +489,12 @@
       <workItem from="1536328943588" duration="4966000" />
       <workItem from="1536398348818" duration="4240000" />
       <workItem from="1536475758804" duration="775000" />
-      <workItem from="1536581609080" duration="882000" />
+      <workItem from="1536581609080" duration="4417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80188000" />
+    <option name="totallyTimeSpent" value="83723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -482,7 +509,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -504,28 +531,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/amazeui.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="0" column="1112" lean-forward="true" selection-start-line="0" selection-start-column="1112" selection-end-line="0" selection-end-column="1112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/ld/js/jquery.area.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11060">
-          <caret line="553" column="5" lean-forward="false" selection-start-line="553" selection-start-column="5" selection-end-line="553" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/address-master/docs/demo.html" />
-    <entry file="file://$PROJECT_DIR$/plugin/ld/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -611,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tourongbao-zichanfang.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="417" column="94" lean-forward="false" selection-start-line="417" selection-start-column="94" selection-end-line="417" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/tab.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -625,23 +623,6 @@
           <folding>
             <marker date="1536581419173" expanded="true" signature="1380:1433" ph="{...}" />
             <marker date="1536581419173" expanded="true" signature="1461:1530" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/yewuduijie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7260">
-          <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
-          <folding>
-            <marker date="1536581419173" expanded="true" signature="8303:8331" ph="{...}" />
-            <marker date="1536581419173" expanded="true" signature="8316:8331" ph="{&quot;type&quot;: 'GET'...}" />
-            <marker date="1536581419173" expanded="true" signature="12478:14188" ph="{&quot;url&quot;: ' http://www.taihetourongbao.com/xn203-backend/public/index.php/pay/wxh5'...}" />
-            <marker date="1536581419173" expanded="true" signature="12478:14200" ph="{...}" />
-            <marker date="1536581419173" expanded="true" signature="12478:14842" ph="{...}" />
-            <marker date="1536581419173" expanded="true" signature="12478:14844" ph="{...}" />
-            <marker date="1536581419173" expanded="true" signature="12601:12689" ph="{&quot;userId&quot;: userId...}" />
-            <marker date="1536581419173" expanded="true" signature="12855:14156" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -686,14 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -719,14 +692,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/duijieshezhi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/fabu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
@@ -766,22 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/registered.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/shenfenrenzheng.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -814,26 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/tourongbao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/tourongbao-renmaiquan.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/tourongbao-zichanfang.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="23" column="47" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -845,14 +778,6 @@
           <folding>
             <marker date="1536582416061" expanded="true" signature="1957:1981" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,16 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/checkLogin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -906,15 +821,203 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Documents/WeChat Files/hehe7894021/Files/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="85" column="8" lean-forward="true" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/yewuduijie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="390" column="0" lean-forward="false" selection-start-line="390" selection-start-column="0" selection-end-line="398" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/WeChat Files/hehe7894021/Files/login(1).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="124" column="85" lean-forward="true" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="226">
+          <caret line="117" column="42" lean-forward="true" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="213" column="40" lean-forward="false" selection-start-line="213" selection-start-column="40" selection-end-line="213" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/registered.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/tourongbao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="323" column="10" lean-forward="true" selection-start-line="323" selection-start-column="10" selection-end-line="323" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="213" column="22" lean-forward="true" selection-start-line="213" selection-start-column="22" selection-end-line="213" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tourongbao-zichanfang.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <marker date="1536582102416" expanded="true" signature="1020:1030" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="1411:1421" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="1810:1820" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="2212:2222" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="4774:4806" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="5102:5116" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="5207:5255" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="5340:5372" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="5588:5613" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="9254:9286" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="10579:10593" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="10680:10728" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="10785:10857" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="10949:10997" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="11350:11364" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="11650:11664" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="11982:11996" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="12318:12332" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="12636:12650" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="12872:12897" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="13576:13687" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="14319:14351" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="14503:14517" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="14604:14651" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="14708:14780" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="14872:14920" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="15203:15217" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="15521:15535" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="15853:15867" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="16189:16203" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="16507:16521" ph="..." />
+            <marker date="1536582102416" expanded="true" signature="16740:16765" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tourongquan-zichanfang.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/tourongbao-zichanfang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="174" column="21" lean-forward="true" selection-start-line="174" selection-start-column="21" selection-end-line="174" selection-end-column="21" />
+          <folding>
+            <element signature="e#3640#3646#0" expanded="true" />
+            <element signature="e#3736#3742#0" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/fabu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="138" column="22" lean-forward="false" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#p#1;n#form#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fabu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="288" column="0" lean-forward="true" selection-start-line="288" selection-start-column="0" selection-end-line="290" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/xiugaishezhixiangxiziliao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="205" column="20" lean-forward="true" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#p#1;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#button#0;n#p#1;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
