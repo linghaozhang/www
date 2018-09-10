@@ -269,10 +269,7 @@ function tijiao() {
         },
         error:function (XMLHttpRequest, textStatus, errorThrown) {
             if (XMLHttpRequest.status==401){
-                layer.msg('您还未登录，请您先登陆！');
-                setTimeout(function () {
                     window.location.href = './login.html';
-                },1500)
             }
         }
     })
