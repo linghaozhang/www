@@ -13,7 +13,9 @@ duijieHTML += '';
 function guanbi() {
     $('.duijietanchu').hide();
 }
-
+function goPage(url) {
+    window.location.href = url + '?userId=' + userData.id;
+}
 // 当前用户数据
 var userData;
 // 当前用户邀请了多少个用户
@@ -84,7 +86,13 @@ function yewuduijie(duijieId) {
             $('.dianhua2').css({display:'block'});
             $('.youxiang2').css({display:'block'});
             console.log(888888,duijieData,userData);
-            
+            if(duijieData.card==='1'){
+                $('.card2').html("");
+            }else{
+                $('.cardImage').click(function () {
+                    window.open(IMG_URL+duijieData.card);
+                });
+            }
             if (duijieData.openWechat==1){
                 $('.weixin').html(duijieData.wechat);
             }else{
@@ -126,7 +134,6 @@ function yewuduijie(duijieId) {
             return false;
         }
     }
-
     //是不是要邀请好友
     if(userData.dockingType==2){
         console.log('走入这个逻辑');
@@ -136,8 +143,6 @@ function yewuduijie(duijieId) {
             $('#yaoqinghaoyou').show();
             return false;
         }else {
-            console.log('走入这个逻辑22222');
-
             // 被对接人是限制模式
             if (duijieData.beDockingType == 2){
                 $('#jiaonabaozhengjin').show();
@@ -149,26 +154,14 @@ function yewuduijie(duijieId) {
             }
         }
     }
-
     //是不是要交钱
     if(userData.dockingType==3){
-        $('#chengweihuiyuan').show();
-        return false;
+        if (userData.payOk == 0) {
+            $('#chengweihuiyuan').show();
+        }else {
+            $('#chakanlianxifangshi').show();
+        }
     }
-
-
-    // 二选一
-    // if(userData.dockingType==4){
-    //     // 被对接人是限制模式
-    //     if (duijieData.beDockingType == 2){
-    //         $('#jiaonabaozhengjin').show();
-    //         return false;
-    //         // 被对接人是正常模式
-    //     }else {
-    //         $('#erxuanyi').show();
-    //         return false;
-    //     }
-    // }
     // 二选一
     if(userData.dockingType==4){
         if (dqyhyqs<yaoqingfz) {
@@ -210,10 +203,13 @@ function duiduiren(userId) {
             $('.dianhua2').css({display:'block'});
             $('.youxiang2').css({display:'block'});
             console.log(11223344,duijieData);
-
-            $('.cardImage').click(function () {
-                window.open(IMG_URL+duijieData.card);
-            });
+            if(duijieData.card==='1'){
+                $('.card2').html("");
+            }else{
+                $('.cardImage').click(function () {
+                    window.open(IMG_URL+duijieData.card);
+                });
+            }
             if (duijieData.openCard==0){
                 $('.card2').css({display:'none'});
             }

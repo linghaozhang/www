@@ -210,7 +210,7 @@ $.ajax({
     success: function (data) {
         var d = data.data;
         
-        console.log(1234,d);
+        console.log(1234,data);
         
 
 
