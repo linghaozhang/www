@@ -105,9 +105,9 @@
                         var host = window.location.host;
                         //分享朋友圈
                         wx.onMenuShareTimeline({
-                            title: '这是一个自定义的标题！',
+                            title: '找各类资金方就在【太和投融宝】',
                             link: link,
-                            imgUrl: protocol+'//'+host+'/www/images/fenxiang.png',// 自定义图标
+                            imgUrl: protocol+'//'+host+'/www/images/newLogo.jpeg',// 自定义图标
                             trigger: function (res) {
                                 // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回.
                                 //alert('click shared');
@@ -125,8 +125,8 @@
                         });
                         //分享给好友
                         wx.onMenuShareAppMessage({
-                            title: '这是一个自定义的标题！', // 分享标题
-                            desc: '这是一个自定义的描述！', // 分享描述
+                            title: '找各类资金方就在【太和投融宝】', // 分享标题
+                            desc: '房地产抵押贷款、上市公司信用贷、教育投资并购资金、企业过桥短拆资金、矿产投资并购资金、旅游养老资金-->点击查看更多', // 分享描述
                             link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                             imgUrl: protocol+'//'+host+'/www/images/fenxiang.png', // 自定义图标
                             type: 'link', // 分享类型,music、video或link，不填默认为link
