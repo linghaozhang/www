@@ -129,8 +129,8 @@
                 <span class="chose-pay-span">选择支付方式并支付即可成为会员</span>
             </p>
             <div class="chose-pay">
-                <img class="cur" src="./../images/wxPay.png" alt="">
-                <img src="./../images/alipay.png" alt="">
+                <img class="cur" src="./../images/wxPay.png" alt="wx">
+                <img src="./../images/alipay.png" alt="ali">
             </div>
             <!--<p style="text-align: center">-->
                 <!--200元-->
@@ -232,11 +232,11 @@
 //        window.location.href = url;
 //    }
 //
-//    window.onload=function(){
-//        if(location.search){
-//            localStorage.setItem('openId',location.search);
-//        }
-//    }
+   window.onload=function(){
+       if(location.search){
+           localStorage.setItem('openId',location.search);
+       }
+   }
 </script>
 <div id="alipay"></div>
 </body>

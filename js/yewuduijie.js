@@ -386,6 +386,7 @@ if(weixinCode){
 
 function isWx(){
     var ua = navigator.userAgent.toLowerCase();
+    console.log(ua);
     var isWeixin = ua.indexOf('micromessenger') != -1;
     if (isWeixin) {
         return true;
@@ -476,7 +477,6 @@ function pay(e) {
     });
     }else{
         var type=$(e.target).prev().children('.cur').attr('alt');
-        console.log(type);
         if(type==='wx'){
             console.log('微信h5支付');
             $.ajax({

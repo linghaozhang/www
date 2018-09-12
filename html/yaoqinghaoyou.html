@@ -19,7 +19,6 @@
 
     <!--分享到微信-->
     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src="../js/checkLogin.js"></script>
 
     <!-- page -->
     <link rel="stylesheet" href="../css/index.css">
@@ -88,7 +87,7 @@
             success : function(data) {
                 if(data.msg==='Success'){
                     wx.config({
-                        debug: true,////生产环境需要关闭debug模式
+                        debug: false,////生产环境需要关闭debug模式
                         appId: data.data.appId,//appId通过微信服务号后台查看
                         timestamp: data.data.timestamp,//生成签名的时间戳
                         nonceStr: data.data.nonceStr,//生成签名的随机字符串
