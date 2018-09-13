@@ -193,7 +193,7 @@ function yewuduijie(duijieId) {
         async:false,
         headers:HEADER,
         data:{
-            userId:userId
+            userId:duijieId
         },
         success:function(data){
             console.log('datadata',data);
@@ -202,7 +202,8 @@ function yewuduijie(duijieId) {
             $('.weixin2').css({display:'block'});
             $('.dianhua2').css({display:'block'});
             $('.youxiang2').css({display:'block'});
-            console.log(11223344,duijieData);
+            console.log('被对接数据',duijieData);
+            console.log('登录人数据',userData);
             if(duijieData.card==='1'){
                 $('.card2').html("");
             }else{
@@ -213,7 +214,6 @@ function yewuduijie(duijieId) {
             if (duijieData.openCard==0){
                 $('.card2').css({display:'none'});
             }
-
             if (duijieData.openWechat==1){
                 $('.weixin').html(duijieData.wechat);
             }else{
@@ -251,9 +251,17 @@ function yewuduijie(duijieId) {
     // }
     // 判断是不是为普通对接模式
     if(userData.dockingType==1){
+        if (userData.payOk == 1){
+            if (duijieData.joinType == 2){
+                $('#weituopxitong').show();
+            }else{
+                $('#chakanlianxifangshi').show();
+            }
+            return false
+        }
         // 被对接人为限制模式
         if (duijieData.beDockingType == 2){
-            $('#jiaonabaozhengjin').show();
+            $('#chengweihuiyuan').show();
             return false;
         }else {
             if (duijieData.joinType == 2){
@@ -275,7 +283,7 @@ function yewuduijie(duijieId) {
 
             // 被对接人是限制模式
             if (duijieData.beDockingType == 2){
-                $('#jiaonabaozhengjin').show();
+                $('#chengweihuiyuan').show();
                 return false
             }else {
                 $('#chakanlianxifangshi').show();
@@ -288,18 +296,30 @@ function yewuduijie(duijieId) {
         if (userData.payOk == 0) {
             $('#chengweihuiyuan').show();
         }else {
-            $('#chakanlianxifangshi').show();
+            if (duijieData.joinType == 2){
+                $('#weituopxitong').show();
+            }else{
+                $('#chakanlianxifangshi').show();
+            }
         }
     }
     // 二选一
     if(userData.dockingType==4){
+        if (userData.payOk == 1){
+            if (duijieData.joinType == 2){
+                $('#weituopxitong').show();
+            }else{
+                $('#chakanlianxifangshi').show();
+            }
+            return false
+        }
         if (dqyhyqs<yaoqingfz) {
             $('#erxuanyi').show();
             return false;
         }else {
             // 被对接人为限制模式
             if (duijieData.beDockingType == 2) {
-                $('#jiaonabaozhengjin').show();
+                $('#chengweihuiyuan').show();
                 return false;
             }else {
                 $('#erxuanyi').show();
@@ -378,9 +398,17 @@ function duiduiren(userId) {
     // }
     // 判断是不是为普通对接模式
     if(userData.dockingType==1){
+        if (userData.payOk == 1){
+            if (duijieData.joinType == 2){
+                $('#weituopxitong').show();
+            }else{
+                $('#chakanlianxifangshi').show();
+            }
+            return false
+        }
         // 被对接人为限制模式
         if (duijieData.beDockingType == 2){
-            $('#jiaonabaozhengjin').show();
+            $('#chengweihuiyuan').show();
             return false;
         }else {
             if (duijieData.joinType == 2){
@@ -402,7 +430,7 @@ function duiduiren(userId) {
 
             // 被对接人是限制模式
             if (duijieData.beDockingType == 2){
-                $('#jiaonabaozhengjin').show();
+                $('#chengweihuiyuan').show();
                 return false
             }else {
                 $('#chakanlianxifangshi').show();
@@ -415,18 +443,30 @@ function duiduiren(userId) {
         if (userData.payOk == 0) {
             $('#chengweihuiyuan').show();
         }else {
-            $('#chakanlianxifangshi').show();
+            if (duijieData.joinType == 2){
+                $('#weituopxitong').show();
+            }else{
+                $('#chakanlianxifangshi').show();
+            }
         }
     }
     // 二选一
     if(userData.dockingType==4){
+        if (userData.payOk == 1){
+            if (duijieData.joinType == 2){
+                $('#weituopxitong').show();
+            }else{
+                $('#chakanlianxifangshi').show();
+            }
+            return false
+        }
         if (dqyhyqs<yaoqingfz) {
             $('#erxuanyi').show();
             return false;
         }else {
             // 被对接人为限制模式
             if (duijieData.beDockingType == 2) {
-                $('#jiaonabaozhengjin').show();
+                $('#chengweihuiyuan').show();
                 return false;
             }else {
                 $('#erxuanyi').show();

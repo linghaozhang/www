@@ -46,7 +46,7 @@ $.ajax({
             $('.tabClass').eq(0).css({color:'#dd514c'});
         }
         
-        console.log(223344,d);
+        console.log('tqr',d);
         // console.log(11223366,arrToStr(d.investmentStageStr,' '));
 
         var headerPicElement = '<img src='+IMG_URL+d.avatar+' alt="" style="width: 50px;height: 50px;border-radius: 50%;border:0;" id="headerPic">';
@@ -277,7 +277,7 @@ $.ajax({
 
             html += '</div>';
             html += '<div class="am-g">';
-            html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.id+');">业务对接</button>';
+            html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.userId+');">业务对接</button>';
             html += '</div></div></div>';
 
             $('#wodefabu').prepend(html);
@@ -287,14 +287,13 @@ $.ajax({
         console.log(7777666666,d.length);
         
         if (d.length == 0){
-            var html = '';
-            html += '<p style="text-align: center;margin:20px 0px 10px;padding:0 24px;">项目信息我正在整理中，请稍等片刻，要想联系本人，请点击下方业务对接。</p>'
+             var ids=location.search.split('=')[1];
+            var htmls = '';
+            htmls += '<p style="text-align: center;margin:20px 0px 10px;padding:0 24px;">项目信息我正在整理中，请稍等片刻，要想联系本人，请点击下方业务对接。</p>';
 
-            html += '<div class="am-g" style="text-align: center;margin-bottom:30px;"><button type="button" class="am-btn am-btn-danger" id="yewuduijieBtn" style="width:88%;" onclick="yewuduijie();">业务对接</button> </div>'
-
-            
-            console.log(111222333,html);
-            $('#wodefabu').prepend(html);
+            htmls += '<div class="am-g" style="text-align: center;margin-bottom:30px;"><button type="button" class="am-btn am-btn-danger" id="yewuduijieBtn" style="width:88%;" onclick="yewuduijie('+ids+');">业务对接</button> </div>'
+            console.log(111222333,htmls);
+            $('#wodefabu').prepend(htmls);
         }
 
 
