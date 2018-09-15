@@ -18,15 +18,15 @@
     <script src="../js/common.js"></script>
 <!-- page -->
 	<link rel="stylesheet" href="../css/index.css">
-
+    <script src="../js/checkLogin.js"></script>
   	<title>太和·投融宝</title>
 </head>
 <body >
     <!-- 轮播 -->
     <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0" style="margin-bottom: 3px;">
       <ul class="am-slides">
-        <li onclick="tioazhuan('http://www.taihetourongbao.com/xn203-www/html/about.html');"><img src="../images/banner1.jpg" /></li>
-        <!--<li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>-->
+        <li><img src="../images/20180911220918.jpg" /></li>
+        <!--<li><img src="https://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>-->
       </ul>
     </div>
     <script>
@@ -35,7 +35,7 @@
         var counter = 0;
         var getSlide = function() {
           counter++;
-          return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+          return '<li><img src="https://s.amazeui.org/media/i/demos/bing-' +
             (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
             '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
         };
@@ -129,8 +129,8 @@
                 <span class="chose-pay-span">选择支付方式并支付即可成为会员</span>
             </p>
             <div class="chose-pay">
-                <img class="cur" src="./../images/wxPay.png" alt="">
-                <img src="./../images/alipay.png" alt="">
+                <img class="cur" src="./../images/wxPay.png" alt="wx">
+                <img src="./../images/alipay.png" alt="ali">
             </div>
             <!--<p style="text-align: center">-->
                 <!--200元-->
@@ -149,7 +149,7 @@
             <p style="text-align: center;margin-bottom: 75px;margin-top:20px;font-size: 14px;">
                 邀请5个金融圈好友注册，后台审核通过后即可进行业务对接
             </p>
-            <button type="button" class="am-btn am-btn-danger" style="width:100%;margin-bottom: 10px;" onclick="goPage('./yaoqinghaoyou.html');">马上邀请</button>
+            <button type="button" class="am-btn am-btn-danger _invite" style="width:100%;margin-bottom: 10px;">马上邀请</button>
             <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">以后再说</button>
         </div>
     </div>
@@ -201,16 +201,16 @@
 
     <!--二选一-->
     <div style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background:rgba(0,0,0,0.5);display: none;" class="duijietanchu" id="erxuanyi">
-        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:20px 20px;">
-            <p style="text-align: center;">
+        <div style="position: fixed;width: 300px;top:10%;left:50%;margin-left:-150px;background:#fff;z-index:9999999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:10px 20px 20px;">
+            <p style="text-align: center;margin-bottom:0;">
                 业务对接
             </p>
-            <p style="text-align: left;font-size:14px;">
+            <p style="text-align: left;font-size:14px;margin-bottom: 10px;margin-top:0">
                 若要进行业务对接，查看对接人联系方式，有以下两种方式：
             </p>
-            <p style="font-size:14px;">1.免费方式：邀请5个金融好友进行注册，后台审核通过后即可进行业务对接。
+            <p style="font-size:14px;margin-bottom: 10px;margin-top:0">1.免费方式：邀请5个金融好友进行注册，后台审核通过后即可进行业务对接。
                 </p>
-            <p style="margin-bottom: 15px;font-size:14px;">2.收费方式：成为平台会员，缴纳会员费后即可进行正常业务对接</p>
+            <p style="margin-bottom: 10px;font-size:14px;margin-top:0">2.收费方式：成为平台会员，缴纳会员费后即可进行正常业务对接</p>
             <div class="chose-pay-span">选择支付方式并支付即可成为会员</div>
             <div>
                 <div class="chose-pay">
@@ -218,7 +218,7 @@
                     <img src="./../images/alipay.png" alt="ali">
                 </div>
                 <button type="button" class="am-btn am-btn-danger _pay" style="width:49%;margin-bottom: 10px;display: inline-block;">马上成为会员</button>
-                <button type="button" class="am-btn am-btn-danger" style="width:49%;margin-bottom: 10px;display: inline-block;" >马上邀请好友</button>
+                <button type="button" class="am-btn am-btn-danger _invite" style="width:49%;margin-bottom: 10px;display: inline-block;" >马上邀请好友</button>
             </div>
             <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="guanbi();">下次再说</button>
         </div>
@@ -227,14 +227,17 @@
 <script src="../js/tab.js" charset="utf-8"></script>
 <script src="../js/index.js" charset="utf-8"></script>
 <script src="../js/yewuduijie.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        function tioazhuan(url) {
-            window.location.href = url;
-        }
-        function goPage(url) {
-            window.location.href = url + '?userId=' + userData.id;
-        }
-    </script>
+<script type="text/javascript">
+//    function tioazhuan(url) {
+//        window.location.href = url;
+//    }
+//
+   window.onload=function(){
+       if(location.search){
+           localStorage.setItem('openId',location.search);
+       }
+   }
+</script>
 <div id="alipay"></div>
 </body>
 </html>

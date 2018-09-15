@@ -24,11 +24,7 @@ $.ajax({
         console.log(987,data);
     },
     error:function (data) {
-        layer.msg('您还未登录，请先登录');
-        setTimeout(function () {
-            window.location.href = '/www/html/login.html';
-        },1500)
-        console.log(666,data);
+        window.location.href = '/www/html/login.html';
     }
 });
 

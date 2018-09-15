@@ -57,10 +57,7 @@ $.ajax({
     },
     error:function (XMLHttpRequest, textStatus, errorThrown) {
         if (XMLHttpRequest.status==401){
-            layer.msg('您还未登录，请您先登陆！');
-            setTimeout(function () {
                 window.location.href = './login.html';
-            },1500)
         }
     }
 
@@ -70,7 +67,7 @@ $.ajax({
 * 页面跳转
 * */
 function goto(url){
-    window.location.href = url+'?userId='+sessionStorage.getItem('TRQuserid');
+    window.location.href = url+'?userId='+localStorage.getItem('TRQuserid');
 }
 
 $('._exit').on('click',function(){

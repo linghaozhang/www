@@ -20,7 +20,7 @@ function shoucangList() {
         async:false,
         headers:HEADER,
         data: {
-            userId : sessionStorage.getItem('TRQuserid')
+            userId : localStorage.getItem('TRQuserid')
         },
         success:function(data){
             console.log(data);
@@ -67,7 +67,7 @@ function quxiaoshoucang(id){
         type: 'GET',
         headers:HEADER,
         data: {
-            userId:sessionStorage.getItem('TRQuserid'),
+            userId:localStorage.getItem('TRQuserid'),
             collectId:id, 
         },
         success:function(data){
@@ -81,10 +81,7 @@ function quxiaoshoucang(id){
         },
         error:function (XMLHttpRequest, textStatus, errorThrown) {
             if (XMLHttpRequest.status==401){
-                layer.msg('您还未登录，请您先登陆！')
-                setTimeout(function () {
                     window.location.href = './login.html';
-                },1500)
             }
         }
     })

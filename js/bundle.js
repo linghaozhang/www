@@ -102,12 +102,12 @@ if (process.env.NODE_ENV !== 'production') {
   };
 
   // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
+  // https://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
   module.exports = __webpack_require__(208)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
+  // https://fb.me/prop-types-in-prod
   module.exports = __webpack_require__(533)();
 }
 
@@ -449,7 +449,7 @@ exports.default = function () {
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
   Copyright (c) 2016 Jed Watson.
   Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
+  https://jedwatson.github.io/classnames
 */
 /* global define */
 
@@ -665,7 +665,7 @@ module.exports = warning;
 /***/ (function(module, exports) {
 
 /*
-	MIT License http://www.opensource.org/licenses/mit-license.php
+	MIT License https://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
@@ -769,7 +769,7 @@ function toComment(sourceMap) {
 function reactProdInvariant(code) {
   var argCount = arguments.length - 1;
 
-  var message = 'Minified React error #' + code + '; visit ' + 'http://facebook.github.io/react/docs/error-decoder.html?invariant=' + code;
+  var message = 'Minified React error #' + code + '; visit ' + 'https://facebook.github.io/react/docs/error-decoder.html?invariant=' + code;
 
   for (var argIdx = 0; argIdx < argCount; argIdx++) {
     message += '&args[]=' + encodeURIComponent(arguments[argIdx + 1]);
@@ -791,7 +791,7 @@ module.exports = reactProdInvariant;
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
-	MIT License http://www.opensource.org/licenses/mit-license.php
+	MIT License https://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
 
@@ -808,7 +808,7 @@ var	memoize = function (fn) {
 
 var isOldIE = memoize(function () {
 	// Test for IE <= 9 as proposed by Browserhacks
-	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// @see https://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
 	// Tests for existence of standard globals is to allow style-loader
 	// to operate correctly into non-standard environments
 	// @see https://github.com/webpack-contrib/style-loader/issues/177
@@ -1131,7 +1131,7 @@ function updateLink (link, options, obj) {
 	}
 
 	if (sourceMap) {
-		// http://stackoverflow.com/a/26603875
+		// https://stackoverflow.com/a/26603875
 		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 	}
 
@@ -3218,7 +3218,7 @@ var shouldBeReleasedProperties = ['dispatchConfig', '_targetInst', 'nativeEvent'
 
 /**
  * @interface Event
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var EventInterface = {
   type: null,
@@ -3705,8 +3705,8 @@ var ATTRIBUTE_NAME_START_CHAR = ':A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\
  *
  * Although this may be confusing, it performs better in general.
  *
- * @see http://jsperf.com/key-exists
- * @see http://jsperf.com/key-missing
+ * @see https://jsperf.com/key-exists
+ * @see https://jsperf.com/key-missing
  */
 var DOMProperty = {
   ID_ATTRIBUTE_NAME: 'data-reactid',
@@ -5279,7 +5279,7 @@ module.exports = React;
 function reactProdInvariant(code) {
   var argCount = arguments.length - 1;
 
-  var message = 'Minified React error #' + code + '; visit ' + 'http://facebook.github.io/react/docs/error-decoder.html?invariant=' + code;
+  var message = 'Minified React error #' + code + '; visit ' + 'https://facebook.github.io/react/docs/error-decoder.html?invariant=' + code;
 
   for (var argIdx = 0; argIdx < argCount; argIdx++) {
     message += '&args[]=' + encodeURIComponent(arguments[argIdx + 1]);
@@ -6001,7 +6001,7 @@ var PX = 'px';
 
 function _getComputedStyleIE(elem, name) {
   // currentStyle maybe null
-  // http://msdn.microsoft.com/en-us/library/ms535231.aspx
+  // https://msdn.microsoft.com/en-us/library/ms535231.aspx
   var ret = elem[CURRENT_STYLE] && elem[CURRENT_STYLE][name];
 
   // 当 width/height 设置为百分比时，通过 pixelLeft 方式转换的 width/height 值
@@ -6010,7 +6010,7 @@ function _getComputedStyleIE(elem, name) {
   // borderWidth 等值也有问题，但考虑到 borderWidth 设为百分比的概率很小，这里就不考虑了
 
   // From the awesome hack by Dean Edwards
-  // http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
+  // https://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
   // If we're not dealing with a regular pixel number
   // but a number that has a weird ending, we need to convert it to pixels
   // exclude left right for relativity
@@ -7016,7 +7016,7 @@ var getEventTarget = __webpack_require__(155);
 
 /**
  * @interface UIEvent
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var UIEventInterface = {
   view: function (event) {
@@ -8648,7 +8648,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
    * top-level listeners to the document object only, at least for these
    * movement types of events and possibly all events.
    *
-   * @see http://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
+   * @see https://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
    *
    * Also, `keyup`/`keypress`/`keydown` do not bubble to the window on IE, but
    * they bubble to document.
@@ -8671,7 +8671,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
             ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'mousewheel', mountAt);
           } else {
             // Firefox needs to capture a different mouse scroll event.
-            // @see http://www.quirksmode.org/dom/events/tests/scroll.html
+            // @see https://www.quirksmode.org/dom/events/tests/scroll.html
             ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topWheel', 'DOMMouseScroll', mountAt);
           }
         } else if (dependency === 'topScroll') {
@@ -8686,7 +8686,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
             ReactBrowserEventEmitter.ReactEventListener.trapCapturedEvent('topBlur', 'blur', mountAt);
           } else if (isEventSupported('focusin')) {
             // IE has `focusin` and `focusout` events which bubble.
-            // @see http://www.quirksmode.org/blog/archives/2008/04/delegating_the.html
+            // @see https://www.quirksmode.org/blog/archives/2008/04/delegating_the.html
             ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topFocus', 'focusin', mountAt);
             ReactBrowserEventEmitter.ReactEventListener.trapBubbledEvent('topBlur', 'focusout', mountAt);
           }
@@ -8733,7 +8733,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
    *
    * NOTE: Scroll events do not bubble.
    *
-   * @see http://www.quirksmode.org/dom/events/scroll.html
+   * @see https://www.quirksmode.org/dom/events/scroll.html
    */
   ensureScrollValueMonitoring: function () {
     if (hasEventPageXY === undefined) {
@@ -8773,7 +8773,7 @@ var getEventModifierState = __webpack_require__(154);
 
 /**
  * @interface MouseEvent
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var MouseEventInterface = {
   screenX: null,
@@ -10905,7 +10905,7 @@ module.exports = has;
 
 /**
  * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * [language type](https://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
  * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
  *
  * @static
@@ -12121,9 +12121,9 @@ module.exports = DOMChildrenOperations;
 
 
 var DOMNamespaces = {
-  html: 'http://www.w3.org/1999/xhtml',
-  mathml: 'http://www.w3.org/1998/Math/MathML',
-  svg: 'http://www.w3.org/2000/svg'
+  html: 'https://www.w3.org/1999/xhtml',
+  mathml: 'https://www.w3.org/1998/Math/MathML',
+  svg: 'https://www.w3.org/2000/svg'
 };
 
 module.exports = DOMNamespaces;
@@ -13051,7 +13051,7 @@ module.exports = getEventCharCode;
 
 /**
  * Translation from modifier key to the associated property in the event.
- * @see http://www.w3.org/TR/DOM-Level-3-Events/#keys-Modifiers
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/#keys-Modifiers
  */
 
 var modifierKeyToProp = {
@@ -13114,7 +13114,7 @@ function getEventTarget(nativeEvent) {
   }
 
   // Safari may fire events on text nodes (Node.TEXT_NODE is 3).
-  // @see http://www.quirksmode.org/js/events_properties.html
+  // @see https://www.quirksmode.org/js/events_properties.html
   return target.nodeType === 3 ? target.parentNode : target;
 }
 
@@ -13143,7 +13143,7 @@ var useHasFeature;
 if (ExecutionEnvironment.canUseDOM) {
   useHasFeature = document.implementation && document.implementation.hasFeature &&
   // always returns true in newer browsers as per the standard.
-  // @see http://dom.spec.whatwg.org/#dom-domimplementation-hasfeature
+  // @see https://dom.spec.whatwg.org/#dom-domimplementation-hasfeature
   document.implementation.hasFeature('', '') !== true;
 }
 
@@ -17112,8 +17112,8 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 /**
  * lodash 3.1.2 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
- * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright 2012-2015 The Dojo Foundation <https://dojofoundation.org/>
+ * Based on Underscore.js 1.8.3 <https://underscorejs.org/LICENSE>
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
@@ -17134,7 +17134,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
 var nativeKeys = getNative(Object, 'keys');
 
 /**
- * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
+ * Used as the [maximum length](https://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
  */
 var MAX_SAFE_INTEGER = 9007199254740991;
@@ -17192,7 +17192,7 @@ function isIndex(value, length) {
 /**
  * Checks if `value` is a valid array-like length.
  *
- * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+ * **Note:** This function is based on [`ToLength`](https://ecma-international.org/ecma-262/6.0/#sec-tolength).
  *
  * @private
  * @param {*} value The value to check.
@@ -17261,7 +17261,7 @@ function isObject(value) {
  * Creates an array of the own enumerable property names of `object`.
  *
  * **Note:** Non-object values are coerced to objects. See the
- * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
+ * [ES spec](https://ecma-international.org/ecma-262/6.0/#sec-object.keys)
  * for more details.
  *
  * @static
@@ -17381,7 +17381,7 @@ module.exports = isIndex;
 
 /**
  * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
  * comparison between two values to determine if they are equivalent.
  *
  * @static
@@ -17860,7 +17860,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             false,
             'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
             'Use `PropTypes.checkPropTypes()` to call them. ' +
-            'Read more at http://fb.me/use-check-prop-types'
+            'Read more at https://fb.me/use-check-prop-types'
           );
         } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
@@ -20157,7 +20157,7 @@ Object.keys(isUnitlessNumber).forEach(function (prop) {
  * Most style properties can be unset by doing .style[prop] = '' but IE8
  * doesn't like doing that with shorthand properties so for the properties that
  * IE8 breaks on, which are listed here, we instead unset each of the
- * individual properties. See http://bugs.jquery.com/ticket/12385.
+ * individual properties. See https://bugs.jquery.com/ticket/12385.
  * The 4-value 'clock' properties like margin, padding, border-width seem to
  * behave without any problems. Curiously, list-style works too without any
  * special prodding.
@@ -21237,7 +21237,7 @@ function unmountComponentFromNode(instance, container, safely) {
     container = container.documentElement;
   }
 
-  // http://jsperf.com/emptying-a-node
+  // https://jsperf.com/emptying-a-node
   while (container.lastChild) {
     container.removeChild(container.lastChild);
   }
@@ -22178,7 +22178,7 @@ module.exports = instantiateReactComponent;
 
 
 /**
- * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
+ * @see https://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
  */
 
 var supportedInputTypes = {
@@ -23669,7 +23669,7 @@ exports.default = SignIn;
 
 window.G_token = localStorage.getItem('TRQtoken');
 window.WWW_URL = '';
-window.IMG_URL = 'http://www.taihetourongbao.com/xn203-backend/public/uploads/'; //图片访问地址
+window.IMG_URL = 'https://www.taihetourongbao.com/xn203-backend/public/uploads/'; //图片访问地址
 
 
 /*
@@ -23678,7 +23678,7 @@ window.IMG_URL = 'http://www.taihetourongbao.com/xn203-backend/public/uploads/';
 // window.G_userIsLoginSuccess = true; // 用户当前是否已经处于登陆状态
 // window.G_userId = 1556; // 当前登陆的用户ID，用户登录前默认为0
 // window.G_userNikeName = '信达';// 当前登录用户的昵称
-// window.G_userHeadPortrait = 'http://webapp.vpncn.cc/upload/app/2017-04-14/header_pic/26ef875ce05558067971d9f031bcdf0e.jpg';// 当前登录用户头像地址
+// window.G_userHeadPortrait = 'https://webapp.vpncn.cc/upload/app/2017-04-14/header_pic/26ef875ce05558067971d9f031bcdf0e.jpg';// 当前登录用户头像地址
 // window.G_userCertificationState = 2; //当前用户实名认证状态，1未认证，2认证中，3已认证，4认证失败，5账户被锁定
 
 /***/ }),
@@ -30504,7 +30504,7 @@ function range(rule, value, source, errors, options) {
 /* eslint max-len:0 */
 
 var pattern = {
-  // http://emailregex.com/
+  // https://emailregex.com/
   email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   url: new RegExp('^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$', 'i'),
   hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i
@@ -34388,7 +34388,7 @@ var UserAudit = function (_React$Component) {
                             "Authorization": Authorization,
                             "Content-Type": 'application/json;charset=utf-8'
                         },
-                        url: 'http://apis.7moor.com/v20160818/sms/sendInterfaceTemplateSms/N00000014371?sig=' + sig,
+                        url: 'https://apis.7moor.com/v20160818/sms/sendInterfaceTemplateSms/N00000014371?sig=' + sig,
                         type: 'POST',
                         dataType: 'json',
                         data: jsonData,
@@ -37500,7 +37500,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-// http://yiminghe.iteye.com/blog/1124720
+// https://yiminghe.iteye.com/blog/1124720
 
 function isFailX(elFuturePos, elRegion, visibleRect) {
   return elFuturePos.left < visibleRect.left || elFuturePos.left + elRegion.width > visibleRect.right;
@@ -38174,7 +38174,7 @@ var PX = 'px';
 
 function _getComputedStyleIE(elem, name) {
   // currentStyle maybe null
-  // http://msdn.microsoft.com/en-us/library/ms535231.aspx
+  // https://msdn.microsoft.com/en-us/library/ms535231.aspx
   var ret = elem[CURRENT_STYLE] && elem[CURRENT_STYLE][name];
 
   // 当 width/height 设置为百分比时，通过 pixelLeft 方式转换的 width/height 值
@@ -38183,7 +38183,7 @@ function _getComputedStyleIE(elem, name) {
   // borderWidth 等值也有问题，但考虑到 borderWidth 设为百分比的概率很小，这里就不考虑了
 
   // From the awesome hack by Dean Edwards
-  // http://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
+  // https://erik.eae.net/archives/2007/07/27/18.54.15/#comment-102291
   // If we're not dealing with a regular pixel number
   // but a number that has a weird ending, we need to convert it to pixels
   // exclude left right for relativity
@@ -38577,7 +38577,7 @@ var msPattern = /^-ms-/;
  *   < "msTransition"
  *
  * As Andi Smith suggests
- * (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
+ * (https://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
  * is converted to lowercase `ms`.
  *
  * @param {string} string
@@ -38898,7 +38898,7 @@ var selectWrap = [1, '<select multiple="true">', '</select>'];
 var tableWrap = [1, '<table>', '</table>'];
 var trWrap = [3, '<table><tbody><tr>', '</tr></tbody></table>'];
 
-var svgWrap = [1, '<svg xmlns="http://www.w3.org/2000/svg">', '</svg>'];
+var svgWrap = [1, '<svg xmlns="https://www.w3.org/2000/svg">', '</svg>'];
 
 var markupWrap = {
   '*': [1, '?<div>', '</div>'],
@@ -39072,7 +39072,7 @@ var msPattern = /^ms-/;
  *   > hyphenateStyleName('msTransition')
  *   < "-ms-transition"
  *
- * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
+ * As Modernizr suggests (https://modernizr.com/docs/#prefixed), an `ms` prefix
  * is converted to `-ms-`.
  *
  * @param {string} string
@@ -40072,7 +40072,7 @@ exports.default = createMemoryHistory;
 /*!
  * Determine if an object is a Buffer
  *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @author   Feross Aboukhadijeh <feross@feross.org> <https://feross.org>
  * @license  MIT
  */
 
@@ -40649,7 +40649,7 @@ var Sizzle =
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://jquery.org/license
  *
  * Date: 2016-08-08
  */
@@ -40716,13 +40716,13 @@ var i,
 
 	// Regular expressions
 
-	// http://www.w3.org/TR/css3-selectors/#whitespace
+	// https://www.w3.org/TR/css3-selectors/#whitespace
 	whitespace = "[\\x20\\t\\r\\n\\f]",
 
-	// http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+	// https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+",
 
-	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
+	// Attribute selectors: https://www.w3.org/TR/selectors/#attribute-selectors
 	attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
 		// Operator (capture 2)
 		"*([*^$|!~]?=)" + whitespace +
@@ -40779,7 +40779,7 @@ var i,
 	rsibling = /[+~]/,
 
 	// CSS escapes
-	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+	// https://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
@@ -41415,7 +41415,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 
 			// Webkit/Opera - :checked should return selected option elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+			// https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 			// IE8 throws error here and will not see later tests
 			if ( !el.querySelectorAll(":checked").length ) {
 				rbuggyQSA.push(":checked");
@@ -42026,7 +42026,7 @@ Expr = Sizzle.selectors = {
 
 		"PSEUDO": function( pseudo, argument ) {
 			// pseudo-class names are case-insensitive
-			// http://www.w3.org/TR/selectors/#pseudo-classes
+			// https://www.w3.org/TR/selectors/#pseudo-classes
 			// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
 			// Remember that setFilters inherits from pseudos
 			var args,
@@ -42113,7 +42113,7 @@ Expr = Sizzle.selectors = {
 		// or beginning with the identifier C immediately followed by "-".
 		// The matching of C against the element's language value is performed case-insensitively.
 		// The identifier C does not have to be a valid language name."
-		// http://www.w3.org/TR/selectors/#lang-pseudo
+		// https://www.w3.org/TR/selectors/#lang-pseudo
 		"lang": markFunction( function( lang ) {
 			// lang value must be a valid identifier
 			if ( !ridentifier.test(lang || "") ) {
@@ -42155,7 +42155,7 @@ Expr = Sizzle.selectors = {
 
 		"checked": function( elem ) {
 			// In CSS3, :checked should return both checked and selected elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+			// https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 			var nodeName = elem.nodeName.toLowerCase();
 			return (nodeName === "input" && !!elem.checked) || (nodeName === "option" && !!elem.selected);
 		},
@@ -42172,7 +42172,7 @@ Expr = Sizzle.selectors = {
 
 		// Contents
 		"empty": function( elem ) {
-			// http://www.w3.org/TR/selectors/#empty-pseudo
+			// https://www.w3.org/TR/selectors/#empty-pseudo
 			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
@@ -47549,7 +47549,7 @@ jQuery.fx.speeds = {
 
 
 // Based off of the plugin by Clint Helfers, with permission.
-// https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
+// https://web.archive.org/web/20100324014747/https://blindsignals.com/index.php/2009/07/jquery-delay/
 jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
 	type = type || "fx";
@@ -47774,7 +47774,7 @@ jQuery.extend( {
 				// Support: IE <=9 - 11 only
 				// elem.tabIndex doesn't always return the
 				// correct value when it hasn't been explicitly set
-				// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
+				// https://web.archive.org/web/20141116233347/https://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 				// Use proper attribute retrieval(#12072)
 				var tabindex = jQuery.find.attr( elem, "tabindex" );
 
@@ -48416,7 +48416,7 @@ support.focusin = "onfocusin" in window;
 //
 // Support: Chrome <=48 - 49, Safari <=9.0 - 9.1
 // focus(in | out) events fire after focus & blur events,
-// which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
+// which is spec violation - https://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
 // Related ticket - https://bugs.chromium.org/p/chromium/issues/detail?id=449857
 if ( !support.focusin ) {
 	jQuery.each( { focus: "focusin", blur: "focusout" }, function( orig, fix ) {
@@ -49125,7 +49125,7 @@ jQuery.extend( {
 
 			// Support: IE <=8 - 11, Edge 12 - 13
 			// IE throws exception on accessing the href property if url is malformed,
-			// e.g. http://example.com:80x/
+			// e.g. https://example.com:80x/
 			try {
 				urlAnchor.href = s.url;
 
@@ -50368,8 +50368,8 @@ return jQuery;
 /**
  * lodash 3.9.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
- * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright 2012-2015 The Dojo Foundation <https://dojofoundation.org/>
+ * Based on Underscore.js 1.8.3 <https://underscorejs.org/LICENSE>
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
@@ -50401,7 +50401,7 @@ var fnToString = Function.prototype.toString;
 var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * Used to resolve the [`toStringTag`](https://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
  * of values.
  */
 var objToString = objectProto.toString;
@@ -50513,7 +50513,7 @@ module.exports = getNative;
  * Build: `lodash modularize exports="npm" -o ./`
  * Copyright jQuery Foundation and other contributors <https://jquery.org/>
  * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Based on Underscore.js 1.8.3 <https://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
 
@@ -50539,7 +50539,7 @@ var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
 
 /**
  * Used to match `RegExp`
- * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ * [syntax characters](https://ecma-international.org/ecma-262/7.0/#sec-patterns).
  */
 var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 
@@ -50611,7 +50611,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * [`toStringTag`](https://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
  * of values.
  */
 var objectToString = objectProto.toString;
@@ -51161,7 +51161,7 @@ function toSource(func) {
  * **Note:** The cache is exposed as the `cache` property on the memoized
  * function. Its creation may be customized by replacing the `_.memoize.Cache`
  * constructor with one whose instances implement the
- * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * [`Map`](https://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
  * method interface of `delete`, `get`, `has`, and `set`.
  *
  * @static
@@ -51220,7 +51220,7 @@ memoize.Cache = MapCache;
 
 /**
  * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
  * comparison between two values to determine if they are equivalent.
  *
  * @static
@@ -51305,7 +51305,7 @@ function isFunction(value) {
 
 /**
  * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * [language type](https://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
  * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
  *
  * @static
@@ -51451,7 +51451,7 @@ module.exports = get;
  * Build: `lodash modularize exports="npm" -o ./`
  * Copyright jQuery Foundation and other contributors <https://jquery.org/>
  * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Based on Underscore.js 1.8.3 <https://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
 
@@ -51471,7 +51471,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * [`toStringTag`](https://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
  * of values.
  */
 var objectToString = objectProto.toString;
@@ -51589,7 +51589,7 @@ function isFunction(value) {
  * Checks if `value` is a valid array-like length.
  *
  * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ * [`ToLength`](https://ecma-international.org/ecma-262/7.0/#sec-tolength).
  *
  * @static
  * @memberOf _
@@ -51618,7 +51618,7 @@ function isLength(value) {
 
 /**
  * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * [language type](https://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
  * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
  *
  * @static
@@ -51684,8 +51684,8 @@ module.exports = isArguments;
 /**
  * lodash 3.0.4 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
- * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright 2012-2015 The Dojo Foundation <https://dojofoundation.org/>
+ * Based on Underscore.js 1.8.3 <https://underscorejs.org/LICENSE>
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
@@ -51718,7 +51718,7 @@ var fnToString = Function.prototype.toString;
 var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * Used to resolve the [`toStringTag`](https://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
  * of values.
  */
 var objToString = objectProto.toString;
@@ -51733,7 +51733,7 @@ var reIsNative = RegExp('^' +
 var nativeIsArray = getNative(Array, 'isArray');
 
 /**
- * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
+ * Used as the [maximum length](https://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
  */
 var MAX_SAFE_INTEGER = 9007199254740991;
@@ -51754,7 +51754,7 @@ function getNative(object, key) {
 /**
  * Checks if `value` is a valid array-like length.
  *
- * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+ * **Note:** This function is based on [`ToLength`](https://ecma-international.org/ecma-262/6.0/#sec-tolength).
  *
  * @private
  * @param {*} value The value to check.
@@ -52032,7 +52032,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Assigns `value` to `key` of `object` if the existing value is not equivalent
- * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * using [`SameValueZero`](https://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
  * for equality comparisons.
  *
  * @private
@@ -52172,7 +52172,7 @@ var isFunction = __webpack_require__(527),
 
 /**
  * Used to match `RegExp`
- * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ * [syntax characters](https://ecma-international.org/ecma-262/7.0/#sec-patterns).
  */
 var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 
@@ -52364,7 +52364,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * [`toStringTag`](https://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
  * of values.
  */
 var nativeObjectToString = objectProto.toString;
@@ -52989,7 +52989,7 @@ var objectProto = Object.prototype;
 
 /**
  * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * [`toStringTag`](https://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
  * of values.
  */
 var nativeObjectToString = objectProto.toString;
@@ -53170,7 +53170,7 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * Checks if `value` is a valid array-like length.
  *
  * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ * [`ToLength`](https://ecma-international.org/ecma-262/7.0/#sec-tolength).
  *
  * @static
  * @memberOf _
@@ -53219,7 +53219,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * **Note:** The cache is exposed as the `cache` property on the memoized
  * function. Its creation may be customized by replacing the `_.memoize.Cache`
  * constructor with one whose instances implement the
- * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * [`Map`](https://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
  * method interface of `clear`, `delete`, `get`, `has`, and `set`.
  *
  * @static
@@ -53844,7 +53844,7 @@ module.exports = function() {
       false,
       'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
       'Use PropTypes.checkPropTypes() to call them. ' +
-      'Read more at http://fb.me/use-check-prop-types'
+      'Read more at https://fb.me/use-check-prop-types'
     );
   };
   shim.isRequired = shim;
@@ -55943,7 +55943,7 @@ var InputNumber = __WEBPACK_IMPORTED_MODULE_4_create_react_class___default()({
     } catch (e) {
       // Fix error in Chrome:
       // Failed to read the 'selectionStart' property from 'HTMLInputElement'
-      // http://stackoverflow.com/q/21177489/3040605
+      // https://stackoverflow.com/q/21177489/3040605
     }
   },
   componentDidUpdate: function componentDidUpdate() {
@@ -66137,7 +66137,7 @@ var IframeUploader = function (_Component) {
     }, _this.onChange = function () {
       var target = _this.getFormInputNode();
       // ie8/9 don't support FileList Object
-      // http://stackoverflow.com/questions/12830058/ie8-input-type-file-get-files
+      // https://stackoverflow.com/questions/12830058/ie8-input-type-file-get-files
       var file = _this.file = {
         uid: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__uid__["a" /* default */])(),
         name: target.value
@@ -67614,7 +67614,7 @@ function extractBeforeInputEvent(topLevelType, targetInst, nativeEvent, nativeEv
 
 /**
  * Create an `onBeforeInput` event to match
- * http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105/#events-inputevents.
+ * https://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105/#events-inputevents.
  *
  * This event plugin is based on the native `textInput` event
  * available in Chrome, Safari, Opera, and IE. This event fires after
@@ -68652,7 +68652,7 @@ var HTMLDOMPropertyConfig = {
     // color is for Safari mask-icon link
     color: 0,
     // itemProp, itemScope, itemType are for
-    // Microdata support. See http://schema.org/docs/gs.html
+    // Microdata support. See https://schema.org/docs/gs.html
     itemProp: 0,
     itemScope: HAS_BOOLEAN_VALUE,
     itemType: 0,
@@ -70261,7 +70261,7 @@ var voidElementTags = _assign({
 
 // We accept any tag to be rendered but since this gets injected into arbitrary
 // HTML, we want to make sure that it's a safe tag.
-// http://www.w3.org/TR/REC-xml/#NT-Name
+// https://www.w3.org/TR/REC-xml/#NT-Name
 
 var VALID_TAG_REGEX = /^[a-zA-Z][a-zA-Z:_\.\-\d]*$/; // Simplified subset
 var validatedTagCache = {};
@@ -70495,7 +70495,7 @@ ReactDOMComponent.Mixin = {
    * This method has side effects because events get registered.
    *
    * Iterating over object properties is faster than iterating over arrays.
-   * @see http://jsperf.com/obj-vs-arr-iteration
+   * @see https://jsperf.com/obj-vs-arr-iteration
    *
    * @private
    * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
@@ -70593,11 +70593,11 @@ ReactDOMComponent.Mixin = {
       // a newline specifically to get eaten by the parser. (Alternately for
       // textareas, replacing "^\n" with "\r\n" doesn't get eaten, and the first
       // \r is normalized out by HTMLTextAreaElement#value.)
-      // See: <http://www.w3.org/TR/html-polyglot/#newlines-in-textarea-and-pre>
-      // See: <http://www.w3.org/TR/html5/syntax.html#element-restrictions>
-      // See: <http://www.w3.org/TR/html5/syntax.html#newlines>
+      // See: <https://www.w3.org/TR/html-polyglot/#newlines-in-textarea-and-pre>
+      // See: <https://www.w3.org/TR/html5/syntax.html#element-restrictions>
+      // See: <https://www.w3.org/TR/html5/syntax.html#newlines>
       // See: Parsing of "textarea" "listing" and "pre" elements
-      //  from <http://www.w3.org/TR/html5/syntax.html#parsing-main-inbody>
+      //  from <https://www.w3.org/TR/html5/syntax.html#parsing-main-inbody>
       return '\n' + ret;
     } else {
       return ret;
@@ -71163,7 +71163,7 @@ function isControlled(props) {
  * The rendered element will be initialized as unchecked (or `defaultChecked`)
  * with an empty value (or `defaultValue`).
  *
- * @see http://www.w3.org/TR/2012/WD-html5-20121025/the-input-element.html
+ * @see https://www.w3.org/TR/2012/WD-html5-20121025/the-input-element.html
  */
 var ReactDOMInput = {
   getHostProps: function (inst, props) {
@@ -74549,8 +74549,8 @@ module.exports = '15.6.1';
 
 
 var NS = {
-  xlink: 'http://www.w3.org/1999/xlink',
-  xml: 'http://www.w3.org/XML/1998/namespace'
+  xlink: 'https://www.w3.org/1999/xlink',
+  xml: 'https://www.w3.org/XML/1998/namespace'
 };
 
 // We use attributes for everything SVG so let's avoid some duplication and run
@@ -75157,7 +75157,7 @@ var SimpleEventPlugin = {
       case 'topVolumeChange':
       case 'topWaiting':
         // HTML Events
-        // @see http://www.w3.org/TR/html5/index.html#events-0
+        // @see https://www.w3.org/TR/html5/index.html#events-0
         EventConstructor = SyntheticEvent;
         break;
       case 'topKeyPress':
@@ -75241,7 +75241,7 @@ var SimpleEventPlugin = {
     // non-interactive elements, which means delegated click listeners do not
     // fire. The workaround for this bug involves attaching an empty click
     // listener on the target node.
-    // http://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
+    // https://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
     if (registrationName === 'onClick' && !isInteractive(inst._tag)) {
       var key = getDictionaryKey(inst);
       var node = ReactDOMComponentTree.getNodeFromInstance(inst);
@@ -75284,7 +75284,7 @@ var SyntheticEvent = __webpack_require__(42);
 
 /**
  * @interface Event
- * @see http://www.w3.org/TR/css3-animations/#AnimationEvent-interface
+ * @see https://www.w3.org/TR/css3-animations/#AnimationEvent-interface
  * @see https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
  */
 var AnimationEventInterface = {
@@ -75328,7 +75328,7 @@ var SyntheticEvent = __webpack_require__(42);
 
 /**
  * @interface Event
- * @see http://www.w3.org/TR/clipboard-apis/
+ * @see https://www.w3.org/TR/clipboard-apis/
  */
 var ClipboardEventInterface = {
   clipboardData: function (event) {
@@ -75371,7 +75371,7 @@ var SyntheticEvent = __webpack_require__(42);
 
 /**
  * @interface Event
- * @see http://www.w3.org/TR/DOM-Level-3-Events/#events-compositionevents
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/#events-compositionevents
  */
 var CompositionEventInterface = {
   data: null
@@ -75412,7 +75412,7 @@ var SyntheticMouseEvent = __webpack_require__(98);
 
 /**
  * @interface DragEvent
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var DragEventInterface = {
   dataTransfer: null
@@ -75453,7 +75453,7 @@ var SyntheticUIEvent = __webpack_require__(81);
 
 /**
  * @interface FocusEvent
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var FocusEventInterface = {
   relatedTarget: null
@@ -75494,7 +75494,7 @@ var SyntheticEvent = __webpack_require__(42);
 
 /**
  * @interface Event
- * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
+ * @see https://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
  *      /#events-inputevents
  */
 var InputEventInterface = {
@@ -75540,7 +75540,7 @@ var getEventModifierState = __webpack_require__(154);
 
 /**
  * @interface KeyboardEvent
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var KeyboardEventInterface = {
   key: getEventKey,
@@ -75627,7 +75627,7 @@ var getEventModifierState = __webpack_require__(154);
 
 /**
  * @interface TouchEvent
- * @see http://www.w3.org/TR/touch-events/
+ * @see https://www.w3.org/TR/touch-events/
  */
 var TouchEventInterface = {
   touches: null,
@@ -75675,7 +75675,7 @@ var SyntheticEvent = __webpack_require__(42);
 
 /**
  * @interface Event
- * @see http://www.w3.org/TR/2009/WD-css3-transitions-20090320/#transition-events-
+ * @see https://www.w3.org/TR/2009/WD-css3-transitions-20090320/#transition-events-
  * @see https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent
  */
 var TransitionEventInterface = {
@@ -75719,7 +75719,7 @@ var SyntheticMouseEvent = __webpack_require__(98);
 
 /**
  * @interface WheelEvent
- * @see http://www.w3.org/TR/DOM-Level-3-Events/
+ * @see https://www.w3.org/TR/DOM-Level-3-Events/
  */
 var WheelEventInterface = {
   deltaX: function (event) {
@@ -75935,7 +75935,7 @@ function dangerousStyleValue(name, value, component, isCustomProperty) {
   // the markup. If you provide unsafe user data here they can inject
   // arbitrary CSS which may be problematic (I couldn't repro this):
   // https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
-  // http://www.thespanner.co.uk/2007/11/26/ultimate-xss-css-injection/
+  // https://www.thespanner.co.uk/2007/11/26/ultimate-xss-css-injection/
   // This is not an XSS hole but instead a potential CSS injection issue
   // which has lead to a greater discussion about how we're going to
   // trust URLs moving forward. See #2115901
@@ -79410,7 +79410,7 @@ module.exports = function (css) {
 			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
 
 		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		if (/^(#|data:|https:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
 		  return fullMatch;
 		}
 

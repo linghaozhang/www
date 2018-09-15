@@ -18,7 +18,7 @@
     <script src="../js/common.js"></script>
     <script src="../js/plupload.full.min.js" charset="utf-8"></script>
     <script src="../plugin/plupload/jquery.ui.plupload.min.js" charset="utf-8"></script>
-
+    <script src="../js/checkLogin.js"></script>
     <!-- page -->
     <link rel="stylesheet" href="../css/index.css">
 
@@ -63,7 +63,7 @@
         type: 'GET',
         headers:HEADER,
         data: {
-            userId  : sessionStorage.getItem('TRQuserid')
+            userId  : localStorage.getItem('TRQuserid')
         },
         success:function(data){
             console.log(6666,data);
@@ -222,7 +222,7 @@
             type: 'POST',
             headers:HEADER,
             data: {
-                id  : sessionStorage.getItem('TRQuserid'),
+                id  : localStorage.getItem('TRQuserid'),
                 identityCard:identityCardReview,
                 card:mpUrl,
                 identityCardReview:1,

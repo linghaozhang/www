@@ -18,7 +18,7 @@
     <script src="../js/common.js"></script>
     <script src="../js/plupload.full.min.js" charset="utf-8"></script>
     <script src="../plugin/plupload/jquery.ui.plupload.min.js" charset="utf-8"></script>
-
+    <script src="../js/checkLogin.js"></script>
     <!-- page -->
     <link rel="stylesheet" href="../css/index.css">
     <style>
@@ -172,7 +172,7 @@
             type: 'POST',
             headers:HEADER,
             data: {
-                fromId:sessionStorage.getItem('TRQuserid'),
+                fromId:localStorage.getItem('TRQuserid'),
                 toId:userId,
                 description:description,
                 content:$('#content').val(),

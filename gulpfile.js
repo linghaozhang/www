@@ -36,15 +36,15 @@ gulp.task('connect', function () {
         middleware: function (connect, opt) {
             return [
                 proxy('/public', {
-                    target: 'http://www.taihetourongbao.com',
+                    target: 'https://www.taihetourongbao.com',
                     changeOrigin:true
                 }),
                 proxy('/product', {
-                    target: 'http://172.16.1.60:8080',
+                    target: 'https://172.16.1.60:8080',
                     changeOrigin:true
                 }),
                 proxy('/bpauth', {
-                    target: 'http://192.168.24.77:8080',
+                    target: 'https://192.168.24.77:8080',
                     changeOrigin:true
                 })
             ]

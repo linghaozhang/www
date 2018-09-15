@@ -21,58 +21,87 @@ $.ajax({
                 $('.org').append(h);
             }
         }
+        $.ajax({
+            url: WWW_URL+'/user',
+            type: 'GET',
+            headers:HEADER,
+            data: {
+                userId:localStorage.getItem('TRQuserid'),
+            },
+            success:function(data){
+                var d = data.data;
+                console.log(999,d);
+                console.log(333,IMG_URL+d.card);
+                console.log(444,IMG_URL+d.avatar);
+                $('.photoBox img').attr({src:IMG_URL+d.avatar});
+                $('.cardBox img').attr({src:IMG_URL+d.card});
+                $('#card').val(IMG_URL+d.card);
+
+                $('#name').val(d.name);
+                // $('#birthday').val(d.birthday);
+                $('#regionInput').val(d.region); //地区
+                $('#orgType').val(d.orgType); // 机构类别
+                $('#org').val(d.org); // 机构选择
+                $('#orgName').val(d.orgName); //
+                $('#department').val(d.department); //
+                $('#position').val(d.position); //
+                $('#wechat').val(d.wechat); //
+                $('#email').val(d.email); //
+                // $('.cardBox').find(' img').attr({src:d.card})
+
+                console.log(123,d);
+            }
+        })
     }
 });
 
 
 // 填写原资料
-$.ajax({
-    url: WWW_URL+'/user',
-    type: 'GET',
-    headers:HEADER,
-    data: {
-        userId:sessionStorage.getItem('TRQuserid'),
-    },
-    success:function(data){
-        var d = data.data;
-        console.log(999,d);
-        console.log(333,IMG_URL+d.card);
-        console.log(444,IMG_URL+d.avatar);
-
-        $('.photoBox img').attr({src:IMG_URL+d.avatar});
-        $('.cardBox img').attr({src:IMG_URL+d.card});
-        $('#card').val(IMG_URL+d.card);
-
-        $('#name').val(d.name);
-        // $('#birthday').val(d.birthday);
-
-        if(d.region!=''){
-            var regionArr = eval(d.region);
-            var regionStr = '';
-            for (var i=0;i<regionArr.length;i++){
-                if (i == 0){
-                    regionStr+=regionArr[i]
-                }else{
-                    regionStr+= ' ' + regionArr[i];
-                }
-            }
-
-            $('#diquDD').html(regionStr); //地区
-        }
-
-
-        $('#orgType').val(d.orgType); // 机构类别
-        $('#org').val(d.org); // 机构选择
-        $('#orgName').val(d.orgName); //
-        $('#department').val(d.department); //
-        $('#position').val(d.position); //
-        $('#wechat').val(d.wechat); //
-        $('#email').val(d.email); //
-        // $('.cardBox').find(' img').attr({src:d.card})
-
-        console.log(123,d);
-    }
-})
+// $.ajax({
+//     url: WWW_URL+'/user',
+//     type: 'GET',
+//     headers:HEADER,
+//     data: {
+//         userId:localStorage.getItem('TRQuserid'),
+//     },
+//     success:function(data){
+//         var d = data.data;
+//         console.log(999,d);
+//         console.log(333,IMG_URL+d.card);
+//         console.log(444,IMG_URL+d.avatar);
+//
+//         $('.photoBox img').attr({src:IMG_URL+d.avatar});
+//         $('.cardBox img').attr({src:IMG_URL+d.card});
+//         $('#card').val(IMG_URL+d.card);
+//
+//         $('#name').val(d.name);
+//         // $('#birthday').val(d.birthday);
+//
+//         if(d.region!=''){
+//             var regionArr = eval(d.region);
+//             var regionStr = '';
+//             for (var i=0;i<regionArr.length;i++){
+//                 if (i == 0){
+//                     regionStr+=regionArr[i]
+//                 }else{
+//                     regionStr+= ' ' + regionArr[i];
+//                 }
+//             }
+//
+//             $('#regionInput').html(regionStr); //地区
+//         }
+//         $('#orgType').val(d.orgType); // 机构类别
+//         $('#org').val(d.org); // 机构选择
+//         $('#orgName').val(d.orgName); //
+//         $('#department').val(d.department); //
+//         $('#position').val(d.position); //
+//         $('#wechat').val(d.wechat); //
+//         $('#email').val(d.email); //
+//         // $('.cardBox').find(' img').attr({src:d.card})
+//
+//         console.log(123,d);
+//     }
+// })
 
 // 提交
 function submitBtn() {
@@ -91,7 +120,7 @@ function submitBtn() {
         type: 'POST',
         headers: HEADER,
         data: {
-            id: sessionStorage.getItem('TRQuserid'),
+            id: localStorage.getItem('TRQuserid'),
 
             avatar:avatarStr,
             card:cardStr,

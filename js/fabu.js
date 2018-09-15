@@ -259,9 +259,9 @@ function tijiao() {
         type: 'post',
         headers:HEADER,
         data: {
-            id  : sessionStorage.getItem('TRQuserid'),
+            id  : localStorage.getItem('TRQuserid'),
             type:1,
-            userId:sessionStorage.getItem('TRQuserid'),
+            userId:localStorage.getItem('TRQuserid'),
             province:getSelectedId('#diqu','.xnbtnSelected'), //省份
             txt:$('#txt').val(), // 描述
             propertyType:getSelectedId('#propertyType','.xnbtnSelected2'), //资产类别
@@ -280,16 +280,15 @@ function tijiao() {
         },
         error:function (XMLHttpRequest, textStatus, errorThrown) {
             if (XMLHttpRequest.status==401){
-                layer.msg('您还未登录，请您先登陆！')
-                setTimeout(function () {
                     window.location.href = './login.html';
-                },1500)
             }
         }
     })
 
 }
-
+function back(){
+    location.href='./tourongbao-zichanfang.html'
+}
 
 $('.biandong').hide();
 $('.propertyTypeLabel_zhaiquan').show();

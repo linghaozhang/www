@@ -18,7 +18,6 @@
     <script src="../plugin/layer/layer.js" charset="utf-8"></script>
 	<script src="../js/md5.js" charset="utf-8"></script>
 	<script src="../js/common.js" charset="utf-8"></script>
-
 	<link rel="stylesheet" href="../css/login.css">
 
   <title>用户登录</title>
@@ -79,6 +78,26 @@
     function goto(url){
         window.location.href = url;
     }
+    //获取openid
+	function getOpenId(){
+        $.ajax({
+            url: WWW_URL+'/get/openid',
+            type: 'GET',
+            success:function(data){
+                alert(JSON.stringify(data))
+                // login();
+            }
+        })
+	}
+    function isWx(){
+        var ua = navigator.userAgent.toLowerCase();
+        var isWeixin = ua.indexOf('micromessenger') != -1;
+        if (isWeixin) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     // 登陆
 	function login() {
 		var userName = $('.userName').val();
@@ -107,10 +126,14 @@
                         layer.msg('您的资料还在审核中！');
                     }else if (review == 1){
                         //保存token
-                        sessionStorage.setItem("TRQuserid",data.data.userInfo.id);
+                        localStorage.setItem("TRQuserid",data.data.userInfo.id);
                         layer.msg('登录成功');
                         setTimeout(function () {
-                            window.location.href = './index.html'; //跳转至首页
+                            if(isWx()){
+                                window.location.href = WWW_URL+'/user/getopenid'; //跳转至首页
+                            }else{
+                                window.location.href = './index.html'; //跳转至首页
+                            }
                         },1200)
                     }else {
                         layer.msg('抱歉您的资料未通过审核！');

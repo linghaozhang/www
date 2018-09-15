@@ -70,12 +70,7 @@ $.ajax({
         console.log(data);
     },
     error:function (data) {
-
-        layer.msg('您还未登录，请先登录');
-        setTimeout(function () {
             window.location.href = './login.html';
-        },1500)
-        console.log(666,data);
     }
 })
 
@@ -149,7 +144,7 @@ function shoucangList() {
         async:false,
         headers:HEADER,
         data: {
-            userId : sessionStorage.getItem('TRQuserid')
+            userId : localStorage.getItem('TRQuserid')
         },
         success:function(data){
             shoucangList = data.data;
@@ -296,7 +291,7 @@ function shoucang(that,collectId) {
         headers:HEADER,
         async:false,
         data: {
-            userId : sessionStorage.getItem('TRQuserid'),
+            userId : localStorage.getItem('TRQuserid'),
             type:'1', // 1是人 2是帖子
             collectId:collectId,
             txt:''
@@ -312,7 +307,7 @@ function shoucang(that,collectId) {
                     async:false,
                     headers:HEADER,
                     data: {
-                        userId : sessionStorage.getItem('TRQuserid')
+                        userId : localStorage.getItem('TRQuserid')
                     },
                     success:function(data){
                         shoucangList = data.data;
@@ -337,7 +332,7 @@ function quxiaoshoucang(id){
         headers:HEADER,
         async:false,
         data: {
-            userId:sessionStorage.getItem('TRQuserid'),
+            userId:localStorage.getItem('TRQuserid'),
             collectId:id,
         },
         success:function(data){
@@ -349,7 +344,7 @@ function quxiaoshoucang(id){
                     async:false,
                     headers:HEADER,
                     data: {
-                        userId : sessionStorage.getItem('TRQuserid')
+                        userId : localStorage.getItem('TRQuserid')
                     },
                     success:function(data){
                         shoucangList = data.data;
@@ -362,10 +357,7 @@ function quxiaoshoucang(id){
         },
         error:function (XMLHttpRequest, textStatus, errorThrown) {
             if (XMLHttpRequest.status==401){
-                layer.msg('您还未登录，请您先登陆！')
-                setTimeout(function () {
                     window.location.href = './login.html';
-                },1500)
             }
         }
     })

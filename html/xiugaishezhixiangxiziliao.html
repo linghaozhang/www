@@ -16,7 +16,7 @@
     <script src="../js/amazeui.min.js"></script>
     <script src="../plugin/layer/layer.js"></script>
     <script src="../js/common.js"></script>
-
+    <script src="../js/checkLogin.js"></script>
     <!-- page -->
     <link rel="stylesheet" href="../css/shezhixiangxiziliao.css">
 
@@ -64,7 +64,10 @@
         <div class="zijinxiangxipeizhi">
 
             <div class="am-g xuanzeList" style="padding:10px;">
-
+                <div class="am-form-group">
+                    <label for="doc-ta-1">投资要求</label>
+                    <textarea class="" rows="8"  id="touziyaoqiu" placeholder="温馨提示：请点击右上方“···”功能，使用“浮窗”功能，切换到微信，复制粘贴文字会更方便！为更高效的进行业务对接，请您用文字尽可能详细描述单位资金投向及偏好，且发布内容不少于100字，另外发布内容中不可带有任何联系方式，一经发现后台将自动删除信息，并警告封号处理。"></textarea>
+                </div>
                 <div class="jigouleibie">
                     <p class="tit">投资方式：</p>
                     <div class="am-g" id="touzifangshi">
@@ -175,10 +178,7 @@
 
 
 
-                <div class="am-form-group">
-                    <label for="doc-ta-1">投资要求</label>
-                    <textarea class="" rows="8"  id="touziyaoqiu" placeholder="温馨提示：请点击右上方“···”功能，使用“浮窗”功能，切换到微信，复制粘贴文字会更方便！为更高效的进行业务对接，请您用文字尽可能详细描述单位资金投向及偏好，且发布内容不少于100字，另外发布内容中不可带有任何联系方式，一经发现后台将自动删除信息，并警告封号处理。"></textarea>
-                </div>
+
 
                 <div class="am-form-group">
                     <label for="doc-ta-1">投资案例</label>
@@ -195,6 +195,7 @@
         </div>
 
         <p><button type="button" style="width: 94.5%;margin-left: 10px;" class="am-btn am-btn-danger" onclick="tijiao();" style="width:100%">保存</button></p>
+        <p><button type="button" style="width: 94.5%;margin-left: 10px;" class="am-btn am-btn-danger" onclick="back();" style="width:100%">返回</button></p>
 
     </fieldset>
 </form>
@@ -202,7 +203,9 @@
 <script src="../js/shezhixiangxiziliao.js"></script>
 </body>
 <script type="text/javascript">
-
+    function back(){
+        location.href='./my.html'
+    }
 
 
 
