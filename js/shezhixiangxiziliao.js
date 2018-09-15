@@ -251,7 +251,7 @@ function tijiao() {
 
             investReq:$('#touziyaoqiu').val(), // 投资要求
             investCase:$('#touzianli').val(), // 投资案例
-            remark:$('#beizhu').val(), // 备注
+            beizhu:$('#beizhu').val(), // 备注
 
             detailedOk:1  // 是否已完善详细信息
         },

@@ -164,6 +164,7 @@ function submitBtn(){
         layer.msg('请将注册信息填写完整');
         return false;
     }
+    alert('注册入参::'+JSON.stringify(content));
     // 提交注册信息
     $.ajax({
         url: WWW_URL+'/user/register',
@@ -171,12 +172,12 @@ function submitBtn(){
         data: content,
         success:function(data){
             console.log(112233445566,data);
+            alert('注册成功::'+JSON.stringify(data));
             if (data.status=="0"){
                 // layer.msg('提交注册信息成功，请等待管理员审核！');
                 $(".register-modal").fadeIn();
                 var uid = getUrlPar('userId');
                 if (uid != null){
-
                     $.ajax({
                         url: WWW_URL+'/invite/create',
                         type: 'POST',
@@ -189,16 +190,11 @@ function submitBtn(){
                             return false;
                         }
                     })
-
-
                 }else{
                     // setTimeout(function () {
                     //     window.location.href = './login.html'; //跳转至登录页
                     // },1200)
                 }
-
-
-
             }else{
                 layer.msg(data.msg);
             }

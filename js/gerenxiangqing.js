@@ -2,6 +2,7 @@
 // 将数组字符串 转为字符串 ['a','b'] => a*b
 function arrToStr(arrStr,type) {
     if(arrStr==0) return '';
+    if(!arrStr){return ''}
     console.log(11,arrStr);
     var arr = eval(arrStr);
     var r = '';
@@ -128,7 +129,8 @@ $.ajax({
         // if($('#touzihangye').html()=='') $('#touzihangye').parent().remove();
 
         $('#caogubili').html(d.stake);
-        $('#beizhu').html(d.remark);
+        $('#beizhu').html(d.beizhu);
+        if($('#beizhu').html()=='') $('#beizhu').parent().remove();
 
         console.log(888666,$('#touzifangshi').html());
 

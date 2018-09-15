@@ -372,7 +372,7 @@ if (indexId != null){
     console.log(9598,indexId,indexIdObj.length);
 
     for (var i=0;i<indexIdObj.length;i++){
-        
+
 
         if (indexIdObj.eq(i).attr('configid') == indexId){
             indexIdObj.eq(i).addClass('xnbtnSelected')
@@ -475,92 +475,63 @@ function tuijianList() {
         success:function(data){
             console.log('推荐',data);
             var d = data.data.recommendInfo;
-
             for (var i=0;i<d.length;i++){
-
                 var obj= d[i];
-                
                 var html = '';
-                html += '<div class="swiper-slide" style="position: relative;">';
-                html += '<p style="position:absolute;width:20px;background:#dd514c;color:#fff;top:10px;right:12px;font-size: 10px;padding:2px 4px;">推荐</p>';
-                html += '<div class="item" style="">';
-                html += '<div class="am-g">';
-                html += '<div class="am-u-sm-2">';
-                html += '<img src="'+IMG_URL+obj.avatar+'"  class="logo" onclick="QJgotoGeren('+obj.id+');">';
-                html += '</div>';
-                html += '<div class="am-u-sm-10">';
-                html += '<p class="nameBox">';
-                html += '<span class="name">'+obj.name+'</span>';
-                html += ' <span class="sf">'+obj.position+'</span>';
-                html += '</p><p class="zhiwei" style="margin-top:-5px;">'+obj.orgName+'</p>';
-                html += '</div>';
+                if(obj.investReq){
+                    html += '<div class="swiper-slide" style="position: relative;">';
+                    html += '<p style="position:absolute;width:20px;background:#dd514c;color:#fff;top:10px;right:12px;font-size: 10px;padding:2px 4px;">推荐</p>';
+                    html += '<div class="item" style="">';
+                    html += '<div class="am-g">';
+                    html += '<div class="am-u-sm-2">';
+                    html += '<img src="'+IMG_URL+obj.avatar+'"  class="logo" onclick="QJgotoGeren('+obj.id+');">';
+                    html += '</div>';
+                    html += '<div class="am-u-sm-10">';
+                    html += '<p class="nameBox">';
+                    html += '<span class="name">'+obj.name+'</span>';
+                    html += ' <span class="sf">'+obj.position+'</span>';
+                    html += '</p><p class="zhiwei" style="margin-top:-5px;">'+obj.orgName+'</p>';
+                    html += '</div>';
 
-                //
-                // html += '<div class="am-u-sm-3" >';
-                // html += '<p class="djBox"style="margin-right:5px;">';
-                // // html += '<span class="dj"></span>';
-                //
-                //
-                // // 判断当前是否已经收藏
-                // var h=0;
-                // var sdf;
-                // for(var j=0;j<shoucangList.length;j++){
-                //     if (shoucangList[j].collectId == obj.id){
-                //         h=1;
-                //         sdf = shoucangList[j];
-                //     }
-                // }
-                // if (h ==0){
-                //     html += '<span class="dj" style="padding:5px 10px;border:1px solid #dd514c;" onclick="shoucang(this, '+obj.id+');">收藏</span>';
-                // }else{
-                //     html += '<span class="dj am-btn xdbtn" style="padding:5px 10px;border:1px solid #dd514c;" onclick="quxiaoshoucang('+obj.id+');">已收藏</span>';
-                //     // html += '<button type="button" class="am-btn am-btn-default xdbtn"  onclick="quxiaoshoucang('+ sdf.collectId +')");">已收藏</button>';
-                // }
-                //
-                // html += '</p></div>';
+                    var investReq = obj.investReq ? obj.investReq : '';
 
-                var investReq = obj.investReq == null ? '' : obj.investReq;
+                    html += '</div>';
+                    html += '<div class="am-g" style="margin:10px 0;">';
+                    html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren('+obj.id+');">'+investReq+'</div>';
+                    html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
+                    html += '标签：';
 
-                html += '</div>';
-                html += '<div class="am-g" style="margin:10px 0;">';
-                html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren('+obj.id+');">'+investReq+'</div>';
-                html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
-                html += '标签：';
-
-                /*机构类别*/
-                if (obj.orgTypeStr != '' && obj.orgTypeStr != null ){
-                    // html += '<div class="am-u-sm-6" style="margin-bottom: 5px;"><button class="am-btn am-btn-default am-btn-xs label" style="width:100%;">'+obj.orgTypeStr+'</button></div>';
-
-                    html += obj.orgTypeStr + '<span style="color:#dd514c;"> | </span>';
-
-                }
-
-                /*投资方式*/
-                if (obj.investStyleStr != ''){
-                    for (var j=0;j<obj.investStyleStr.length;j++) {
-                        // html += '<div class="am-u-sm-6" style="margin-bottom: 5px;"><button class="am-btn am-btn-default am-btn-xs label" style="width:100%;">'+obj.investStyleStr[j]+'</button></div>';
-
-                        html += obj.investStyleStr[j] + '<span style="color:#dd514c;"> | </span>';
+                    /*机构类别*/
+                    if (obj.orgTypeStr != '' && obj.orgTypeStr != null ){
+                        html += obj.orgTypeStr + '<span style="color:#dd514c;"> | </span>';
                     }
 
-                }
+                    /*投资方式*/
+                    if (obj.investStyleStr&&obj.investStyleStr instanceof Array ){
+                        for (var j=0;j<obj.investStyleStr.length;j++) {
+                            // html += '<div class="am-u-sm-6" style="margin-bottom: 5px;"><button class="am-btn am-btn-default am-btn-xs label" style="width:100%;">'+obj.investStyleStr[j]+'</button></div>';
 
-                /*资金偏好标签*/
-                if (obj.Preference != ''){
-                    for (var k=0;k<obj.sourceStr.length;k++){
-                        // html += '<div class="am-u-sm-6" style="margin-bottom: 5px;"><button class="am-btn am-btn-default am-btn-xs label" style="width:100%;">'+obj.sourceStr[k]+'</button></div>';
-                        html += obj.sourceStr[k] + '<span style="color:#dd514c;"> | </span>';
+                            html += obj.investStyleStr[j] + '<span style="color:#dd514c;"> | </span>';
+                        }
 
                     }
 
+                    /*资金偏好标签*/
+                    if (obj.Preference != ''){
+                        for (var k=0;k<obj.sourceStr.length;k++){
+                            // html += '<div class="am-u-sm-6" style="margin-bottom: 5px;"><button class="am-btn am-btn-default am-btn-xs label" style="width:100%;">'+obj.sourceStr[k]+'</button></div>';
+                            html += obj.sourceStr[k] + '<span style="color:#dd514c;"> | </span>';
+                        }
+                    }
+                    html += '</div>';
+                    html += '<div class="am-g" style="text-align: center;">';
+                    html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;" onclick="yewuduijie('+obj.id+');">业务对接</button>';
+                    html += '</div></div></div>';
                 }
 
-                html += '</div>';
-                html += '<div class="am-g" style="text-align: center;">';
-                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;" onclick="yewuduijie('+obj.id+');">业务对接</button>';
-                html += '</div></div></div>';
 
                 $('.swiper-wrapper').append(html);
+
             }
             mySwiper.update();
         }

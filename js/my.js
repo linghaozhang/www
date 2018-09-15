@@ -73,6 +73,7 @@ function goto(url){
 $('._exit').on('click',function(){
     layer.msg('退出成功');
    localStorage.removeItem('TRQtoken') ;
+    localStorage.removeItem('TRQuserid');
     setTimeout(function () {
         window.location.href = './login.html';
     },1500)
