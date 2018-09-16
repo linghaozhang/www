@@ -1,4 +1,4 @@
-// 修改底部TAB颜色
+//swiper-wrapper// 修改底部TAB颜色
 $('.tabTou').css({color:"#dd514c"});
 $('.zichanfangView').css({color:"#dd514c"});
 
@@ -468,7 +468,7 @@ function tuijianList() {
 
                 html += '</div>';
                 html += '<div class="am-g">';
-                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.id+');">业务对接</button>';
+                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.userId+');">业务对接</button>';
                 html += '</div></div></div>';
 
                 console.log(998,html);
