@@ -55,10 +55,8 @@ function init() {
             }
         }
     })
-
 };
 init();
-
 console.log('我邀请了几个好友?',dqyhyqs);
 
 function yewuduijie(duijieId) {
@@ -297,10 +295,6 @@ function duiduiren(userId) {
                     if (duijieData.joinType == 2){
                         $('#weituopxitong').show();
                     }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
                         $('#chakanlianxifangshi').show();
                     }
                 }
@@ -314,16 +308,11 @@ function duiduiren(userId) {
                     return false;
                 }else {
                     console.log('走入这个逻辑22222');
-
                     // 被对接人是限制模式
                     if (duijieData.beDockingType == 2){
                         $('#chengweihuiyuan').show();
                         return false
                     }else {
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
                         $('#chakanlianxifangshi').show();
                         return false;
                     }
