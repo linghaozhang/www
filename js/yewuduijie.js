@@ -150,8 +150,21 @@ function yewuduijie(duijieId) {
             }
             //是不是要邀请好友
             if(userData.dockingType==2){
+                if (userData.payOk == 1){
+                    if (duijieData.joinType == 2){
+                        $('#weituopxitong').show();
+                    }else{
+                        if(data.times===0){
+                            layer.msg(data.msg);
+                            return false
+                        }
+                        $('#chakanlianxifangshi').show();
+                    }
+                    return false
+                }
                 // 如果没邀请够人数
-                if (dqyhyqs<yaoqingfz){
+                if (data.count<5){
+                    layer.msg(data.msg);
                     $('#yaoqinghaoyou').show();
                     return false;
                 }else {
@@ -302,17 +315,29 @@ function duiduiren(userId) {
             }
             //是不是要邀请好友
             if(userData.dockingType==2){
+                if (userData.payOk == 1){
+                    if (duijieData.joinType == 2){
+                        $('#weituopxitong').show();
+                    }else{
+                        if(data.times===0){
+                            layer.msg(data.msg);
+                            return false
+                        }
+                        $('#chakanlianxifangshi').show();
+                    }
+                    return false
+                }
                 // 如果没邀请够人数
-                if (dqyhyqs<yaoqingfz){
+                if (data.count<5){
+                    layer.msg(data.msg);
                     $('#yaoqinghaoyou').show();
                     return false;
                 }else {
-                    console.log('走入这个逻辑22222');
                     // 被对接人是限制模式
                     if (duijieData.beDockingType == 2){
                         $('#chengweihuiyuan').show();
                         return false
-                    }else {
+                    }else{
                         $('#chakanlianxifangshi').show();
                         return false;
                     }

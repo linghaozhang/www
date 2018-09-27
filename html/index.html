@@ -31,7 +31,7 @@
       </ul>
     </div>
     <script>
-      let vConsole = new VConsole();
+//      let vConsole = new VConsole();
       $(function() {
         var $slider = $('#demo-slider-0');
         var counter = 0;
@@ -232,6 +232,7 @@
 //
    window.onload=function(){
        if(location.search){
+           console.log('openId',location.search);
            localStorage.setItem('openId',location.search);
        }
    }

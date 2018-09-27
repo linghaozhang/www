@@ -145,9 +145,13 @@ $.ajax({
             var ID = obj.userId;
             
             for (var j=0;j<allUser.length;j++){
+
+
                 if (allUser[j].id == obj.userId){
                     var userObj = allUser[j];
+
                     console.log(11223344,userObj);
+
                     var html = '';
                     html += '<div class="item" style="">';
                     html += '<div class="am-g">';
@@ -170,12 +174,16 @@ $.ajax({
 
                     html += '</div>';
                     html += '<div class="am-g">';
-                    html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.userId+');">业务对接</button>';
+                    html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.id+');">业务对接</button>';
                     html += '</div></div>';
+
                     $('.contentBox').unshift(html);
+
                 }
             }
         }
+
+
     }
 });
 
