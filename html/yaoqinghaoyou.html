@@ -16,7 +16,7 @@
     <script src="../js/amazeui.min.js"></script>
     <script src="../plugin/layer/layer.js"></script>
     <script src="../js/common.js"></script>
-
+    <script src="../js/vconsole.js"></script>
     <!--分享到微信-->
     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
@@ -62,14 +62,14 @@
 
 </body>
 <script type="text/javascript">
-
-    var user = localStorage.getItem('TRQuserid');
+    let vConsole = new VConsole();
+    var userTq = localStorage.getItem('TRQtoken');
     /* 判断是否登录 */
-    if (user){
-        $('#fenxiang').css({display:'none'})
-        $('#mx').css({display:'none'})
-    }else{
+    if (userTq){
         $('#zhuce').css({display:'none'})
+    }else{
+        $('#fenxiang').css({display:'none'});
+        $('#mx').css({display:'none'})
     }
 
 
@@ -93,7 +93,6 @@
 
     $(function(){
         var url = location.href.split('#').toString();//url不能写死
-        console.log('url',url);
         $.ajax({
             type : "POST",
             url: WWW_URL + '/share/wx',
