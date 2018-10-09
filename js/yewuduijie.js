@@ -391,7 +391,7 @@ function duiduiren(userId) {
 }
 
 $('._invite').on('click',function(){
-    location.href='./yaoqinghaoyou.html'
+    window.location.href = './yaoqinghaoyou.html?userId='+localStorage.getItem('TRQuserid');
 });
 
 

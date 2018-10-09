@@ -210,9 +210,17 @@
     function save(){
 
         var zmUrlArr = $('#zhengmian').attr('src').split('/');
+        if(zmUrlArr[zmUrlArr.length-1]==='shenfenrenzhen.jpg'){
+            layer.msg('请上传身份证正面');
+            return false
+        }
         var zmUrl = 'file/'+ zmUrlArr[zmUrlArr.length-1];
 
         var fmUrlArr = $('#fanmian').attr('src').split('/');
+        if(fmUrlArr[fmUrlArr.length-1]==='shenfenrenzhen.jpg'){
+            layer.msg('请上传身份证反面');
+            return false
+        }
         var fmUrl = 'file/'+ fmUrlArr[fmUrlArr.length-1];
         console.log(12233,zmUrl);
         var identityCardReview = '["'+zmUrl+'","'+fmUrl+'"]';

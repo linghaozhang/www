@@ -72,7 +72,7 @@
 
     <div style="margin:20px 0px;text-align: center;" id="fenxiang">
         <button type="button" class="am-btn am-btn-danger" style="width:93%;padding:0;">
-            <a href="./yaoqinghaoyou.html" style="display:block;color:#fff;padding: .5em 1em;">马上分享给好友获取奖励</a>
+            <a onclick="goto('./yaoqinghaoyou.html')" style="display:block;color:#fff;padding: .5em 1em;">马上分享给好友获取奖励</a>
         </button>
     </div>
 
@@ -96,4 +96,9 @@
 </body>
 <script src="../js/common.js"></script>
 <script src="../js/yue.js"></script>
+<script>
+    function goto(url){
+        window.location.href = url+'?userId='+localStorage.getItem('TRQuserid');
+    }
+</script>
 </html>
