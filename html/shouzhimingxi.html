@@ -29,9 +29,10 @@
 <table class="am-table">
     <thead>
         <tr class="titleBox" style="text-align: center">
-            <th style="text-align: center">被邀请人</th>
-            <th style="text-align: center">奖励金额</th>
-            <th style="text-align: center">邀请时间</th>
+            <th style="text-align: center;font-size:1.2rem;font-weight:normal">被邀请人</th>
+            <th style="text-align: center;font-size:1.2rem;font-weight:normal">奖励金额</th>
+            <th style="text-align: center;font-size:1.2rem;font-weight:normal">审核状态</th>
+            <th style="text-align: center;font-size:1.2rem;font-weight:normal">邀请时间</th>
             <!--<th>时间</th>-->
         </tr>
     </thead>
@@ -58,28 +59,22 @@
         },
         success:function(data){
             console.log(6666,data);
-
             var d = data.data;
             var allNumber = 0;
             for (var i=0;i<d.length;i++){
-//
                 var obj = d[i].userInfo; // 详细信息
-//
-//
                 allNumber += d[i].price;
                 var typeStr = d[i].type==1? '好友邀请':''; //类型文字
-//
-//
+                var review=obj.review===1?'已通过':'未通过';
                 var html = '';
                 html += '<tr style="text-align: center">';
-                html += '<td>'+obj.name+'</td>';
-
+                html += '<td style="font-size:1.3rem;">'+obj.name+'</td>';
                 var payOkTxt = obj.payOk == 1 ? 200 : 0;
-                var time = obj.created_at.substring(0,10);
-
-
-                html += '<td>'+payOkTxt+'</td>';
-                html += '<td>'+time+'</td>';
+                var time = obj.created_at;
+                // var time = obj.created_at.substring(0,10);
+                html += '<td style="font-size:1.2rem;">'+payOkTxt+'</td>';
+                html += '<td style="font-size:1.2rem;">'+review+'</td>';
+                html += '<td style="font-size:1.2rem;">'+time+'</td>';
                 html += '</tr>';
 //
                 $('#content').prepend(html);
