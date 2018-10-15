@@ -16,7 +16,6 @@
     <script src="../js/amazeui.min.js"></script>
     <script src="../plugin/layer/layer.js"></script>
     <script src="../js/common.js"></script>
-    <script src="../js/vconsole.js"></script>
     <!--分享到微信-->
     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
@@ -62,7 +61,6 @@
 
 </body>
 <script type="text/javascript">
-    let vConsole = new VConsole();
     var userTq = localStorage.getItem('TRQtoken');
     /* 判断是否登录 */
     if (userTq){
@@ -103,7 +101,7 @@
             success : function(data) {
                 if(data.msg==='Success'){
                     wx.config({
-                        debug: true,////生产环境需要关闭debug模式
+                        debug: false,////生产环境需要关闭debug模式
                         appId: data.data.appId,//appId通过微信服务号后台查看
                         timestamp: data.data.timestamp,//生成签名的时间戳
                         nonceStr: data.data.nonceStr,//生成签名的随机字符串

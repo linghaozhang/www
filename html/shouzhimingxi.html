@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="viewport"content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <!-- common -->
@@ -24,24 +24,24 @@
 </head>
 <body style="padding:15px;">
 <!--<p class="mingxi" style="padding-left:30px;">-->
-    <!--邀请记录-->
+<!--邀请记录-->
 <!--</p>-->
 <table class="am-table">
     <thead>
-        <tr class="titleBox" style="text-align: center">
-            <th style="text-align: center;font-size:1.2rem;font-weight:normal">被邀请人</th>
-            <th style="text-align: center;font-size:1.2rem;font-weight:normal">奖励金额</th>
-            <th style="text-align: center;font-size:1.2rem;font-weight:normal">审核状态</th>
-            <th style="text-align: center;font-size:1.2rem;font-weight:normal">邀请时间</th>
-            <!--<th>时间</th>-->
-        </tr>
+    <tr class="titleBox" style="text-align: center">
+        <th style="text-align: center;font-size:1.2rem;font-weight:normal">被邀请人</th>
+        <th style="text-align: center;font-size:1.2rem;font-weight:normal">奖励金额</th>
+        <th style="text-align: center;font-size:1.2rem;font-weight:normal">审核状态</th>
+        <th style="text-align: center;font-size:1.2rem;font-weight:normal">邀请时间</th>
+        <!--<th>时间</th>-->
+    </tr>
     </thead>
     <tbody id="content">
-        <!--<tr style="text-align: center">-->
-        <!--<td>刘德华</td>-->
-        <!--<td>200.00</td>-->
-        <!--<td>2017-11-11</td>-->
-        <!--</tr>-->
+    <!--<tr style="text-align: center">-->
+    <!--<td>刘德华</td>-->
+    <!--<td>200.00</td>-->
+    <!--<td>2017-11-11</td>-->
+    <!--</tr>-->
     </tbody>
     </tbody>
 </table>
@@ -51,30 +51,36 @@
 <script type="text/javascript">
     // 获取总收入和收入列表
     $.ajax({
-        url: WWW_URL+'/invite/get',
+        url: WWW_URL + '/invite/get',
         type: 'get',
-        headers:HEADER,
+        headers: HEADER,
         data: {
-            inviteId : localStorage.getItem('TRQuserid')
+            inviteId: localStorage.getItem('TRQuserid')
         },
-        success:function(data){
-            console.log(6666,data);
+        success: function (data) {
             var d = data.data;
             var allNumber = 0;
-            for (var i=0;i<d.length;i++){
+            for (var i = 0; i < d.length; i++) {
                 var obj = d[i].userInfo; // 详细信息
                 allNumber += d[i].price;
-                var typeStr = d[i].type==1? '好友邀请':''; //类型文字
-                var review=obj.review===1?'已通过':'未通过';
+                var typeStr = d[i].type == 1 ? '好友邀请' : ''; //类型文字
+                var review;
+                if (obj.review === 0) {
+                    review = '待审核'
+                } else if (obj.review === 1) {
+                    review = '已通过'
+                } else {
+                    review = '未通过'
+                }
                 var html = '';
                 html += '<tr style="text-align: center">';
-                html += '<td style="font-size:1.3rem;">'+obj.name+'</td>';
+                html += '<td style="font-size:1.3rem;">' + obj.name + '</td>';
                 var payOkTxt = obj.payOk == 1 ? 200 : 0;
                 var time = obj.created_at;
                 // var time = obj.created_at.substring(0,10);
-                html += '<td style="font-size:1.2rem;">'+payOkTxt+'</td>';
-                html += '<td style="font-size:1.2rem;">'+review+'</td>';
-                html += '<td style="font-size:1.2rem;">'+time+'</td>';
+                html += '<td style="font-size:1.2rem;">' + payOkTxt + '</td>';
+                html += '<td style="font-size:1.2rem;">' + review + '</td>';
+                html += '<td style="font-size:1.2rem;">' + time + '</td>';
                 html += '</tr>';
 //
                 $('#content').prepend(html);
@@ -88,9 +94,9 @@
 //            console.log(allNumber);
 //            console.log(data);
         },
-        error:function (XMLHttpRequest, textStatus, errorThrown) {
-            if (XMLHttpRequest.status==401){
-                    window.location.href = './login.html';
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            if (XMLHttpRequest.status == 401) {
+                window.location.href = './login.html';
             }
         }
     });

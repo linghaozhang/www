@@ -58,172 +58,177 @@ function init() {
 };
 init();
 console.log('我邀请了几个好友?',dqyhyqs);
-
 function yewuduijie(duijieId) {
     console.log('-----------------下面')
     var duijieData;
     // 获取被对接人的信息并写入页面
     $.ajax({
-        url: WWW_URL+'/user/getmsg',
+        url: WWW_URL+'/user',
         type: 'GET',
         async:false,
         headers:HEADER,
-        data:{
-            userId:duijieId
-        },
-        success:function(data){
-            console.log('datadata',data);
-
-            duijieData =data.data;
-            $('.card2').css({display:'block'});
-            $('.weixin2').css({display:'block'});
-            $('.dianhua2').css({display:'block'});
-            $('.youxiang2').css({display:'block'});
-            console.log('被对接数据',duijieData);
-            console.log('登录人数据',userData);
-            if(duijieData.card==='1'){
-                $('.card2').html("");
-            }else{
-                $('.cardImage').click(function () {
-                    window.open(IMG_URL+duijieData.card);
-                });
-            }
-            if (duijieData.openCard==0){
-                $('.card2').css({display:'none'});
-            }
-            if (duijieData.openWechat==1){
-                $('.weixin').html(duijieData.wechat);
-            }else{
-                $('.weixin2').css({display:'none'});
-            }
-
-            if (duijieData.openPhone==1){
-                $('.dianhua').html(duijieData.phone);
-            }else{
-                $('.dianhua2').css({display:'none'});
-            }
-
-            if (duijieData.openEmail==1){
-                $('.youxiang').html(duijieData.email);
-            }else{
-                $('.youxiang2').css({display:'none'});
-            }
-            if(duijieData.remark != ''){
-                $('.beizhuxinxi').html(duijieData.remark);
-            }else {
-                $('.beizhuxinxi').html('对接前请说明来自太和投融宝，谢谢！');
-            }
-
-            console.log('===== duijieData',duijieData);
-            console.log('==== userData',userData);
-
-            // 判断是不是为普通对接模式
-            if(userData.dockingType==1){
-                if (userData.payOk == 1){
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
+        success:function(res){
+            userData = res.data;
+            $.ajax({
+                url: WWW_URL+'/user/getmsg',
+                type: 'GET',
+                async:false,
+                headers:HEADER,
+                data:{
+                    userId:duijieId
+                },
+                success:function(data){
+                    duijieData =data.data;
+                    $('.card2').css({display:'block'});
+                    $('.weixin2').css({display:'block'});
+                    $('.dianhua2').css({display:'block'});
+                    $('.youxiang2').css({display:'block'});
+                    console.log('被对接数据',duijieData);
+                    console.log('登录人数据',userData);
+                    if(duijieData.card==='1'){
+                        $('.card2').html("");
                     }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
+                        $('.cardImage').click(function () {
+                            window.open(IMG_URL+duijieData.card);
+                        });
                     }
-                    return false
-                }
-                // 被对接人为限制模式
-                if (duijieData.beDockingType == 2){
-                    $('#chengweihuiyuan').show();
-                    return false;
-                }else {
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
+                    if (duijieData.openCard==0){
+                        $('.card2').css({display:'none'});
+                    }
+                    if (duijieData.openWechat==1){
+                        $('.weixin').html(duijieData.wechat);
                     }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
+                        $('.weixin2').css({display:'none'});
                     }
-                }
-                return false;
-            }
-            //是不是要邀请好友
-            if(userData.dockingType==2){
-                if (userData.payOk == 1){
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
+
+                    if (duijieData.openPhone==1){
+                        $('.dianhua').html(duijieData.phone);
                     }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
+                        $('.dianhua2').css({display:'none'});
                     }
-                    return false
-                }
-                // 如果没邀请够人数
-                if (data.count<5){
-                    $('#yaoqinghaoyou').show();
-                    return false;
-                }else {
-                    // 被对接人是限制模式
-                    if (duijieData.beDockingType == 2){
-                        $('#chengweihuiyuan').show();
-                        return false
+
+                    if (duijieData.openEmail==1){
+                        $('.youxiang').html(duijieData.email);
+                    }else{
+                        $('.youxiang2').css({display:'none'});
+                    }
+                    if(duijieData.remark != ''){
+                        $('.beizhuxinxi').html(duijieData.remark);
                     }else {
-                        $('#chakanlianxifangshi').show();
-                        return false;
+                        $('.beizhuxinxi').html('对接前请说明来自太和投融宝，谢谢！');
                     }
-                }
-            }
-            //是不是要交钱
-            if(userData.dockingType==3){
-                if (userData.payOk == 0) {
-                    $('#chengweihuiyuan').show();
-                }else {
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
-                    }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
+
+                    console.log('===== duijieData',duijieData);
+                    console.log('==== userData',userData);
+
+                    // 判断是不是为普通对接模式
+                    if(userData.dockingType==1){
+                        if (userData.payOk == 1){
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
                             return false
                         }
-                        $('#chakanlianxifangshi').show();
+                        // 被对接人为限制模式
+                        if (duijieData.beDockingType == 2){
+                            $('#chengweihuiyuan').show();
+                            return false;
+                        }else {
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                        }
+                        return false;
                     }
-                }
-            }
-            // 二选一
-            if(userData.dockingType==4){
-                if (userData.payOk == 1){
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
-                    }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
+                    //是不是要邀请好友
+                    if(userData.dockingType==2){
+                        if (userData.payOk == 1){
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
                             return false
                         }
-                        $('#chakanlianxifangshi').show();
+                        // 如果没邀请够人数
+                        if (data.count<5){
+                            $('#yaoqinghaoyou').show();
+                            return false;
+                        }else {
+                            // 被对接人是限制模式
+                            if (duijieData.beDockingType == 2){
+                                $('#chengweihuiyuan').show();
+                                return false
+                            }else {
+                                $('#chakanlianxifangshi').show();
+                                return false;
+                            }
+                        }
                     }
-                    return false
-                }
-                if (data.count<5) {
-                    $('#erxuanyi').show();
-                    return false;
-                }else {
-                    // 被对接人为限制模式
-                    if (duijieData.beDockingType == 2) {
-                        $('#chengweihuiyuan').show();
-                        return false;
-                    }else {
-                        $('#erxuanyi').show();
-                        return false;
+                    //是不是要交钱
+                    if(userData.dockingType==3){
+                        if (userData.payOk == 0) {
+                            $('#chengweihuiyuan').show();
+                        }else {
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                        }
+                    }
+                    // 二选一
+                    if(userData.dockingType==4){
+                        if (userData.payOk == 1){
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                            return false
+                        }
+                        if (data.count<5) {
+                            $('#erxuanyi').show();
+                            return false;
+                        }else {
+                            // 被对接人为限制模式
+                            if (duijieData.beDockingType == 2) {
+                                $('#chengweihuiyuan').show();
+                                return false;
+                            }else {
+                                $('#erxuanyi').show();
+                                return false;
+                            }
+                        }
                     }
                 }
-            }
+            });
         }
     });
-
 }
 
 // 对接资金方人员的时候调用的方法
@@ -232,159 +237,166 @@ function duiduiren(userId) {
     var duijieData;
     // 获取被对接人的信息并写入页面
     $.ajax({
-        url: WWW_URL+'/user/getmsg',
+        url: WWW_URL+'/user',
         type: 'GET',
         async:false,
         headers:HEADER,
-        data:{
-            userId:userId
-        },
-        success:function(data){
-            console.log('datadata',data);
+        success:function(res){
+            userData = res.data;
+            $.ajax({
+                url: WWW_URL+'/user/getmsg',
+                type: 'GET',
+                async:false,
+                headers:HEADER,
+                data:{
+                    userId:userId
+                },
+                success:function(data){
+                    console.log('datadata',data);
 
-            duijieData =data.data;
-            $('.card2').css({display:'block'});
-            $('.weixin2').css({display:'block'});
-            $('.dianhua2').css({display:'block'});
-            $('.youxiang2').css({display:'block'});
-            console.log(11223344,duijieData);
-            if(duijieData.card==='1'){
-                $('.card2').html("");
-            }else{
-                $('.cardImage').click(function () {
-                    window.open(IMG_URL+duijieData.card);
-                });
-            }
-            if (duijieData.openCard==0){
-                $('.card2').css({display:'none'});
-            }
+                    duijieData =data.data;
+                    $('.card2').css({display:'block'});
+                    $('.weixin2').css({display:'block'});
+                    $('.dianhua2').css({display:'block'});
+                    $('.youxiang2').css({display:'block'});
+                    console.log(11223344,duijieData);
+                    if(duijieData.card==='1'){
+                        $('.card2').html("");
+                    }else{
+                        $('.cardImage').click(function () {
+                            window.open(IMG_URL+duijieData.card);
+                        });
+                    }
+                    if (duijieData.openCard==0){
+                        $('.card2').css({display:'none'});
+                    }
 
-            if (duijieData.openWechat==1){
-                $('.weixin').html(duijieData.wechat);
-            }else{
-                $('.weixin2').css({display:'none'});
-            }
+                    if (duijieData.openWechat==1){
+                        $('.weixin').html(duijieData.wechat);
+                    }else{
+                        $('.weixin2').css({display:'none'});
+                    }
 
-            if (duijieData.openPhone==1){
-                $('.dianhua').html(duijieData.phone);
-            }else{
-                $('.dianhua2').css({display:'none'});
-            }
+                    if (duijieData.openPhone==1){
+                        $('.dianhua').html(duijieData.phone);
+                    }else{
+                        $('.dianhua2').css({display:'none'});
+                    }
 
-            if (duijieData.openEmail==1){
-                $('.youxiang').html(duijieData.email);
-            }else{
-                $('.youxiang2').css({display:'none'});
-            }
-            if(duijieData.remark != ''){
-                $('.beizhuxinxi').html(duijieData.remark);
-            }else {
-                $('.beizhuxinxi').html('对接前请说明来自太和投融宝，谢谢！');
-            }
-
-            console.log('===== duijieData',duijieData);
-            console.log('==== userData',userData);
-
-            // 判断是不是为普通对接模式
-            if(userData.dockingType==1){
-                if (userData.payOk == 1){
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
+                    if (duijieData.openEmail==1){
+                        $('.youxiang').html(duijieData.email);
                     }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
+                        $('.youxiang2').css({display:'none'});
                     }
-                    return false
-                }
-                // 被对接人为限制模式
-                if (duijieData.beDockingType == 2){
-                    $('#chengweihuiyuan').show();
-                    return false;
-                }else {
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
-                    }else{
-                        $('#chakanlianxifangshi').show();
-                    }
-                }
-                return false;
-            }
-            //是不是要邀请好友
-            if(userData.dockingType==2){
-                if (userData.payOk == 1){
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
-                    }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
-                    }
-                    return false
-                }
-                // 如果没邀请够人数
-                if (data.count<5){
-                    $('#yaoqinghaoyou').show();
-                    return false;
-                }else {
-                    // 被对接人是限制模式
-                    if (duijieData.beDockingType == 2){
-                        $('#chengweihuiyuan').show();
-                        return false
-                    }else{
-                        $('#chakanlianxifangshi').show();
-                        return false;
-                    }
-                }
-            }
-            //是不是要交钱
-            if(userData.dockingType==3){
-                if (userData.payOk == 0) {
-                    $('#chengweihuiyuan').show();
-                }else {
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
-                    }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
-                    }
-                }
-            }
-            // 二选一
-            if(userData.dockingType==4){
-                if (userData.payOk == 1){
-                    if (duijieData.joinType == 2){
-                        $('#weituopxitong').show();
-                    }else{
-                        if(data.times===0){
-                            layer.msg(data.msg);
-                            return false
-                        }
-                        $('#chakanlianxifangshi').show();
-                    }
-                    return false
-                }
-                if (data.count<5) {
-                    $('#erxuanyi').show();
-                    return false;
-                }else {
-                    // 被对接人为限制模式
-                    if (duijieData.beDockingType == 2) {
-                        $('#chengweihuiyuan').show();
-                        return false;
+                    if(duijieData.remark != ''){
+                        $('.beizhuxinxi').html(duijieData.remark);
                     }else {
-                        $('#erxuanyi').show();
+                        $('.beizhuxinxi').html('对接前请说明来自太和投融宝，谢谢！');
+                    }
+                    console.log('===== duijieData',duijieData);
+                    console.log('==== userData',userData);
+                    // 判断是不是为普通对接模式
+                    if(userData.dockingType==1){
+                        if (userData.payOk == 1){
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                            return false
+                        }
+                        // 被对接人为限制模式
+                        if (duijieData.beDockingType == 2){
+                            $('#chengweihuiyuan').show();
+                            return false;
+                        }else {
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                $('#chakanlianxifangshi').show();
+                            }
+                        }
                         return false;
                     }
+                    //是不是要邀请好友
+                    if(userData.dockingType==2){
+                        if (userData.payOk == 1){
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                            return false
+                        }
+                        // 如果没邀请够人数
+                        if (data.count<5){
+                            $('#yaoqinghaoyou').show();
+                            return false;
+                        }else {
+                            // 被对接人是限制模式
+                            if (duijieData.beDockingType == 2){
+                                $('#chengweihuiyuan').show();
+                                return false
+                            }else{
+                                $('#chakanlianxifangshi').show();
+                                return false;
+                            }
+                        }
+                    }
+                    //是不是要交钱
+                    if(userData.dockingType==3){
+                        if (userData.payOk == 0) {
+                            $('#chengweihuiyuan').show();
+                        }else {
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                        }
+                    }
+                    // 二选一
+                    if(userData.dockingType==4){
+                        if (userData.payOk == 1){
+                            if (duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                            }else{
+                                if(data.times===0){
+                                    layer.msg(data.msg);
+                                    return false
+                                }
+                                $('#chakanlianxifangshi').show();
+                            }
+                            return false
+                        }
+                        if (data.count<5) {
+                            $('#erxuanyi').show();
+                            return false;
+                        }else {
+                            // 被对接人为限制模式
+                            if (duijieData.beDockingType == 2) {
+                                $('#chengweihuiyuan').show();
+                                return false;
+                            }else {
+                                $('#erxuanyi').show();
+                                return false;
+                            }
+                        }
+                    }
                 }
-            }
+            });
         }
     });
 
@@ -435,34 +447,6 @@ if(weixinCode){
     });
 }
 
-
-
-// function jsApiCall()
-// {
-// 	WeixinJSBridge.invoke(
-// 		'getBrandWCPayRequest',
-// 		data,
-// 		function(res){
-// 			WeixinJSBridge.log(res.err_msg);
-// 			alert(res.err_code+res.err_desc+res.err_msg);
-// 		}
-// 	);
-// }
-// 
-// function callpay()
-// {
-// 	if (typeof WeixinJSBridge == "undefined"){
-// 	    if( document.addEventListener ){
-// 	        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
-// 	    }else if (document.attachEvent){
-// 	        document.attachEvent('WeixinJSBridgeReady', jsApiCall);
-// 	        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
-// 	    }
-// 	}else{
-// 	    jsApiCall();
-// 	}
-// }
-
 function isWx(){
     var ua = navigator.userAgent.toLowerCase();
     console.log(ua);
@@ -491,6 +475,8 @@ if(!isWx()){
     });
 }
 $('._pay').on('click',function(e){
+    $('erxuanyi').fadeOut();
+    $('chengweihuiyuan').fadeOut();
     pay(e);
 });
 window.onload=function(){
