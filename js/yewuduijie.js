@@ -475,8 +475,9 @@ if(!isWx()){
     });
 }
 $('._pay').on('click',function(e){
-    $('erxuanyi').fadeOut();
-    $('chengweihuiyuan').fadeOut();
+
+    $('#erxuanyi').fadeOut();
+    $('#chengweihuiyuan').fadeOut();
     pay(e);
 });
 window.onload=function(){
