@@ -160,10 +160,16 @@ function submitBtn(){
     // 判断是否填写完整
     var content = $('#formReg').serialize()+'&region='+$('#regionInput').val();
     var patt1=new RegExp("=&");
+    var card=$('#card').val();
+    if(!card){
+        layer.msg('请上传名片');
+        return false;
+    }
     if (patt1.test(content)){
         layer.msg('请将注册信息填写完整');
         return false;
     }
+    // alert('提交注册信息');
     // 提交注册信息
     $.ajax({
         url: WWW_URL+'/user/register',
