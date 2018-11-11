@@ -37,14 +37,19 @@ $.ajax({
 
         var d = data.data;
         if (d.type == 2){
+            // 资产方
             $('.tabClass').eq(0).css({display:'none'});
             $('.content').eq(0).css({display:'none'});
             $('.content').eq(1).css({display:'block'});
             $('.tabClass').eq(1).css({color:'#dd514c'});
         }else{
-            $('.tabClass').css({display:'block'});
-            $('.content').eq(0).css({display:'block'});
-            $('.tabClass').eq(0).css({color:'#dd514c'});
+            // $('.tabClass').css({display:'block'});
+            // $('.content').eq(0).css({display:'block'});
+            // $('.tabClass').eq(0).css({color:'#dd514c'});
+            $('.tabClass').eq(0).css({display:'none'});
+            $('.content').eq(0).css({display:'none'});
+            $('.content').eq(1).css({display:'block'});
+            $('.tabClass').eq(1).css({color:'#dd514c'});
         }
         
         console.log('tqr',d);

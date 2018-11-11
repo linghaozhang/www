@@ -209,10 +209,10 @@ function getSelectedId(id,selsect) {
 function tijiao() {
 
 
-    if ($('#touziyaoqiu').val().length < 100 ){
-        layer.msg('投资要求不能少于100字');
-        return false;
-    }
+    // if ($('#touziyaoqiu').val().length < 100 ){
+    //     layer.msg('投资要求不能少于100字');
+    //     return false;
+    // }
 
     var data = $('#myForm').serialize()+"&id="+localStorage.getItem('TRQuserid')+"&detailedOk=1";
 
@@ -226,32 +226,32 @@ function tijiao() {
             // introduce:$('#introduce').val(), // 自我介绍
             // workExp:$('#workExp').val(), // 工作经历
             // educationExp:$('#educationExp').val(), // 教育经历
-            investStyle: getSelectedId('#touzifangshi','.xnbtnSelected2'), // 投资方式
-            riskAppetite: getSelectedId('#fengxianpianhao','.xnbtnSelected'), // 风险偏好
-            product: getSelectedId('#chanpinpianhao','.xnbtnSelected'), // 产品偏好
+            // investStyle: getSelectedId('#touzifangshi','.xnbtnSelected2'), // 投资方式
+            // riskAppetite: getSelectedId('#fengxianpianhao','.xnbtnSelected'), // 风险偏好
+            // product: getSelectedId('#chanpinpianhao','.xnbtnSelected'), // 产品偏好
             preCost: getSelectedId('#qianqifeiyong','.xnbtnSelected'), // 前期费用
-            investmentStage: getSelectedId('#touzijieduan','.xnbtnSelected'), // 投资阶段
-            equity: getSelectedId('#guquanleixing','.xnbtnSelected'), // 投资阶段
-            stake:$('#cangubili').val(), // 参股比例
-            horizon:$('#touziqixian').val(), // 投资期限
-
-            means: getSelectedId('#tigongziliao','.xnbtnSelected'), // 需要资料
-            source: getSelectedId('#zijinlaiyuan','.xnbtnSelected'), // 资金来源
+            // investmentStage: getSelectedId('#touzijieduan','.xnbtnSelected'), // 投资阶段
+            // equity: getSelectedId('#guquanleixing','.xnbtnSelected'), // 投资阶段
+            // stake:$('#cangubili').val(), // 参股比例
+            // horizon:$('#touziqixian').val(), // 投资期限
+            //
+            // means: getSelectedId('#tigongziliao','.xnbtnSelected'), // 需要资料
+            // source: getSelectedId('#zijinlaiyuan','.xnbtnSelected'), // 资金来源
             mechanismSpecies: getSelectedId('#jigouleibie','.xnbtnSelected'), // 机构类别 mechanismSpecies  orgType
-            industry: getSelectedId('#touzihangye','.xnbtnSelected'), // 投资行业
+            // industry: getSelectedId('#touzihangye','.xnbtnSelected'), // 投资行业
             Preference: getSelectedId('#zichanpianhaobiaoqian','.xnbtnSelected'), // 资金偏好标签
-            investAmount: getSelectedId('#touzijine','.xnbtnSelected'), // 投资金额
-            investRegion: getSelectedId('#touzidiqu','.xnbtnSelected'), // 投资地区
-            minReturn:$('#zuidihuibaoyaoqiu').val(), // 最低回报要求
-
-            riskControl: getSelectedId('#toufengkongyaoqiu','.xnbtnSelected'), // 投风控要求
-            itemsType: getSelectedId('#diyawuleixing','.xnbtnSelected'), // 抵押物类型
-            investAmount: getSelectedId('#touzijine','.xnbtnSelected'), // 投资金额
-            discount:$('#zuidihuibaoyaoqiu2').val(), // 抵押物折扣率
-
-            investReq:$('#touziyaoqiu').val(), // 投资要求
-            investCase:$('#touzianli').val(), // 投资案例
-            beizhu:$('#beizhu').val(), // 备注
+            // investAmount: getSelectedId('#touzijine','.xnbtnSelected'), // 投资金额
+            // investRegion: getSelectedId('#touzidiqu','.xnbtnSelected'), // 投资地区
+            // minReturn:$('#zuidihuibaoyaoqiu').val(), // 最低回报要求
+            //
+            // riskControl: getSelectedId('#toufengkongyaoqiu','.xnbtnSelected'), // 投风控要求
+            // itemsType: getSelectedId('#diyawuleixing','.xnbtnSelected'), // 抵押物类型
+            // investAmount: getSelectedId('#touzijine','.xnbtnSelected'), // 投资金额
+            // discount:$('#zuidihuibaoyaoqiu2').val(), // 抵押物折扣率
+            //
+            // investReq:$('#touziyaoqiu').val(), // 投资要求
+            // investCase:$('#touzianli').val(), // 投资案例
+            // beizhu:$('#beizhu').val(), // 备注
 
             detailedOk:1  // 是否已完善详细信息
         },
