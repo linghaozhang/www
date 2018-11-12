@@ -64,7 +64,7 @@ $.ajax({
             // html += '</p>';
             // html += '</div>';
             html += '</div>';
-            html += '<div class="am-g" style="margin:10px 0px;">';
+            html += '<div class="am-g">';
 
             var investReq = obj.investReq == null ? '' : obj.investReq;
 
@@ -78,18 +78,21 @@ $.ajax({
                     html += obj.mechanismSpeciesStr+'<span style="color:#dd514c;"> | </span>';
 
             }
-
-            console.log('投资方式',obj.investStyleStr);
             /*投资方式*/
-            if (obj.investStyleStr != '' && obj.investStyleStr != undefined && obj.investStyleStr != 'undefined'){
-                for (var j=0;j<obj.investStyleStr.length;j++) {
-                    html += obj.investStyleStr[j]+'<span style="color:#dd514c;"> | </span>';
-                }
-
+            // if (obj.investStyleStr != '' && obj.investStyleStr != undefined && obj.investStyleStr != 'undefined'){
+            //     for (var j=0;j<obj.investStyleStr.length;j++) {
+            //         html += obj.investStyleStr[j]+'<span style="color:#dd514c;"> | </span>';
+            //     }
+            //
+            // }
+            /*前期费用*/
+            if(obj.preCost){
+                obj.preCostStr.forEach(function(i){
+                    html += i+'<span style="color:#dd514c;"> | </span>';
+                })
             }
-
             /*资金偏好标签*/
-            if (obj.Preference != ''&& obj.investStyleStr != undefined){
+            if (obj.preference){
                 for (var k=0;k<obj.preferenceStr.length;k++){
                     html += obj.preferenceStr[k]+'<span style="color:#dd514c;"> | </span>';
                 }

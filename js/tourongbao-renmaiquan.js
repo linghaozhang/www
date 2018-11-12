@@ -231,7 +231,7 @@ function allSer() {
             var html = '';
             for (var i = 0; i < d.length; i++) {
                 var obj = d[i];
-                if (obj.type===2 ||obj.investReq) {
+                // if (obj.type===2 ||obj.investReq) {
                     html += '<div class="item">';
                     html += '<div class="logolist">';
                     html += '<img src="' + IMG_URL + obj.avatar + '" alt="" onclick="QJgotoGeren(' + obj.id + ');">';
@@ -246,7 +246,7 @@ function allSer() {
                     html += '</div>';
                     html += '</div>';
                     html += '</div>';
-                }
+                // }
             }
             $('.box').prepend(html);
             console.log(887, data);
