@@ -22,7 +22,61 @@ $.ajax({
         }
     }
 });
+$.ajax({
+    url: WWW_URL+'/config',
+    type: 'get',
+    headers:HEADER,
+    success:function(data){
+        var d = data.data;
+        console.log(d);
+        for (var i=0;i<d.length;i++){
 
+            // 前期费用
+            if(d[i].type==25){
+                // var h = '<option value="'+d[i].id+'">'+d[i].cat+'</option>';
+                var h = '<div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn3" type="button" configId="'+d[i].id+'"  id='+d[i].id+'>'+d[i].cat+'</button></div>';
+                $('#qianqifeiyong').append(h);
+            }
+            // 机构类别
+            if(d[i].type==18){
+                // var h = '<option value="'+d[i].id+'">'+d[i].cat+'</option>';
+                var h = '<div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn3" type="button" configId="'+d[i].id+'"  id='+d[i].id+'>'+d[i].cat+'</button></div>';
+                $('#jigouleibie').append(h);
+            }
+            // 资金偏好标签
+            if(d[i].type==20){
+                // var h = '<option value="'+d[i].id+'">'+d[i].cat+'</option>';
+                var h = '<div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn" type="button" configId="'+d[i].id+'"  id='+d[i].id+'>'+d[i].cat+'</button></div>';
+                $('#zichanpianhaobiaoqian').append(h);
+            }
+        }
+    }
+});
+$(document).on('click','.xnbtn3',function () {
+    console.log(8);
+    $(this).parent().parent().find(' button').removeClass('xnbtnSelected');
+    $(this).parent().parent().find(' button').css({color:'#444'});
+    $(this).addClass('xnbtnSelected');
+    console.log(123);
+    $(this).css({color:'#fff'});
+});
+$(document).on('click','.xnbtn',function () {
+    $(this).addClass('xnbtnSelected');
+    $(this).removeClass('xnbtn');
+});
+$(document).on('click','.xnbtnSelected',function () {
+    $(this).addClass('xnbtn');
+    $(this).removeClass('xnbtnSelected');
+});
+function getSelectedId(id,selsect) {
+    var list = [];
+    var len = $(id).find(selsect).length;
+    for (var i=0;i<len;i++){
+        list.push( $(id).find(selsect).eq(i).attr('configId') );
+    }
+    var o = JSON.stringify(list);
+    return o;
+}
 function getUrlStr(name){
     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
@@ -69,6 +123,11 @@ function selectType(type){
     $('#userType').val(type);
     $('#formReg').css({display:'block'});
     $('.usertypeBox').fadeOut();
+    if(type==1){
+        $('._favourite').show()
+    }else{
+        $('._favourite').hide()
+    }
 }
 
 // 发送验证码 yzm
@@ -152,13 +211,18 @@ function submitBtn(){
     }
 
     // 记录所在地区
-    // var diquDD = $('#diquDD').html().replace(/\s/g, "");
-    // var diquDDArr = diquDD.split('&gt;');
-    // var diquStr = JSON.stringify(diquDDArr);
-    // $('#regionInput').val(diquStr);
+    var diquDD = $('#diquDD').html().replace(/\s/g, "");
+    var diquDDArr = diquDD.split('&gt;');
+    var diquStr = JSON.stringify(diquDDArr);
+    $('#regionInput').val(diquStr);
 
     // 判断是否填写完整
     var content = $('#formReg').serialize()+'&region='+$('#regionInput').val();
+    if($('#userType').val()==1){
+        content+='&preCost='+getSelectedId('#qianqifeiyong','.xnbtnSelected');
+        content+='&mechanismSpecies='+getSelectedId('#jigouleibie','.xnbtnSelected');
+        content+='&Preference='+getSelectedId('#zichanpianhaobiaoqian','.xnbtnSelected');
+    }
     var patt1=new RegExp("=&");
     var card=$('#card').val();
     if(!card){
@@ -169,6 +233,8 @@ function submitBtn(){
         layer.msg('请将注册信息填写完整');
         return false;
     }
+
+    console.log(content);
     // alert('提交注册信息');
     // 提交注册信息
     $.ajax({

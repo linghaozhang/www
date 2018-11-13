@@ -151,6 +151,7 @@ $.ajax({
 
 // 所有按钮选中与取消选中
 $(document).on('click','.xnbtn',function () {
+    console.log(213);
    $(this).addClass('xnbtnSelected');
    $(this).removeClass('xnbtn');
 });

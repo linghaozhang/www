@@ -170,7 +170,7 @@ function yewuduijie(duijieId) {
                         if (data.count<5){
                             $('#yaoqinghaoyou').show();
                             return false;
-                        }else {
+                        }else{
                             // 被对接人是限制模式
                             if (duijieData.beDockingType == 2){
                                 $('#chengweihuiyuan').show();

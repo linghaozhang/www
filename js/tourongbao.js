@@ -321,7 +321,7 @@ function allSer() {
                 html += '</div>';
                 var investReq = obj.investReq == null ? '' : obj.investReq;
                 html += '</div>';
-                html += '<div class="am-g" >';
+                html += '<div class="am-g" style="margin:10px 0;">';
                 html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren(' + obj.id + ');" >' + investReq + '</div>';
                 html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
                 html += '标签：';
@@ -517,7 +517,7 @@ function tuijianList() {
                 /*机构类别*/
                 if (obj.orgTypeStr) {
                     obj.mechanismSpeciesStr.forEach(function (i) {
-                        html += orgTypeStr + '<span style="color:#dd514c;"> | </span>';
+                        html += i + '<span style="color:#dd514c;"> | </span>';
                     })
 
                 }

@@ -249,8 +249,8 @@ function tijiao() {
 
     /*判断资产描述是否够100个字*/
     var zichanmiaoshuStr = $('.zichanmiaoshu').val();
-    if (zichanmiaoshuStr.length < 100){
-        layer.msg('资产描述字数不能少于100');
+    if (zichanmiaoshuStr.length < 50){
+        layer.msg('资产描述字数不能少于50');
         return false;
     }
 

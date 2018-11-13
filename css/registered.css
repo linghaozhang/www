@@ -22,7 +22,7 @@
     border:1px solid #dddddd;
     margin:0 auto;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     background:#dd514c;
     color:#fff;
 }
@@ -73,4 +73,15 @@
     background-color:#dd514c;
     border-radius: 5px;
     text-align:center;
+}
+.xnbtnbox{
+    margin-bottom:10px;
+}
+.xnbtnbox .xnbtn3,.xnbtnbox .xnbtn{
+        width:100%
+}
+.xnbtnSelected, .xnbtnSelected2 {
+    background-color: #d7342e !important;
+    color: #fff !important;
+    width:100%
 }

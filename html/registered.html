@@ -167,12 +167,27 @@
               <button type="button" class="am-btn am-btn-danger" onclick="yanzhengma();" id="yanzheng">发送</button>
           </div>
       </div>
-
-      <div class="am-form-group">
-          <label for="password">设置密码</label>
-          <input type="password" class="" id="password" name="password" placeholder="设置个密码吧">
+      <div class="_favourite">
+          <div class="am-form-group">
+              <label for="password">设置密码</label>
+              <input type="password" class="" id="password" name="password" placeholder="设置个密码吧">
+          </div>
+          <div class="am-form-group">
+              <label>机构类别</label>
+              <div class="am-g" id="jigouleibie">
+              </div>
+          </div>
+          <div class="am-form-group">
+              <label>资金偏好标签</label>
+              <div class="am-g" id="zichanpianhaobiaoqian">
+              </div>
+          </div>
+          <div class="am-form-group">
+              <label>前期费用</label>
+              <div class="am-g" id="qianqifeiyong">
+              </div>
+          </div>
       </div>
-
     <p>
         <button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="submitBtn();">注册</button>
         <!--<button type="button" class="am-btn am-btn-danger" style="width:100%;" onclick="registerss();">注册</button>-->
@@ -182,13 +197,14 @@
 </form>
 
 <div class="usertypeBox" style="display:block;width:100%;height:100%;position: fixed;top:0;left:0;background:#fff;padding:20px 10px;text-align: center;overflow: auto;z-index: 99999999999;font-size: 14px;">
-    <p class="txt" style="text-align:center;margin-bottom:0px;">资金方和资产方在平台内均可发布项目，若身份为双重角色</p>
+    <p class="txt" style="text-align:center;margin-bottom:0px;">资金方和资产方在平台内均可发布项目</p>
+    <p class="txt" style="text-align:center;margin:0px;">若身份为双重角色</p>
     <p class="txt" style="text-align:center;margin-top:0px;">请根据业务侧重程度选择角色</p>
-    <p class="btn" onclick="selectType(1);" style="width: 244px;"><i class="iconfont" style="margin-right:10px;font-size: 22px;">&#xe611;</i>资金方（投资为主）</p>
+    <p class="btn" onclick="selectType(1);" style="width: 200px;"><i class="iconfont" style="margin-right:10px;font-size: 20px;">&#xe611;</i>资金方（投资为主）</p>
     <p class="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;太和投融宝平台中的资金方是指资金方在投资项目时是以本公司名义进行的直接投资，而非挣取财顾费的平台公司或个人；对申请进入的资金方，我们团队会进行严格筛选核查，其中包括线下拜访考察、投资案例核实、企业背景调查等。真实的资金方通常情况下有较强的资金实力和尽调团队，平台资金方在投资放款前，原则上不收取任何费用，对所谓的以收取评估费、交通费、考察费、公证费、律师费等虚假资方，平台将实行禁入、黑名单公示或报警处理。</p>
     <!--<p class="txt">温馨提示：要求资金方投资项目时候必须以本公司名义进行投资，而非以挣居间费的平台公司或个人，对申请进入的资金方，我们团队会进行严格逐一筛选核查，其中包括线下约谈拜访考察、投资案例核实、企业规模考察、企业背景调查等。</p>-->
     <!--<p class="txt">平台声明：平台资金方在投资过程中没有任何费用，包括且不限于评估费、交通费、公证费、律师费等。对有费用的公司，平台一律免进，对混迹平台内假的资金方已经核实，立马清除封号，绝不姑息！切实对每个会员负责，保障会员权益。</p>-->
-    <p class="btn" onclick="selectType(2);" style="width: 244px;"><i class="iconfont" style="margin-right:10px;font-size: 22px;">&#xe641;</i>资产方（项目为主）</p>
+    <p class="btn" onclick="selectType(2);" style="width: 200px;"><i class="iconfont" style="margin-right:10px;font-size: 20px;">&#xe641;</i>资产方（项目为主）</p>
     <p class="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适合项目资源比较多的机构或个人选择，目的是让每一个有投资价值的资产都能精准对接到相匹配的资金；让每一个加入平台的渠道方（中间人）都能将自身的人脉资源、项目资源等进行资源变现，同时解决渠道方（中间人）在项目对接过程中资金错配、被跳单、甩单的烦恼。</p>
     <!--<p class="txt">温馨提示：项目信息比较多的机构和个人进入，让每一个有投资价值的资产都能高效精准对接匹配资金。同时让每一个加入平台的渠道商（中间人）都能有所收益，解决渠道商（中间人）在项目对接过程中资金错配、跳单、甩单的痛点。</p>-->
 </div>
