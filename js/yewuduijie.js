@@ -92,7 +92,7 @@ function yewuduijie(duijieId) {
                             window.open(IMG_URL+duijieData.card);
                         });
                     }
-                    if (duijieData.openCard==0){
+                    if (duijieData.openCard==2){
                         $('.card2').css({display:'none'});
                     }
                     if (duijieData.openWechat==1){
@@ -267,7 +267,7 @@ function duiduiren(userId) {
                             window.open(IMG_URL+duijieData.card);
                         });
                     }
-                    if (duijieData.openCard==0){
+                    if (duijieData.openCard==2){
                         $('.card2').css({display:'none'});
                     }
 
@@ -482,8 +482,8 @@ $('._pay').on('click',function(e){
 });
 window.onload=function(){
     if(location.search){
-        let search=location.search;
-        let code=search.split('&')[0].split('=')[1];
+        var search=location.search;
+        var code=search.split('&')[0].split('=')[1];
         if(code){
             wxPay(code);
         }

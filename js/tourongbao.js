@@ -326,10 +326,10 @@ function allSer() {
                 html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
                 html += '标签：';
                 /*机构类别*/
-                if (obj.orgTypeStr) {
-                    // obj.mechanismSpeciesStr.forEach(function (i) {
-                        html += obj.orgTypeStr + '<span style="color:#dd514c;"> | </span>';
-                    // })
+                if (obj.mechanismSpeciesStr) {
+                    obj.mechanismSpeciesStr.forEach(function (i) {
+                        html += i + '<span style="color:#dd514c;"> | </span>';
+                    })
                 }
 
                 /*投资方式*/
@@ -515,7 +515,7 @@ function tuijianList() {
                 html += '标签：';
 
                 /*机构类别*/
-                if (obj.orgTypeStr) {
+                if (obj.mechanismSpeciesStr) {
                     obj.mechanismSpeciesStr.forEach(function (i) {
                         html += i + '<span style="color:#dd514c;"> | </span>';
                     })

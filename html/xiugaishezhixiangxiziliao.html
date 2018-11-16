@@ -265,10 +265,11 @@
             $('#zuidihuibaoyaoqiu2').val(d.discount);
 
             // xunaze(); //股权投资类型
-            var kk = eval(d.investStyle);
+            var kk = eval(d.investStyle),k;
             console.log(111222333,d.investStyle);
-
-            var k = kk[0];
+            if(kk){
+                k = kk[0];
+            }
             var kkk = '';
             
             console.log(11122233355);

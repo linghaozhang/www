@@ -11,15 +11,15 @@ $.ajax({
         if(data.data.type == 2) return false;
 
 
-        var detailedOk = data.data.detailedOk;
+        // var detailedOk = data.data.detailedOk;
         // 未完善
-        if (detailedOk==0){
-            window.location.href = '/www/html/shezhixiangxiziliao.html'
-
-            //已完善
-        }else if (detailedOk==1){
-
-        }
+        // if (detailedOk==0){
+        //     window.location.href = '/www/html/shezhixiangxiziliao.html'
+        //
+        //     //已完善
+        // }else if (detailedOk==1){
+        //
+        // }
 
         console.log(987,data);
     },
