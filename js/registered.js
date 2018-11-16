@@ -205,10 +205,10 @@ function submitBtn(){
     // 判断验证码是否正确
     var yzmInput = $('#yanzmtxt').val();
     var yanzhengma = calcMD5(yzmInput);
-    // if (yanzhengma!=yzm){
-    //     layer.msg('验证码错误');
-    //     return false;
-    // }
+    if (yanzhengma!=yzm){
+        layer.msg('验证码错误');
+        return false;
+    }
 
     // 记录所在地区
     // var diquDD = $('#diquDD').html().replace(/\s/g, "");
@@ -225,14 +225,14 @@ function submitBtn(){
     }
     var patt1=new RegExp("=&");
     var card=$('#card').val();
-    // if(!card){
-    //     layer.msg('请上传名片');
-    //     return false;
-    // }
-    // if (patt1.test(content)){
-    //     layer.msg('请将注册信息填写完整');
-    //     return false;
-    // }
+    if(!card){
+        layer.msg('请上传名片');
+        return false;
+    }
+    if (patt1.test(content)){
+        layer.msg('请将注册信息填写完整');
+        return false;
+    }
 
     console.log(content);
     // alert('提交注册信息');
