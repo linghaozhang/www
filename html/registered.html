@@ -60,7 +60,7 @@
 
     <div class="am-form-group">
       <label for="name">姓名</label>
-      <input type="text" class="" name="name" id="name" placeholder="请输入用户名">
+      <input type="text" class="" name="name" id="name" placeholder="请输入姓名">
     </div>
 
     <!--<div class="am-form-group">-->
@@ -236,7 +236,7 @@
     uploader.bind('FilesAdded',function(uploader,files){
         uploader.start();
     });
-    $('.photoBox>img').hide()
+    $('.photoBox>img').hide();
     //绑定各种事件，并在事件监听函数中做你想做的事
     uploader.bind('FileUploaded',function(uploader,files,responseObject){
         var url = responseObject.response;

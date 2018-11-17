@@ -220,7 +220,7 @@ function yewuduijie(duijieId) {
                                 $('#chengweihuiyuan').show();
                                 return false;
                             }else {
-                                $('#erxuanyi').show();
+                                $('#chakanlianxifangshi').show();
                                 return false;
                             }
                         }
@@ -390,7 +390,7 @@ function duiduiren(userId) {
                                 $('#chengweihuiyuan').show();
                                 return false;
                             }else {
-                                $('#erxuanyi').show();
+                                $('#chakanlianxifangshi').show();
                                 return false;
                             }
                         }

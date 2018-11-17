@@ -229,6 +229,10 @@ function submitBtn(){
         layer.msg('请上传名片');
         return false;
     }
+    if(!$('#avatar').val()){
+        layer.msg('请上传头像');
+        return false;
+    }
     if (patt1.test(content)){
         layer.msg('请将注册信息填写完整');
         return false;
