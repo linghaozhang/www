@@ -295,7 +295,7 @@ function allSer() {
         headers: HEADER,
         data: {
             region: region, //地区
-            orgType: orgType,//机构类别
+            mechanismSpecies: orgType,//机构类别
             investStyle: investStyle,//投资方式
             preference: preference,//资金偏好标签
             source: source, //投资来源
