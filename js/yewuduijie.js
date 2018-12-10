@@ -26,7 +26,7 @@ var userId;
 
 function init() {
     // 获取当前用户数据
-    $.ajax({
+   /* $.ajax({
         url: WWW_URL+'/user',
         type: 'GET',
         async:false,
@@ -36,10 +36,10 @@ function init() {
             userData = data.data;
             userId=data.userid;
         }
-    });
+    });*/
 
     // 获取所有用户
-    $.ajax({
+    /*$.ajax({
         url: WWW_URL + '/user/all',
         type: 'GET',
         async: false,
@@ -54,7 +54,7 @@ function init() {
                 }
             }
         }
-    })
+    })*/
 };
 init();
 console.log('我邀请了几个好友?',dqyhyqs);

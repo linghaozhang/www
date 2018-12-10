@@ -7,31 +7,10 @@ function gotoTourongbao(url) {
     window.location.href = url;
 }
 
+var allConfig;
 // 综合筛选
 function shaixuan() {
-    $('.xuanzeList').show();
-    $('.btnsBoxx').show();
-}
-
-// 关闭筛选
-function shaixuanhide() {
-    $('.xuanzeList').hide();
-    $('.btnsBoxx').hide();
-}
-
-// 打开地区
-function diqu() {
-    $('.diqu2').show();
-    $('.diqubtnsBoxx').show();
-}
-
-//地区关闭
-function diquhide() {
-    $('.diqu2').hide();
-    $('.diqubtnsBoxx').hide();
-}
-
-var allConfig;
+	
 // 获取搜索列表的数据
 $.ajax({
     url: WWW_URL + '/config',
@@ -63,15 +42,34 @@ $.ajax({
                 var h = '<div class="am-u-sm-6 xnbtnbox"><button class="am-btn am-btn-default am-btn-xs xnbtn" style="width:92%;" type="button" configId="' + d[i].id + '">' + d[i].cat + '</button></div>';
                 $('.jigouxuanze').append(h);
             }
-
-
         }
-        console.log(data);
     },
     error: function (data) {
         window.location.href = './login.html';
     }
 })
+    $('.xuanzeList').show();
+    $('.btnsBoxx').show();
+}
+
+// 关闭筛选
+function shaixuanhide() {
+    $('.xuanzeList').hide();
+    $('.btnsBoxx').hide();
+}
+
+// 打开地区
+function diqu() {
+    $('.diqu2').show();
+    $('.diqubtnsBoxx').show();
+}
+
+//地区关闭
+function diquhide() {
+    $('.diqu2').hide();
+    $('.diqubtnsBoxx').hide();
+}
+
 
 // 处理地区选择
 $(document).on('click', '.diqu .xnbtn', function () {
@@ -115,7 +113,7 @@ function fabuBtn() {
 
 var allUser;
 // 所有用户数据
-$.ajax({
+/*$.ajax({
     url: WWW_URL + '/user/all',
     type: 'GET',
     async: false,
@@ -123,7 +121,7 @@ $.ajax({
     success: function (data) {
         allUser = data.data;
     }
-})
+})*/
 
 //搜索取消
 function sousuoquxiao() {
