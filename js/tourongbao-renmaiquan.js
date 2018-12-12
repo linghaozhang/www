@@ -148,7 +148,6 @@ function shoucangList() {
         success: function (data) {
             shoucangList = data.data;
             console.log(11, data);
-            allSer();
         }
     })
 
@@ -158,7 +157,7 @@ shoucangList();
 
 function allSer() {
 
-    $('.contentBox').empty();
+    // $('.contentBox').empty();
 
     sousuoquxiao(); //搜索取消
     diquhide(); //地区取消
@@ -211,46 +210,59 @@ function allSer() {
 
     if (orgType != '') orgType = '["' + orgType + '"]';
     if (org != '') org = '["' + org + '"]';
-
-
-    $.ajax({
-        url: WWW_URL + '/search/user',
-        type: 'GET',
-        headers: HEADER,
-        data: {
-            region: region, //地区
-            orgType: orgType,//机构类别
-            org: org,//机构选择
-            searchTxt: searchTxt //搜索框文字
+    var page=1;
+    $('.am-g.box').dropload({
+        scrollArea : window,
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
+            domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
         },
-        success: function (data) {
-            $('.box').empty();
-            var d = data.data;
-            var html = '';
-            for (var i = 0; i < d.length; i++) {
-                var obj = d[i];
-                // if (obj.type===2 ||obj.investReq) {
-                    html += '<div class="item">';
-                    html += '<div class="logolist">';
-                    html += '<img src="' + IMG_URL + obj.avatar + '" alt="" onclick="QJgotoGeren(' + obj.id + ');">';
-                    html += '</div>';
-                    html += '<div class="main" onclick="QJgotoGeren(' + obj.id + ');" >';
-                    html += '<p class="tit">';
-                    html += '<span style="margin-right:5px;font-size: 16px;">' + obj.name + '</span>';
-                    html += '<span style="font-size: 16px;">' + obj.position + '</span>';
-                    html += '</p>';
-                    html += '<p class="lab">' + obj.orgName;
-                    html += '</p>';
-                    html += '</div>';
-                    html += '</div>';
-                    html += '</div>';
-                // }
-            }
-            $('.box').prepend(html);
-            console.log(887, data);
+        loadDownFn : function(me){
+            $.ajax({
+                url: WWW_URL + '/search/user',
+                type: 'GET',
+                headers: HEADER,
+                data: {
+                    region: region, //地区
+                    orgType: orgType,//机构类别
+                    org: org,//机构选择
+                    searchTxt: searchTxt, //搜索框文字
+                    page:page
+                },
+                success: function (data) {
+                    var d = data.data;
+                    if(!d.length){
+                        me.noData(true);
+                    }
+                    for (var i = 0; i < d.length; i++) {
+                        var html = '';
+                        var obj = d[i];
+                        // if (obj.type===2 ||obj.investReq) {
+                        html += '<div class="item">';
+                        html += '<div class="logolist">';
+                        html += '<img src="' + IMG_URL + obj.avatar + '" alt="" onclick="QJgotoGeren(' + obj.id + ');">';
+                        html += '</div>';
+                        html += '<div class="main" onclick="QJgotoGeren(' + obj.id + ');" >';
+                        html += '<p class="tit">';
+                        html += '<span style="margin-right:5px;font-size: 16px;">' + obj.name + '</span>';
+                        html += '<span style="font-size: 16px;">' + obj.position + '</span>';
+                        html += '</p>';
+                        html += '<p class="lab">' + obj.orgName;
+                        html += '</p>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        // }
+                        $('.am-g.box .inner').append(html);
+                    }
+                    page++;
+                    me.resetload();
+                }
+            })
         }
-    })
-
+    });
 }
 
 

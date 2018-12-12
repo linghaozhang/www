@@ -194,7 +194,7 @@ shoucangList();
 
 function allSer() {
 
-    $('.contentBox').empty();
+    // $('.contentBox').empty();
     sousuoquxiao(); //搜索取消
     diquhide(); //地区取消
     shaixuanhide(); //筛选取消
@@ -249,8 +249,6 @@ function allSer() {
             preference = zichanpianhaobiaoqian.attr('configId');
         }
     }
-
-
     //资金来源
     var zichanxinxiduijie = $('.zichanxinxiduijie').find(' .xnbtnSelected');
     if (zichanxinxiduijie.length == 0) {
@@ -262,7 +260,6 @@ function allSer() {
             source = zichanxinxiduijie.attr('configId');
         }
     }
-
     //投资金额
     var touzijine = $('.touzijine').find(' .xnbtnSelected');
     if (touzijine.length == 0) {
@@ -275,91 +272,100 @@ function allSer() {
         }
     }
 
+    var page=1;
     // 搜索信息
     var searchTxt = $('.sousuoinput').val();
-
-
     if (orgType != '') orgType = '["' + orgType + '"]';
     if (investStyle != '') investStyle = '["' + investStyle + '"]';
     if (preference != '') preference = '["' + preference + '"]';
     if (source != '') source = '["' + source + '"]';
     if (investAmount != '') investAmount = '["' + investAmount + '"]';
-
-
     console.log(99991, region, orgType, investStyle, preference, source, investAmount, searchTxt);
-
-    $.ajax({
-        url: WWW_URL + '/search/fund-user',
-        type: 'GET',
-        headers: HEADER,
-        data: {
-            region: region, //地区
-            mechanismSpecies: orgType,//机构类别
-            investStyle: investStyle,//投资方式
-            preference: preference,//资金偏好标签
-            source: source, //投资来源
-            investAmount: investAmount,//投资金额
-            searchTxt: searchTxt //搜索框文字
+    $('.contentBox').dropload({
+        scrollArea : window,
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
+            domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
         },
-        success: function (data) {
-            var d = data.data;
-            console.log(9123992, d);
-            for (var i = 0; i < d.length; i++) {
-                var obj = d[i];
-                var html = '';
-                html += '<div class="item" style="">';
-                html += '<div class="am-g">';
-                html += '<div class="am-u-sm-2">';
-                html += '<img src="' + IMG_URL + obj.avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
-                html += '</div>';
-                html += '<div class="am-u-sm-10">';
-                html += '<p class="nameBox">';
-                html += '<span class="name">' + obj.name + '</span>';
-                html += ' <span class="sf">' + obj.position + '</span>';
-                html += '</p><p class="zhiwei" style="margin-top:-5px;">' + obj.orgName + '</p>';
-                html += '</div>';
-                var investReq = obj.investReq == null ? '' : obj.investReq;
-                html += '</div>';
-                html += '<div class="am-g" style="margin:10px 0;">';
-                html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren(' + obj.id + ');" >' + investReq + '</div>';
-                html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
-                html += '标签：';
-                /*机构类别*/
-                if (obj.mechanismSpeciesStr) {
-                    obj.mechanismSpeciesStr.forEach(function (i) {
-                        html += i + '<span style="color:#dd514c;"> | </span>';
-                    })
-                }
-
-                /*投资方式*/
-                // if (obj.investStyle != '' && obj.investStyle != null) {
-                //     for (var j = 0; j < obj.investStyleStr.length; j++) {
-                //         html += obj.investStyleStr[j] + '<span style="color:#dd514c;"> | </span>';
-                //     }
-                // }
-
-                /*前期费用*/
-                if(obj.preCost&&obj.preCostStr){
-                    obj.preCostStr.forEach(function(i){
-                        html += i+'<span style="color:#dd514c;"> | </span>';
-                    })
-                }
-                /*资金偏好标签*/
-                if (preference != null && obj.preferenceStr) {
-                    for (var k = 0; k < obj.preferenceStr.length; k++) {
-                        html += obj.preferenceStr[k] + '<span style="color:#dd514c;"> | </span>';
+        loadDownFn : function(me){
+            $.ajax({
+                url: WWW_URL + '/search/fund-user',
+                type: 'GET',
+                headers: HEADER,
+                data: {
+                    region: region, //地区
+                    mechanismSpecies: orgType,//机构类别
+                    investStyle: investStyle,//投资方式
+                    preference: preference,//资金偏好标签
+                    source: source, //投资来源
+                    investAmount: investAmount,//投资金额
+                    searchTxt: searchTxt, //搜索框文字
+                    page:page
+                },
+                success: function (data) {
+                    var d = data.data;
+                    console.log(9123992, d);
+                    if(!d.length){
+                        me.noData(true);
                     }
+                    for (var i = 0; i < d.length; i++) {
+                        var obj = d[i];
+                        var html = '';
+                        html += '<div class="item" style="">';
+                        html += '<div class="am-g">';
+                        html += '<div class="am-u-sm-2">';
+                        html += '<img src="' + IMG_URL + obj.avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
+                        html += '</div>';
+                        html += '<div class="am-u-sm-10">';
+                        html += '<p class="nameBox">';
+                        html += '<span class="name">' + obj.name + '</span>';
+                        html += ' <span class="sf">' + obj.position + '</span>';
+                        html += '</p><p class="zhiwei" style="margin-top:-5px;">' + obj.orgName + '</p>';
+                        html += '</div>';
+                        var investReq = obj.investReq == null ? '' : obj.investReq;
+                        html += '</div>';
+                        html += '<div class="am-g" style="margin:10px 0;">';
+                        html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren(' + obj.id + ');" >' + investReq + '</div>';
+                        html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
+                        html += '标签：';
+                        /*机构类别*/
+                        if (obj.mechanismSpeciesStr) {
+                            obj.mechanismSpeciesStr.forEach(function (i) {
+                                html += i + '<span style="color:#dd514c;"> | </span>';
+                            })
+                        }
+                        /*投资方式*/
+                        // if (obj.investStyle != '' && obj.investStyle != null) {
+                        //     for (var j = 0; j < obj.investStyleStr.length; j++) {
+                        //         html += obj.investStyleStr[j] + '<span style="color:#dd514c;"> | </span>';
+                        //     }
+                        // }
+                        /*前期费用*/
+                        if(obj.preCost&&obj.preCostStr){
+                            obj.preCostStr.forEach(function(i){
+                                html += i+'<span style="color:#dd514c;"> | </span>';
+                            })
+                        }
+                        /*资金偏好标签*/
+                        if (preference != null && obj.preferenceStr) {
+                            for (var k = 0; k < obj.preferenceStr.length; k++) {
+                                html += obj.preferenceStr[k] + '<span style="color:#dd514c;"> | </span>';
+                            }
+                        }
+                        html += '</div>';
+                        html += '<div class="am-g">';
+                        html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%" onclick="yewuduijie(' + obj.id + ');">业务对接</button>';
+                        html += '</div></div>';
+                        $('.contentBox .inner').append(html);
+                    }
+                    page++;
+                    me.resetload();
                 }
-                html += '</div>';
-                html += '<div class="am-g">';
-                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%" onclick="yewuduijie(' + obj.id + ');">业务对接</button>';
-                html += '</div></div>';
-                // console.log(html);
-                $('.contentBox').prepend(html);
-            }
+            })
         }
-    })
-
+    });
 }
 
 

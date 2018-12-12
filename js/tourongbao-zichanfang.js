@@ -111,19 +111,6 @@ $(document).on('click','.zichanxinxiduijie .xnbtn',function () {
 function fabuBtn(){
     window.location.href = './fabu.html';
 }
-
-var allUser;
-// 所有用户数据
-/*$.ajax({
-    url: WWW_URL+'/user/all',
-    type: 'GET',
-    async:false,
-    headers:HEADER,
-    success:function(data){
-        allUser = data.data;
-    }
-})*/
-
 //搜索取消
 function sousuoquxiao() {
     $('.sousuoBox').hide();
@@ -133,62 +120,10 @@ function openSousuo() {
     $('.sousuoBox').show();
 }
 
-console.log(778899,allUser);
 
 //加载全部数据
-$.ajax({
-    url: WWW_URL+'/buttJoin',
-    type: 'GET',
-    headers:HEADER,
-    success:function(data){
-
-        var d = data.data;
-        for (var i=0;i<d.length;i++){
-            var obj = d[i];
-            var ID = obj.userId;
-            
-            for (var j=0;j<allUser.length;j++){
 
 
-                if (allUser[j].id == obj.userId){
-                    var userObj = allUser[j];
-
-                    console.log(11223344,userObj);
-
-                    var html = '';
-                    html += '<div class="item" style="">';
-                    html += '<div class="am-g">';
-                    html += '<div class="am-u-sm-2">';
-                    html += '<img src="'+IMG_URL+userObj.avatar+'"  class="logo" onclick="QJgotoGeren('+userObj.id+');">';
-                    html += '</div>';
-                    html += '<div class="am-u-sm-10">';
-                    html += '<p class="nameBox">';
-                    html += '<span class="name">'+userObj.name+'</span>';
-                    html += ' <span class="sf">'+userObj.position+'</span>';
-                    html += '</p><p class="zhiwei" style="margin-top:-5px;font-size: 13px;">'+userObj.orgName+'</p>';
-                    html += '</div><div class="am-u-sm-3">';
-                    html += '<p class="djBox">';
-                    html += '<span class="dj"></span>';
-                    html += '</p></div></div>';
-                    html += '<div class="am-g" style="margin:10px 0;">';
-                    html += '<div class="am-u-sm-12 am-u-sm-centered content"  style="padding:0px 10px;color:#333;text-align: justify;">'+obj.txt+'</div>';
-                    html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
-                    html += '标签：';
-
-                    html += '</div>';
-                    html += '<div class="am-g">';
-                    html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.id+');">业务对接</button>';
-                    html += '</div></div>';
-
-                    $('.contentBox').unshift(html);
-
-                }
-            }
-        }
-
-
-    }
-});
 
 // 获取收藏列表
 var shoucangList;
@@ -213,7 +148,7 @@ shoucangList();
 
 function allSer() {
 
-    $('.contentBox').empty();
+    // $('.contentBox').empty();
 
     sousuoquxiao(); //搜索取消
     diquhide(); //地区取消
@@ -280,119 +215,129 @@ function allSer() {
     if (propertyTypeLabel != '') propertyTypeLabel= '["'+propertyTypeLabel+'"]';
     if (propertyTrade != '') propertyTrade= '["'+propertyTrade+'"]';
     if (propertyRole != '') propertyRole= '["'+propertyRole+'"]';
-
-
-
-    $.ajax({
-        url: WWW_URL+'/search/butt-join',
-        type: 'GET',
-        headers:HEADER,
-        data: {
-            region : region , //地区
-            propertyType: propertyType,//资产类别
-            propertyTypeLabel: '',//资产类别标签
-            propertyTrade:  propertyTrade,//投资行业
-            propertyRole:propertyRole,//资产对接行业
-            searchTxt: searchTxt //搜索框文字
+    var page=1;
+    $('.contentBox').dropload({
+        scrollArea : window,
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
+            domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
         },
-        success:function(data){
-            var d = data.data;
-            for (var i=0;i<d.length;i++){
-
-                var obj= d[i];
-
-                var html = '';
-                html += '<div class="item" style="">';
-                html += '<div class="am-g">';
-                html += '<div class="am-u-sm-2">';
-                html += '<img src="'+IMG_URL+obj.avatar+'"  class="logo" onclick="QJgotoGeren('+obj.userId+');">';
-                html += '</div>';
-                html += '<div class="am-u-sm-10">';
-                html += '<p class="nameBox">';
-                html += '<span class="name">'+obj.name+'</span>';
-                html += ' <span class="sf">'+obj.position+'</span>';
-                html += '</p><p class="zhiwei" style="margin-top:-5px;font-size: 13px;">'+obj.orgName+'</p>';
-                html += '</div>';
-
-                // html += '<div class="am-u-sm-3">';
-                // // html += '<p class="djBox">';
-                //
-                // // 判断当前是否已经收藏
-                // var h=0;
-                // var sdf;
-                // for(var j=0;j<shoucangList.length;j++){
-                //     if (shoucangList[j].collectId == obj.id){
-                //         h=1;
-                //         sdf = shoucangList[j];
-                //     }
-                // }
-                // if (h ==0){
-                //     html += '<span class="dj" style="padding:5px 10px;border:1px solid #dd514c;" onclick="shoucang(this, '+obj.id+');">收藏</span>';
-                // }else{
-                //     html += '<span class="dj am-btn xdbtn" style="padding:5px 10px;border:1px solid #dd514c;" onclick="quxiaoshoucang('+obj.id+');">已收藏</span>';
-                //     // html += '<button type="button" class="am-btn am-btn-default xdbtn"  onclick="quxiaoshoucang('+ sdf.collectId +')");">已收藏</button>';
-                // }
-                //
-                //
-                // html += '<span class="dj"></span>';
-                // html += '</p></div>';
-
-                html += '</div>';
-                html += '<div class="am-g" style="margin:10px 0;">';
-                html += '<div class="am-u-sm-12 am-u-sm-centered content"  style="padding:0px 10px;color:#333;text-align: justify;">'+obj.txt+'</div>';
-                html += '<p style="text-align: right;font-size: 12px;padding-right:10px;margin:0px 0px 5px;">发布时间：'+ obj.create_at +'</p>';
-                html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px;margin-top:0px;">';
-                html += '标签：';
-
-                console.log(777666999999999999,obj);
-                
-                /*资产信息对接*/
-                if (obj.propertyRoleStr != '' && obj.propertyRoleStr != null){
-                    for (var j=0;j<obj.propertyRoleStr.length;j++) {
-                        html += obj.propertyRoleStr[j] + '<span style="color:#dd514c;"> | </span>';
+        loadDownFn : function(me){
+            $.ajax({
+                url: WWW_URL+'/search/butt-join',
+                type: 'GET',
+                headers:HEADER,
+                data: {
+                    region : region , //地区
+                    propertyType: propertyType,//资产类别
+                    propertyTypeLabel: '',//资产类别标签
+                    propertyTrade:  propertyTrade,//投资行业
+                    propertyRole:propertyRole,//资产对接行业
+                    searchTxt: searchTxt, //搜索框文字
+                    page:page
+                },
+                success:function(data){
+                    var d = data.data;
+                    if(!d.length){
+                        me.noData(true);
                     }
-                }
+                    for (var i=0;i<d.length;i++){
 
-                /*资产所在地区*/
-                if (obj.provinceStr != '' && obj.provinceStr != null){
-                    for (var j=0;j<obj.provinceStr.length;j++) {
-                        html += obj.provinceStr[j] + '<span style="color:#dd514c;"> | </span>';
+                        var obj= d[i];
+
+                        var html = '';
+                        html += '<div class="item" style="">';
+                        html += '<div class="am-g">';
+                        html += '<div class="am-u-sm-2">';
+                        html += '<img src="'+IMG_URL+obj.avatar+'"  class="logo" onclick="QJgotoGeren('+obj.userId+');">';
+                        html += '</div>';
+                        html += '<div class="am-u-sm-10">';
+                        html += '<p class="nameBox">';
+                        html += '<span class="name">'+obj.name+'</span>';
+                        html += ' <span class="sf">'+obj.position+'</span>';
+                        html += '</p><p class="zhiwei" style="margin-top:-5px;font-size: 13px;">'+obj.orgName+'</p>';
+                        html += '</div>';
+
+                        // html += '<div class="am-u-sm-3">';
+                        // // html += '<p class="djBox">';
+                        //
+                        // // 判断当前是否已经收藏
+                        // var h=0;
+                        // var sdf;
+                        // for(var j=0;j<shoucangList.length;j++){
+                        //     if (shoucangList[j].collectId == obj.id){
+                        //         h=1;
+                        //         sdf = shoucangList[j];
+                        //     }
+                        // }
+                        // if (h ==0){
+                        //     html += '<span class="dj" style="padding:5px 10px;border:1px solid #dd514c;" onclick="shoucang(this, '+obj.id+');">收藏</span>';
+                        // }else{
+                        //     html += '<span class="dj am-btn xdbtn" style="padding:5px 10px;border:1px solid #dd514c;" onclick="quxiaoshoucang('+obj.id+');">已收藏</span>';
+                        //     // html += '<button type="button" class="am-btn am-btn-default xdbtn"  onclick="quxiaoshoucang('+ sdf.collectId +')");">已收藏</button>';
+                        // }
+                        //
+                        //
+                        // html += '<span class="dj"></span>';
+                        // html += '</p></div>';
+
+                        html += '</div>';
+                        html += '<div class="am-g" style="margin:10px 0;">';
+                        html += '<div class="am-u-sm-12 am-u-sm-centered content"  style="padding:0px 10px;color:#333;text-align: justify;">'+obj.txt+'</div>';
+                        html += '<p style="text-align: right;font-size: 12px;padding-right:10px;margin:0px 0px 5px;">发布时间：'+ obj.create_at +'</p>';
+                        html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px;margin-top:0px;">';
+                        html += '标签：';
+
+                        console.log(777666999999999999,obj);
+
+                        /*资产信息对接*/
+                        if (obj.propertyRoleStr != '' && obj.propertyRoleStr != null){
+                            for (var j=0;j<obj.propertyRoleStr.length;j++) {
+                                html += obj.propertyRoleStr[j] + '<span style="color:#dd514c;"> | </span>';
+                            }
+                        }
+
+                        /*资产所在地区*/
+                        if (obj.provinceStr != '' && obj.provinceStr != null){
+                            for (var j=0;j<obj.provinceStr.length;j++) {
+                                html += obj.provinceStr[j] + '<span style="color:#dd514c;"> | </span>';
+                            }
+                        }
+                        //
+                        /*资产类别*/
+                        if (obj.propertyTypeStr != '' && obj.propertyTypeStr != null){
+                            for (var j=0;j<obj.propertyTypeStr.length;j++) {
+                                html += obj.propertyTypeStr[j] + '<span style="color:#dd514c;"> | </span>';
+                            }
+                        }
+
+                        /*资产类别标签*/
+                        if (obj.propertyTypeLabelStr != '' && obj.propertyTypeLabelStr != null){
+                            for (var j=0;j<obj.propertyTypeLabelStr.length;j++) {
+                                html += obj.propertyTypeLabelStr[j] + '<span style="color:#dd514c;"> | </span>';
+                            }
+                        }
+
+                        /*资产行业*/
+                        if (obj.propertyTradeStr != '' && obj.propertyTradeStr != null){
+                            for (var j=0;j<obj.propertyTradeStr.length;j++) {
+                                html += obj.propertyTradeStr[j] + '<span style="color:#dd514c;"> | </span>';
+                            }
+                        }
+                        html += '</div>';
+                        html += '<div class="am-g">';
+                        html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.userId+');">业务对接</button>';
+                        html += '</div></div>';
+                        $('.contentBox .inner').append(html);
                     }
+                    page++;
+                    me.resetload();
                 }
-                //
-                /*资产类别*/
-                if (obj.propertyTypeStr != '' && obj.propertyTypeStr != null){
-                    for (var j=0;j<obj.propertyTypeStr.length;j++) {
-                        html += obj.propertyTypeStr[j] + '<span style="color:#dd514c;"> | </span>';
-                    }
-                }
-
-                /*资产类别标签*/
-                if (obj.propertyTypeLabelStr != '' && obj.propertyTypeLabelStr != null){
-                    for (var j=0;j<obj.propertyTypeLabelStr.length;j++) {
-                        html += obj.propertyTypeLabelStr[j] + '<span style="color:#dd514c;"> | </span>';
-                    }
-                }
-
-                /*资产行业*/
-                if (obj.propertyTradeStr != '' && obj.propertyTradeStr != null){
-                    for (var j=0;j<obj.propertyTradeStr.length;j++) {
-                        html += obj.propertyTradeStr[j] + '<span style="color:#dd514c;"> | </span>';
-                    }
-                }
-
-
-
-
-                html += '</div>';
-                html += '<div class="am-g">';
-                html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="yewuduijie('+obj.userId+');">业务对接</button>';
-                html += '</div></div>';
-
-                $('.contentBox').append(html);
-            }
+            })
         }
-    })
+    });
 }
 
 function tuijianList() {

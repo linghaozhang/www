@@ -56,13 +56,20 @@
         },
         success:function(data){
             var d = data.data;
-
-            if (d.joinType == 1) $('#mfdjBtn').addClass('selected');
+            if (d.joinType == 1) {
+                $('#mfdjBtn').addClass('selected')
+            }else{
+                $('#mfdjBtn').removeClass('selected')
+            }
             if (d.joinType == 2) $('#wtptBtn').addClass('selected');
             if (d.openWechat == 1) $('#weixin').addClass('selected');
             if (d.openPhone == 1) $('#phone').addClass('selected');
             if (d.openEmail == 1) $('#email').addClass('selected');
-            if (d.openCard == 1) $('#mingpian').addClass('selected');
+            if (d.openCard == 1) {
+                $('#mingpian').addClass('selected')
+            }else{
+                $('#mingpian').removeClass('selected')
+            }
             $('.beizhu').val(d.remark);
         }
     })

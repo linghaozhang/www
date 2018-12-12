@@ -25,109 +25,99 @@ $.ajax({
         window.location.href = '/www/html/login.html';
     }
 });
-$('#contentM').dropload({
-    scrollArea : window,
-    domDown : {
-        domClass   : 'dropload-down',
-        domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
-        domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-        domNoData  : '<div class="dropload-noData">暂无数据</div>'
-    },
-    loadDownFn : function(me){
-        // $.ajax({
-        //     url: WWW_URL+'/recommend/get',
-        //     type: 'GET',
-        //     headers:HEADER,
-        //     data: {
-        //         type:1,
-        //         position:1,
-        //     },
-        //     success: function(data){
-        //         console.log(data);
-        //         // 每次数据加载完，必须重置
-        //         me.resetload();
-        //     },
-        //     error: function(xhr, type){
-        //         alert('Ajax error!');
-        //         // 即使加载出错，也得重置
-        //         me.resetload();
-        //     }
-        // });
-        $.ajax({
-            url: WWW_URL+'/recommend/get',
-            type: 'GET',
-            headers:HEADER,
-            data: {
-                type:1,
-                position:1,
-            },
-            success:function(data){
-                var d= data.data.recommendInfo;
-                for (var i=0;i<d.length;i++){
-                    var obj = d[i];
-                    var html = '';
-                    html += '<div class="item" style="">';
-                    html += '<div class="am-g">';
-                    html += '<div class="am-u-sm-2">';
-                    html += '<img src="'+IMG_URL+obj.avatar+'" alt="" class="logo" onclick="QJgotoGeren('+obj.id+');">';
-                    html += '</div>';
-                    html += '<div class="am-u-sm-10">';
-                    html += '<p class="nameBox">';
-                    html += '<span class="name" style="margin-right:10px">'+obj.name+'</span>';
-                    html += '<span class="sf">'+obj.position+'</span>';
-                    html += '</p>';
-                    html += ' <p class="zhiwei" style="margin-top:-5px;">'+obj.orgName+'</p>';
-                    html += '</div>';
-                    // html += '<div class="am-u-sm-3">';
-                    // html += '<p class="djBox">';
-                    // html += '<span class="dj">123</span>次对接';
-                    // html += '</p>';
-                    // html += '</div>';
-                    html += '</div>';
-                    html += '<div class="am-g">';
-
-                    var investReq = obj.investReq == null ? '' : obj.investReq;
-
-                    html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;" onclick="QJgotoGeren('+obj.id+');">'+investReq+'</div></div>';
-                    html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
-                    html += '标签：';
-                    /*机构类别*/
-                    if (obj.mechanismSpeciesStr != '' && obj.mechanismSpeciesStr != null ){
-                        html += obj.mechanismSpeciesStr+'<span style="color:#dd514c;"> | </span>';
-
+(function(){
+    var page=1;
+    $('#contentM').dropload({
+        scrollArea : window,
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
+            domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
+        },
+        loadDownFn : function(me){
+            $.ajax({
+                url: WWW_URL+'/recommend/get',
+                type: 'GET',
+                headers:HEADER,
+                data: {
+                    type:1,
+                    position:1,
+                    page:page
+                },
+                success:function(data){
+                    var d= data.data.recommendInfo;
+                    if(!d.length){
+                        me.noData(true);
                     }
-                    /*投资方式*/
-                    // if (obj.investStyleStr != '' && obj.investStyleStr != undefined && obj.investStyleStr != 'undefined'){
-                    //     for (var j=0;j<obj.investStyleStr.length;j++) {
-                    //         html += obj.investStyleStr[j]+'<span style="color:#dd514c;"> | </span>';
-                    //     }
-                    //
-                    // }
-                    /*前期费用*/
-                    if(obj.preCost){
-                        obj.preCostStr.forEach(function(i){
-                            html += i+'<span style="color:#dd514c;"> | </span>';
-                        })
-                    }
-                    /*资金偏好标签*/
-                    if (obj.preference){
-                        for (var k=0;k<obj.preferenceStr.length;k++){
-                            html += obj.preferenceStr[k]+'<span style="color:#dd514c;"> | </span>';
+                    for (var i=0;i<d.length;i++){
+                        var obj = d[i];
+                        var html = '';
+                        html += '<div class="item" style="">';
+                        html += '<div class="am-g">';
+                        html += '<div class="am-u-sm-2">';
+                        html += '<img src="'+IMG_URL+obj.avatar+'" alt="" class="logo" onclick="QJgotoGeren('+obj.id+');">';
+                        html += '</div>';
+                        html += '<div class="am-u-sm-10">';
+                        html += '<p class="nameBox">';
+                        html += '<span class="name" style="margin-right:10px">'+obj.name+'</span>';
+                        html += '<span class="sf">'+obj.position+'</span>';
+                        html += '</p>';
+                        html += ' <p class="zhiwei" style="margin-top:-5px;">'+obj.orgName+'</p>';
+                        html += '</div>';
+                        // html += '<div class="am-u-sm-3">';
+                        // html += '<p class="djBox">';
+                        // html += '<span class="dj">123</span>次对接';
+                        // html += '</p>';
+                        // html += '</div>';
+                        html += '</div>';
+                        html += '<div class="am-g">';
+
+                        var investReq = obj.investReq == null ? '' : obj.investReq;
+
+                        html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;" onclick="QJgotoGeren('+obj.id+');">'+investReq+'</div></div>';
+                        html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
+                        html += '标签：';
+                        /*机构类别*/
+                        if (obj.mechanismSpeciesStr != '' && obj.mechanismSpeciesStr != null ){
+                            html += obj.mechanismSpeciesStr+'<span style="color:#dd514c;"> | </span>';
+
                         }
+                        /*投资方式*/
+                        // if (obj.investStyleStr != '' && obj.investStyleStr != undefined && obj.investStyleStr != 'undefined'){
+                        //     for (var j=0;j<obj.investStyleStr.length;j++) {
+                        //         html += obj.investStyleStr[j]+'<span style="color:#dd514c;"> | </span>';
+                        //     }
+                        //
+                        // }
+                        /*前期费用*/
+                        if(obj.preCost){
+                            obj.preCostStr.forEach(function(i){
+                                html += i+'<span style="color:#dd514c;"> | </span>';
+                            })
+                        }
+                        /*资金偏好标签*/
+                        if (obj.preference){
+                            for (var k=0;k<obj.preferenceStr.length;k++){
+                                html += obj.preferenceStr[k]+'<span style="color:#dd514c;"> | </span>';
+                            }
 
+                        }
+                        html += '</div>';
+                        html += '<div class="am-g">';
+                        html += ' <button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="duiduiren('+obj.id+');">业务对接</button>';
+                        html += '</div></div>';
+                        $('#contentM .inner').append(html);
                     }
-                    html += '</div>';
-                    html += '<div class="am-g">';
-                    html += ' <button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%;" onclick="duiduiren('+obj.id+');">业务对接</button>';
-                    html += '</div></div>';
-                    $('#contentM .inner').append(html);
-                }
-                me.resetload();
+                    page++;
+                    me.resetload();
 
-            }
-        })
-    }
-});
+                }
+            })
+        }
+    });
+})()
+
 // $.ajax({
 //     url: WWW_URL+'/recommend/get',
 //     type: 'GET',
