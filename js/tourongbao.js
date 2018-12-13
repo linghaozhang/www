@@ -194,7 +194,7 @@ shoucangList();
 
 function allSer() {
 
-    // $('.contentBox').empty();
+    $('.contentBox').empty();
     sousuoquxiao(); //搜索取消
     diquhide(); //地区取消
     shaixuanhide(); //筛选取消
@@ -273,6 +273,7 @@ function allSer() {
     }
 
     var page=1;
+    var isBottom=false;
     // 搜索信息
     var searchTxt = $('.sousuoinput').val();
     if (orgType != '') orgType = '["' + orgType + '"]';
@@ -281,7 +282,9 @@ function allSer() {
     if (source != '') source = '["' + source + '"]';
     if (investAmount != '') investAmount = '["' + investAmount + '"]';
     console.log(99991, region, orgType, investStyle, preference, source, investAmount, searchTxt);
-    $('.contentBox').dropload({
+    $('.contentBox')
+        .append('<div class="inner"></div>')
+        .dropload({
         scrollArea : window,
         domDown : {
             domClass   : 'dropload-down',
@@ -290,6 +293,11 @@ function allSer() {
             domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
         },
         loadDownFn : function(me){
+            if(isBottom){
+                me.noData(true);
+                me.resetload();
+                return false
+            }
             $.ajax({
                 url: WWW_URL + '/search/fund-user',
                 type: 'GET',
@@ -308,6 +316,7 @@ function allSer() {
                     var d = data.data;
                     console.log(9123992, d);
                     if(!d.length){
+                        isBottom=true;
                         me.noData(true);
                     }
                     for (var i = 0; i < d.length; i++) {

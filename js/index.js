@@ -27,6 +27,7 @@ $.ajax({
 });
 (function(){
     var page=1;
+    var isBottom=false;
     $('#contentM').dropload({
         scrollArea : window,
         domDown : {
@@ -36,6 +37,11 @@ $.ajax({
             domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
         },
         loadDownFn : function(me){
+            if(isBottom){
+                me.noData(true);
+                me.resetload();
+                return false
+            }
             $.ajax({
                 url: WWW_URL+'/recommend/get',
                 type: 'GET',
@@ -49,6 +55,7 @@ $.ajax({
                     var d= data.data.recommendInfo;
                     if(!d.length){
                         me.noData(true);
+                        isBottom=true
                     }
                     for (var i=0;i<d.length;i++){
                         var obj = d[i];

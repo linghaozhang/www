@@ -157,7 +157,7 @@ shoucangList();
 
 function allSer() {
 
-    // $('.contentBox').empty();
+    $('.am-g.box').empty();
 
     sousuoquxiao(); //搜索取消
     diquhide(); //地区取消
@@ -211,7 +211,10 @@ function allSer() {
     if (orgType != '') orgType = '["' + orgType + '"]';
     if (org != '') org = '["' + org + '"]';
     var page=1;
-    $('.am-g.box').dropload({
+    var isBottom=false;
+    $('.am-g.box')
+        .append('<div class="inner"></div>')
+        .dropload({
         scrollArea : window,
         domDown : {
             domClass   : 'dropload-down',
@@ -220,6 +223,11 @@ function allSer() {
             domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
         },
         loadDownFn : function(me){
+            if(isBottom){
+                me.noData(true);
+                me.resetload();
+                return false
+            }
             $.ajax({
                 url: WWW_URL + '/search/user',
                 type: 'GET',
@@ -234,6 +242,7 @@ function allSer() {
                 success: function (data) {
                     var d = data.data;
                     if(!d.length){
+                        isBottom=true;
                         me.noData(true);
                     }
                     for (var i = 0; i < d.length; i++) {
