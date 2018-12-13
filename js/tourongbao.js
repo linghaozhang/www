@@ -8,10 +8,6 @@ function gotoTourongbao(url) {
 }
 
 var allConfig;
-
-// 综合筛选
-function shaixuan() {
-	// 获取搜索列表的数据
 $.ajax({
     url: WWW_URL + '/config',
     type: 'get',
@@ -68,6 +64,10 @@ $.ajax({
         }
     }
 })
+
+// 综合筛选
+function shaixuan() {
+    // 获取搜索列表的数据
 
     $('.xuanzeList').show();
     $('.btnsBoxx').show();
@@ -285,96 +285,96 @@ function allSer() {
     $('.contentBox')
         .append('<div class="inner"></div>')
         .dropload({
-        scrollArea : window,
-        domDown : {
-            domClass   : 'dropload-down',
-            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
-            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-            domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
-        },
-        loadDownFn : function(me){
-            if(isBottom){
-                me.noData(true);
-                me.resetload();
-                return false
-            }
-            $.ajax({
-                url: WWW_URL + '/search/fund-user',
-                type: 'GET',
-                headers: HEADER,
-                data: {
-                    region: region, //地区
-                    mechanismSpecies: orgType,//机构类别
-                    investStyle: investStyle,//投资方式
-                    preference: preference,//资金偏好标签
-                    source: source, //投资来源
-                    investAmount: investAmount,//投资金额
-                    searchTxt: searchTxt, //搜索框文字
-                    page:page
-                },
-                success: function (data) {
-                    var d = data.data;
-                    console.log(9123992, d);
-                    if(!d.length){
-                        isBottom=true;
-                        me.noData(true);
-                    }
-                    for (var i = 0; i < d.length; i++) {
-                        var obj = d[i];
-                        var html = '';
-                        html += '<div class="item" style="">';
-                        html += '<div class="am-g">';
-                        html += '<div class="am-u-sm-2">';
-                        html += '<img src="' + IMG_URL + obj.avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
-                        html += '</div>';
-                        html += '<div class="am-u-sm-10">';
-                        html += '<p class="nameBox">';
-                        html += '<span class="name">' + obj.name + '</span>';
-                        html += ' <span class="sf">' + obj.position + '</span>';
-                        html += '</p><p class="zhiwei" style="margin-top:-5px;">' + obj.orgName + '</p>';
-                        html += '</div>';
-                        var investReq = obj.investReq == null ? '' : obj.investReq;
-                        html += '</div>';
-                        html += '<div class="am-g" style="margin:10px 0;">';
-                        html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren(' + obj.id + ');" >' + investReq + '</div>';
-                        html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
-                        html += '标签：';
-                        /*机构类别*/
-                        if (obj.mechanismSpeciesStr) {
-                            obj.mechanismSpeciesStr.forEach(function (i) {
-                                html += i + '<span style="color:#dd514c;"> | </span>';
-                            })
-                        }
-                        /*投资方式*/
-                        // if (obj.investStyle != '' && obj.investStyle != null) {
-                        //     for (var j = 0; j < obj.investStyleStr.length; j++) {
-                        //         html += obj.investStyleStr[j] + '<span style="color:#dd514c;"> | </span>';
-                        //     }
-                        // }
-                        /*前期费用*/
-                        if(obj.preCost&&obj.preCostStr){
-                            obj.preCostStr.forEach(function(i){
-                                html += i+'<span style="color:#dd514c;"> | </span>';
-                            })
-                        }
-                        /*资金偏好标签*/
-                        if (preference != null && obj.preferenceStr) {
-                            for (var k = 0; k < obj.preferenceStr.length; k++) {
-                                html += obj.preferenceStr[k] + '<span style="color:#dd514c;"> | </span>';
-                            }
-                        }
-                        html += '</div>';
-                        html += '<div class="am-g">';
-                        html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%" onclick="yewuduijie(' + obj.id + ');">业务对接</button>';
-                        html += '</div></div>';
-                        $('.contentBox .inner').append(html);
-                    }
-                    page++;
+            scrollArea : window,
+            domDown : {
+                domClass   : 'dropload-down',
+                domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+                domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
+                domNoData  : '<div class="dropload-noData" >—— 我是有底线的 ——</div>'
+            },
+            loadDownFn : function(me){
+                if(isBottom){
+                    me.noData(true);
                     me.resetload();
+                    return false
                 }
-            })
-        }
-    });
+                $.ajax({
+                    url: WWW_URL + '/search/fund-user',
+                    type: 'GET',
+                    headers: HEADER,
+                    data: {
+                        region: region, //地区
+                        mechanismSpecies: orgType,//机构类别
+                        investStyle: investStyle,//投资方式
+                        preference: preference,//资金偏好标签
+                        source: source, //投资来源
+                        investAmount: investAmount,//投资金额
+                        searchTxt: searchTxt, //搜索框文字
+                        page:page
+                    },
+                    success: function (data) {
+                        var d = data.data;
+                        console.log(9123992, d);
+                        if(!d.length){
+                            isBottom=true;
+                            me.noData(true);
+                        }
+                        for (var i = 0; i < d.length; i++) {
+                            var obj = d[i];
+                            var html = '';
+                            html += '<div class="item" style="">';
+                            html += '<div class="am-g">';
+                            html += '<div class="am-u-sm-2">';
+                            html += '<img src="' + IMG_URL + obj.avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
+                            html += '</div>';
+                            html += '<div class="am-u-sm-10">';
+                            html += '<p class="nameBox">';
+                            html += '<span class="name">' + obj.name + '</span>';
+                            html += ' <span class="sf">' + obj.position + '</span>';
+                            html += '</p><p class="zhiwei" style="margin-top:-5px;">' + obj.orgName + '</p>';
+                            html += '</div>';
+                            var investReq = obj.investReq == null ? '' : obj.investReq;
+                            html += '</div>';
+                            html += '<div class="am-g" style="margin:10px 0;">';
+                            html += '<div class="am-u-sm-12 am-u-sm-centered content" style="padding:0px 10px;color:#333;text-align: justify;" onclick="QJgotoGeren(' + obj.id + ');" >' + investReq + '</div>';
+                            html += '<div class="am-g lableBox" style="padding:0px 20px;font-size: 13px">';
+                            html += '标签：';
+                            /*机构类别*/
+                            if (obj.mechanismSpeciesStr) {
+                                obj.mechanismSpeciesStr.forEach(function (i) {
+                                    html += i + '<span style="color:#dd514c;"> | </span>';
+                                })
+                            }
+                            /*投资方式*/
+                            // if (obj.investStyle != '' && obj.investStyle != null) {
+                            //     for (var j = 0; j < obj.investStyleStr.length; j++) {
+                            //         html += obj.investStyleStr[j] + '<span style="color:#dd514c;"> | </span>';
+                            //     }
+                            // }
+                            /*前期费用*/
+                            if(obj.preCost&&obj.preCostStr){
+                                obj.preCostStr.forEach(function(i){
+                                    html += i+'<span style="color:#dd514c;"> | </span>';
+                                })
+                            }
+                            /*资金偏好标签*/
+                            if (preference != null && obj.preferenceStr) {
+                                for (var k = 0; k < obj.preferenceStr.length; k++) {
+                                    html += obj.preferenceStr[k] + '<span style="color:#dd514c;"> | </span>';
+                                }
+                            }
+                            html += '</div>';
+                            html += '<div class="am-g">';
+                            html += '<button type="button" class="am-btn am-btn-danger" style="width:92%;margin-left:4%" onclick="yewuduijie(' + obj.id + ');">业务对接</button>';
+                            html += '</div></div>';
+                            $('.contentBox .inner').append(html);
+                        }
+                        page++;
+                        me.resetload();
+                    }
+                })
+            }
+        });
 }
 
 
@@ -399,8 +399,6 @@ if (indexId != null) {
     console.log(9598, indexId, indexIdObj.length);
 
     for (var i = 0; i < indexIdObj.length; i++) {
-
-
         if (indexIdObj.eq(i).attr('configid') == indexId) {
             indexIdObj.eq(i).addClass('xnbtnSelected')
         }
