@@ -33,7 +33,9 @@ $.ajax({
                 console.log(444, IMG_URL + d.avatar);
                 $('.photoBox img').attr({src: IMG_URL + d.avatar});
                 $('.cardBox img').attr({src: IMG_URL + d.card});
-                $('#card').val(IMG_URL + d.card);
+                // $('#card').val(IMG_URL + d.card);
+                $('#card').val(d.card);
+                $("#avatar").val(d.avatar);
 
                 $('#name').val(d.name);
                 // $('#birthday').val(d.birthday);
@@ -107,9 +109,20 @@ function submitBtn() {
     var avatarArr = $('.photoBox img').attr('src').split('/');
     var avatarStr = 'file/' + avatarArr[avatarArr.length - 1];
 
+	var avatar = $("#avatar").val();
+    if (!avatar) {
+        layer.msg('请上传头像');
+        return false
+    }
+	
+	
     /*名片图片*/
     var cardArr = $('#card').val().split('/');
-    console.log(112222222, cardArr);
+    console.log(1, avatarArr);
+	
+	return false;
+	
+	
     var cardStr = 'file/' + cardArr[cardArr.length - 1];
     var card = $("#card").val();
     if (!card) {

@@ -245,15 +245,16 @@ function getSelectedId(id,selsect) {
 }
 
 // 提交信息
+	 var issubmit=false;
 function tijiao() {
-
+	if(issubmit==false){
     /*判断资产描述是否够100个字*/
     var zichanmiaoshuStr = $('.zichanmiaoshu').val();
     if (zichanmiaoshuStr.length < 50){
         layer.msg('资产描述字数不能少于50');
         return false;
     }
-
+	issubmit = true;
     $.ajax({
         url: WWW_URL+'/buttJoin/create',
         type: 'post',
@@ -284,6 +285,13 @@ function tijiao() {
             }
         }
     })
+	}else{
+	 layer.msg('点击慢点，改成：温馨提示：请勿重复提交！');
+        return false;	
+	}
+  setTimeout(function() {  
+            issubmit = false;  
+        }, 10000);  
 
 }
 function back(){

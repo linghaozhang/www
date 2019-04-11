@@ -8,10 +8,6 @@ function gotoTourongbao(url) {
 }
 
 var allConfig;
-
-// 综合筛选
-function shaixuan() {
-	// 获取搜索列表的数据
 $.ajax({
     url: WWW_URL + '/config',
     type: 'get',
@@ -68,6 +64,10 @@ $.ajax({
         }
     }
 })
+
+// 综合筛选
+function shaixuan() {
+	// 获取搜索列表的数据
 
     $('.xuanzeList').show();
     $('.btnsBoxx').show();
@@ -322,10 +322,15 @@ function allSer() {
                     for (var i = 0; i < d.length; i++) {
                         var obj = d[i];
                         var html = '';
+						if(obj.avatar.length > 10){
+							var avatar = obj.avatar
+						}else{
+							var avatar = 'file/defult.jpg';
+						}
                         html += '<div class="item" style="">';
                         html += '<div class="am-g">';
                         html += '<div class="am-u-sm-2">';
-                        html += '<img src="' + IMG_URL + obj.avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
+                        html += '<img src="' + IMG_URL + avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
                         html += '</div>';
                         html += '<div class="am-u-sm-10">';
                         html += '<p class="nameBox">';
@@ -399,8 +404,6 @@ if (indexId != null) {
     console.log(9598, indexId, indexIdObj.length);
 
     for (var i = 0; i < indexIdObj.length; i++) {
-
-
         if (indexIdObj.eq(i).attr('configid') == indexId) {
             indexIdObj.eq(i).addClass('xnbtnSelected')
         }
@@ -505,13 +508,18 @@ function tuijianList() {
             for (var i = 0; i < d.length; i++) {
                 var obj = d[i];
                 var html = '';
+				if(obj.avatar.length > 10){
+					var avatar = obj.avatar
+				}else{
+					var avatar = 'file/defult.jpg';
+				}
                 // if(obj.investReq){
                 html += '<div class="swiper-slide" style="position: relative;">';
                 html += '<p style="position:absolute;width:20px;background:#dd514c;color:#fff;top:10px;right:12px;font-size: 10px;padding:2px 4px;">推荐</p>';
                 html += '<div class="item" style="">';
                 html += '<div class="am-g">';
                 html += '<div class="am-u-sm-2">';
-                html += '<img src="' + IMG_URL + obj.avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
+                html += '<img src="' + IMG_URL + avatar + '"  class="logo" onclick="QJgotoGeren(' + obj.id + ');">';
                 html += '</div>';
                 html += '<div class="am-u-sm-10">';
                 html += '<p class="nameBox">';

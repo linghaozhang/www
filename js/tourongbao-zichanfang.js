@@ -258,10 +258,15 @@ function allSer() {
                         var obj= d[i];
 
                         var html = '';
+						if(obj.avatar.length > 10){
+							var avatar = obj.avatar
+						}else{
+							var avatar = 'file/defult.jpg';
+						}
                         html += '<div class="item" style="">';
                         html += '<div class="am-g">';
                         html += '<div class="am-u-sm-2">';
-                        html += '<img src="'+IMG_URL+obj.avatar+'"  class="logo" onclick="QJgotoGeren('+obj.userId+');">';
+                        html += '<img src="'+IMG_URL+avatar+'"  class="logo" onclick="QJgotoGeren('+obj.userId+');">';
                         html += '</div>';
                         html += '<div class="am-u-sm-10">';
                         html += '<p class="nameBox">';
@@ -368,12 +373,17 @@ function tuijianList() {
                 var obj= d[i];
 
                 var html = '';
+				if(obj.userInfo.avatar.length > 10){
+					var avatar = obj.userInfo.avatar
+				}else{
+					var avatar = 'file/defult.jpg';
+				}
                 html += '<div class="swiper-slide">';
                 html += '<p style="position:absolute;width:20px;background:#dd514c;color:#fff;top:10px;right:12px;font-size: 10px;padding:2px 4px;">推荐</p>';
                 html += '<div class="item" style="">';
                 html += '<div class="am-g">';
                 html += '<div class="am-u-sm-2">';
-                html += '<img src="'+IMG_URL+obj.userInfo.avatar+'"  class="logo" onclick="QJgotoGeren('+obj.userInfo.id+');">';
+                html += '<img src="'+IMG_URL+avatar+'"  class="logo" onclick="QJgotoGeren('+obj.userInfo.id+');">';
                 html += '</div>';
                 html += '<div class="am-u-sm-10">';
                 html += '<p class="nameBox">';

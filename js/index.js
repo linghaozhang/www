@@ -60,10 +60,15 @@ $.ajax({
                     for (var i=0;i<d.length;i++){
                         var obj = d[i];
                         var html = '';
+						if(obj.avatar.length > 10){
+							var avatar = obj.avatar
+						}else{
+							var avatar = 'file/defult.jpg';
+						}
                         html += '<div class="item" style="">';
                         html += '<div class="am-g">';
                         html += '<div class="am-u-sm-2">';
-                        html += '<img src="'+IMG_URL+obj.avatar+'" alt="" class="logo" onclick="QJgotoGeren('+obj.id+');">';
+                        html += '<img src="'+IMG_URL+avatar+'" alt="" class="logo" onclick="QJgotoGeren('+obj.id+');">';
                         html += '</div>';
                         html += '<div class="am-u-sm-10">';
                         html += '<p class="nameBox">';

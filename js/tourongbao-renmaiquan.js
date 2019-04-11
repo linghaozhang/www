@@ -248,10 +248,15 @@ function allSer() {
                     for (var i = 0; i < d.length; i++) {
                         var html = '';
                         var obj = d[i];
+						if(obj.avatar.length > 10){
+							var avatar = obj.avatar
+						}else{
+							var avatar = 'file/defult.jpg';
+						}
                         // if (obj.type===2 ||obj.investReq) {
                         html += '<div class="item">';
                         html += '<div class="logolist">';
-                        html += '<img src="' + IMG_URL + obj.avatar + '" alt="" onclick="QJgotoGeren(' + obj.id + ');">';
+                        html += '<img src="' + IMG_URL + avatar + '" alt="" onclick="QJgotoGeren(' + obj.id + ');">';
                         html += '</div>';
                         html += '<div class="main" onclick="QJgotoGeren(' + obj.id + ');" >';
                         html += '<p class="tit">';
