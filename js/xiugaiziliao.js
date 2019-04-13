@@ -118,11 +118,6 @@ function submitBtn() {
 	
     /*名片图片*/
     var cardArr = $('#card').val().split('/');
-    console.log(1, avatarArr);
-	
-	return false;
-	
-	
     var cardStr = 'file/' + cardArr[cardArr.length - 1];
     var card = $("#card").val();
     if (!card) {
