@@ -167,7 +167,7 @@ function yewuduijie(duijieId) {
                             return false
                         }
                         // 如果没邀请够人数
-                        if (data.count<5){
+                        if (data.count<2){
                             $('#yaoqinghaoyou').show();
                             return false;
                         }else{
@@ -211,7 +211,7 @@ function yewuduijie(duijieId) {
                             }
                             return false
                         }
-                        if (data.count<5) {
+                        if (data.count<2) {
                             $('#erxuanyi').show();
                             return false;
                         }else {
@@ -337,7 +337,7 @@ function duiduiren(userId) {
                             return false
                         }
                         // 如果没邀请够人数
-                        if (data.count<5){
+                        if (data.count<2){
                             $('#yaoqinghaoyou').show();
                             return false;
                         }else {
@@ -381,7 +381,7 @@ function duiduiren(userId) {
                             }
                             return false
                         }
-                        if (data.count<5) {
+                        if (data.count<2) {
                             $('#erxuanyi').show();
                             return false;
                         }else {
