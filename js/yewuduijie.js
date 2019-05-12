@@ -175,6 +175,9 @@ function yewuduijie(duijieId) {
                             if (duijieData.beDockingType == 2){
                                 $('#chengweihuiyuan').show();
                                 return false
+                            }else if(duijieData.joinType == 2){
+                                $('#weituopxitong').show();
+                                return false
                             }else {
                                 $('#chakanlianxifangshi').show();
                                 return false;
@@ -388,6 +391,9 @@ function duiduiren(userId) {
                             // 被对接人为限制模式
                             if (duijieData.beDockingType == 2) {
                                 $('#chengweihuiyuan').show();
+                                return false;
+                            }else if(duijieData.joinType == 2){
+                                $('#weituopxitong').show();
                                 return false;
                             }else {
                                 $('#chakanlianxifangshi').show();
