@@ -513,7 +513,7 @@ function pay(e) {
     if(isWx()){
         var openId = localStorage.getItem('openId');
         $.ajax({
-        url: WWW_URL+'/pay/wx'+openId+'&amount=1&userId='+userId,
+        url: WWW_URL+'/pay/wx'+openId+'&amount=1&userId='+userData.id,
         type: 'GET',
         success:function(data){
 			var val=JSON.parse(data);
@@ -557,7 +557,7 @@ function pay(e) {
                 async:false,
                 headers:HEADER,
                 data:{
-                    userId:userId,
+                    userId:userData.id,
                     amount:"0.01"
                 },
                 success:function(data){
@@ -601,7 +601,7 @@ function pay(e) {
             console.log({
                 amount:0.01 ,
                 callurl:location.href,
-                userid:userId
+                userid:userData.id
             })
             $.ajax({
                  url: WWW_URL+'/pay/alipay',
@@ -610,7 +610,7 @@ function pay(e) {
                 data:{
                     amount:0.01 ,
                     callurl:location.href,
-                    userid:userId
+                    userid:userData.id
                 },
                 success:function(data){
                     console.log('data,',data);
