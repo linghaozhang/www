@@ -90,9 +90,7 @@ padding:15px 20px;
 
 .item{
 border-bottom: 1px solid #ccc;
-width: 90%;
-margin:0 auto;
-height: 70px;
+height: 90px;
 box-sizing: border-box;
 padding-top:15px;
 display: flex;
@@ -100,6 +98,7 @@ display: flex;
 .logolist{
 width: 50px;
 height: 50px;
+	margin-top:10px;
 }
 .logolist>img{
 width: 100%;
@@ -131,8 +130,13 @@ margin-boittom:0px;
 font-size: 14px;
 }
 .item{
-padding:10px 0px 0px 0px;
-margin:0 auto;
+padding:10px 5% 0px 5%;
+}
+.item .role{
+	height:12px;
+	position: absolute;
+	right:-15px;
+	top:6px;
 }
 
 

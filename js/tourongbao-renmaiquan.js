@@ -260,8 +260,8 @@ function allSer() {
                         html += '</div>';
                         html += '<div class="main" onclick="QJgotoGeren(' + obj.id + ');" >';
                         html += '<p class="tit">';
-                        html += '<span style="margin-right:5px;font-size: 16px;">' + obj.name + '</span>';
-                        html += '<span style="font-size: 16px;">' + obj.position + '</span>';
+                        html += '<span style="display:block;margin-right:5px;font-size: 16px;position:relative;">' + obj.name + '<img class="role" src="./../images/hehuoren1.png" />'+'</span>';
+                        html += '<span style="display:block;font-size: 14px;">' + obj.position + '</span>';
                         html += '</p>';
                         html += '<p class="lab">' + obj.orgName;
                         html += '</p>';
