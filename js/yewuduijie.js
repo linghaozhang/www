@@ -167,13 +167,16 @@ function yewuduijie(duijieId) {
                             return false
                         }
                         // 如果没邀请够人数
-                        if (data.count<5){
+                        if (data.count<2){
                             $('#yaoqinghaoyou').show();
                             return false;
                         }else{
                             // 被对接人是限制模式
                             if (duijieData.beDockingType == 2){
                                 $('#chengweihuiyuan').show();
+                                return false
+                            }else if(duijieData.joinType == 2){
+                                $('#weituopxitong').show();
                                 return false
                             }else {
                                 $('#chakanlianxifangshi').show();
@@ -211,7 +214,7 @@ function yewuduijie(duijieId) {
                             }
                             return false
                         }
-                        if (data.count<5) {
+                        if (data.count<2) {
                             $('#erxuanyi').show();
                             return false;
                         }else {
@@ -337,7 +340,7 @@ function duiduiren(userId) {
                             return false
                         }
                         // 如果没邀请够人数
-                        if (data.count<5){
+                        if (data.count<2){
                             $('#yaoqinghaoyou').show();
                             return false;
                         }else {
@@ -381,13 +384,16 @@ function duiduiren(userId) {
                             }
                             return false
                         }
-                        if (data.count<5) {
+                        if (data.count<2) {
                             $('#erxuanyi').show();
                             return false;
                         }else {
                             // 被对接人为限制模式
                             if (duijieData.beDockingType == 2) {
                                 $('#chengweihuiyuan').show();
+                                return false;
+                            }else if(duijieData.joinType == 2){
+                                $('#weituopxitong').show();
                                 return false;
                             }else {
                                 $('#chakanlianxifangshi').show();
@@ -507,7 +513,7 @@ function pay(e) {
     if(isWx()){
         var openId = localStorage.getItem('openId');
         $.ajax({
-        url: WWW_URL+'/pay/wx'+openId+'&amount=1&userId='+userId,
+        url: WWW_URL+'/pay/wx'+openId+'&amount=1&userId='+userData.id,
         type: 'GET',
         success:function(data){
 			var val=JSON.parse(data);
@@ -551,7 +557,7 @@ function pay(e) {
                 async:false,
                 headers:HEADER,
                 data:{
-                    userId:userId,
+                    userId:userData.id,
                     amount:"0.01"
                 },
                 success:function(data){
@@ -595,7 +601,7 @@ function pay(e) {
             console.log({
                 amount:0.01 ,
                 callurl:location.href,
-                userid:userId
+                userid:userData.id
             })
             $.ajax({
                  url: WWW_URL+'/pay/alipay',
@@ -604,7 +610,7 @@ function pay(e) {
                 data:{
                     amount:0.01 ,
                     callurl:location.href,
-                    userid:userId
+                    userid:userData.id
                 },
                 success:function(data){
                     console.log('data,',data);
