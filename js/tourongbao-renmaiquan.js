@@ -247,12 +247,14 @@ function allSer() {
                     }
                     for (var i = 0; i < d.length; i++) {
                         var html = '';
+                        var style
                         var obj = d[i];
 						if(obj.avatar.length > 10){
 							var avatar = obj.avatar
 						}else{
 							var avatar = 'file/defult.jpg';
 						}
+
                         // if (obj.type===2 ||obj.investReq) {
                         html += '<div class="item">';
                         html += '<div class="logolist">';
@@ -260,7 +262,13 @@ function allSer() {
                         html += '</div>';
                         html += '<div class="main" onclick="QJgotoGeren(' + obj.id + ');" >';
                         html += '<p class="tit">';
-                        html += '<span style="display:block;margin-right:5px;font-size: 16px;position:relative;">' + obj.name + '<img class="role" src="./../images/hehuoren1.png" />'+'</span>';
+                        html += '<span style="display:block;margin-right:5px;font-size: 16px;position:relative;">' + obj.name ;
+                        if(obj.identity==2){
+                            html += '<img class="role" src="./../images/hehuoren.png" />';
+                        }else if(obj.identity==1){
+                            html += '<img class="role" src="./../images/lianhechuangshiren.png" />';
+                        }
+                        html += '</span>';
                         html += '<span style="display:block;font-size: 14px;">' + obj.position + '</span>';
                         html += '</p>';
                         html += '<p class="lab">' + obj.orgName;
